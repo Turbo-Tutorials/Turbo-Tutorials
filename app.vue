@@ -1,17 +1,6 @@
 <script lang="ts" setup>
 import { resolveRenderer } from "./components/componentMapping";
 
-useSchemaOrg([
-  defineWebSite({
-    name: "Tim Benniks Press kit",
-  }),
-  definePerson({
-    name: "Tim Benniks",
-    image: "/icon.png",
-    sameAs: ["https://timbenniks.dev/"],
-  }),
-  defineWebPage(),
-]);
 useHead({
   viewport: "width=device-width, initial-scale=1",
   charset: "utf-8",
