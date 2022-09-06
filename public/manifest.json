@@ -1,0 +1,25 @@
+{
+  "name": "Tim Benniks Links",
+  "icons": [
+    {
+      "src": "icon.png",
+      "type": "image/png",
+      "sizes": "384x384"
+    },
+    {
+      "src": "icon.png",
+      "type": "image/png",
+      "sizes": "384x384",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icon.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#3671cd",
+  "theme_color": "#14356b",
+  "display": "standalone"
+}
