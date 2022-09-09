@@ -2,7 +2,7 @@ module.exports = {
   plugins: [require("@tailwindcss/line-clamp")],
   theme: {
     colors: {
-      dark: "#1F2937",
+      dark: "#0F2139",
       black: "#000000",
       white: "#fff",
       grey: "#344459",

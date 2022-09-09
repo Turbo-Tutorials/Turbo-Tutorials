@@ -5,19 +5,21 @@ const props = defineProps<{
   component: ComponentInstance;
 }>();
 
-const entry = computed(() => props.component.parameters.entry.value?.id);
-
-const { data: richtext } = await useAsyncData(entry.value.toString(), () => {
-  return queryContent(`/${entry.value}`).findOne();
-});
+const title = computed(() => props.component.parameters.title.value as string);
+const titleType = computed(
+  () => props.component.parameters.titleType.value as string
+);
+const text = computed(() => props.component.parameters.text.value);
 </script>
 
 <template>
-  <ContentRenderer
-    v-if="richtext"
-    :value="richtext"
-    :class="{
-      'max-w-[1440px] mx-auto px-8 lg:p-0 mb-12': entry === 'intro',
-    }"
-  />
+  <section class="component component-richtext">
+    <AtomsLeTitle
+      v-if="title"
+      :as="titleType"
+      :lines="title"
+      class="text-3xl md:text-5xl font-bold uppercase leading-none mb-4"
+    />
+    <div v-html="text" v-if="text" />
+  </section>
 </template>

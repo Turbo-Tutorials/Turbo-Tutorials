@@ -4,17 +4,24 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "preview": "nuxt preview"
+    "preview": "nuxt preview",
+    "context:manifest": "uniform context manifest download --output ./lib/context/context-manifest.json"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^5.3.2",
-    "nuxt": "3.0.0-rc.8",
-    "@uniformdev/uniform-nuxt": "17.1.0",
+    "@tailwindcss/line-clamp": "^0.4.0",
     "@uniformdev/canvas": "17.1.0",
     "@uniformdev/canvas-vue": "17.1.0",
     "@uniformdev/cli": "17.1.0",
     "@uniformdev/context": "17.1.0",
     "@uniformdev/context-vue": "17.1.0",
-    "@tailwindcss/line-clamp": "^0.4.0"
+    "@uniformdev/uniform-nuxt": "17.1.0",
+    "nuxt": "3.0.0-rc.9"
+  },
+  "dependencies": {
+    "@contentful/rich-text-html-renderer": "^15.13.1",
+    "@uniformdev/canvas-cloudinary": "^17.1.0",
+    "@uniformdev/canvas-contentful": "^17.1.0",
+    "contentful": "^9.1.34"
   }
 }
