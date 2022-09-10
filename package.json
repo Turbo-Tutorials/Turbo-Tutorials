@@ -8,8 +8,8 @@
     "context:manifest": "uniform context manifest download --output ./lib/context/context-manifest.json"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^5.3.2",
-    "@tailwindcss/line-clamp": "^0.4.0",
+    "@nuxtjs/tailwindcss": "^5.3.3",
+    "@tailwindcss/line-clamp": "^0.4.2",
     "@uniformdev/canvas": "17.1.0",
     "@uniformdev/canvas-vue": "17.1.0",
     "@uniformdev/cli": "17.1.0",

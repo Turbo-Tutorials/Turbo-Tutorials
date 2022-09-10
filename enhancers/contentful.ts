@@ -4,7 +4,9 @@ import {
   ContentfulClientList,
 } from "@uniformdev/canvas-contentful";
 
-import { createClient } from "contentful";
+import pkg from "contentful";
+const { createClient } = pkg;
+// import { createClient } from "contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import * as duration from 'duration-fns'
 
