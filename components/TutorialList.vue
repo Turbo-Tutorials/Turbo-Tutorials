@@ -5,26 +5,32 @@ const props = defineProps<{
   component: ComponentInstance;
 }>();
 
-const list = computed(() => props.component.parameters.entry.value);
+const popular = props.component.parameters?.popular?.value || false;
+
+function orderByPopularity(tutorials) {
+  return tutorials.sort((a, b) => (a.views > b.views ? -1 : 1));
+}
+
+const list = computed(() =>
+  popular
+    ? orderByPopularity(props.component.parameters.entry.value)
+    : props.component.parameters.entry.value
+);
+
+const title = computed(() => props.component.parameters.title.value);
 </script>
 
 <template>
   <div class="max-w-[1440px] mx-auto px-8 lg:p-0">
-    <section class="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-20">
-      <fieldset>
-        <legend>TutorialList</legend>
-        <pre>{{ list }}</pre>
-      </fieldset>
+    <AtomsLeTitle
+      v-if="title"
+      as="h2"
+      :lines="title"
+      class="text-3xl md:text-4xl font-bold uppercase leading-none mb-4"
+    />
+
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <TutorialCard v-for="tutorial in list" v-bind="tutorial" />
     </section>
   </div>
-
-  <!-- <AtomsImage
-      :alt="image.alt"
-      :width="image.width"
-      :height="image.height"
-      :public-id="image.publicId"
-      :widths="image.widths.split(',')"
-      loading="lazy"
-      fetchpriority="low"
-    /> -->
 </template>

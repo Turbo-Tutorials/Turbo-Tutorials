@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { resolveRenderer } from "../components/componentMapping";
-const route = useRoute();
 
+const route = useRoute();
 const { $useComposition } = useNuxtApp();
 const { data } = await $useComposition({
   slug: route.params.slug ? route.params.slug : "/",
@@ -25,7 +25,8 @@ usePageMeta({
 });
 </script>
 <template>
-  <main class="max-w-[1512px] mx-auto">
+  <main class="max-w-[1440px] mx-auto pt-36">
+    <GlobalHeader />
     <Composition
       v-if="composition"
       :data="composition"

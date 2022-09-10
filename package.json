@@ -22,6 +22,7 @@
     "@contentful/rich-text-html-renderer": "^15.13.1",
     "@uniformdev/canvas-cloudinary": "^17.1.0",
     "@uniformdev/canvas-contentful": "^17.1.0",
-    "contentful": "^9.1.34"
+    "contentful": "^9.1.34",
+    "duration-fns": "^3.0.1"
   }
 }

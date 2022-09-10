@@ -1,6 +1,8 @@
 <script lang="ts" setup>
-function createSrcSet(widths: Array<number>, publicId: string) {
-  const baseUrl = "https://res.cloudinary.com/dwfcofnrd/image/upload";
+function createSrcSet(widths: Array<number>, publicId: string, fetch: boolean) {
+  const baseUrl = `https://res.cloudinary.com/dwfcofnrd/image/${
+    fetch ? "fetch" : "upload"
+  }/`;
 
   const result = widths.map((width) => {
     return `${baseUrl}/f_auto,q_auto,w_${width}/${publicId} ${width}w`;
@@ -17,10 +19,11 @@ const props = defineProps<{
   alt: string;
   loading: "lazy" | "eager";
   fetchpriority: "low" | "high";
+  fetch: boolean;
 }>();
 
 const srcset = computed(() => {
-  return createSrcSet(props.widths, props.publicId);
+  return createSrcSet(props.widths, props.publicId, props.fetch);
 });
 </script>
 

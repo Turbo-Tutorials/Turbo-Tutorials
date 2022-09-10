@@ -6,6 +6,8 @@ import {
 
 import { createClient } from "contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+import * as duration from 'duration-fns'
+
 export { CANVAS_CONTENTFUL_PARAMETER_TYPES, CANVAS_CONTENTFUL_QUERY_PARAMETER_TYPES } from "@uniformdev/canvas-contentful";
 
 export const contentfulEnhancer = () => {
@@ -78,11 +80,48 @@ export const contentfulTutorialListByTagsEnhancer = async ({ component }) => {
   const tutorialListByTags = await client.getEntries({
     content_type: "turboTutorial",
     "metadata.tags.sys.id[all]": tags.value,
-    order: "-sys.createdAt",
+    order: "-fields.publicationDate",
     limit: limit.value,
   });
 
   return tutorialListByTags.items.map(item => enhanceContentfulItem(item))
+}
+
+export const tutorialYouTubeEnhancer = async ({ component, parameter }) => {
+  if (component.type !== 'tutorialList') {
+    return parameter.value
+  }
+
+  const getVideoSpecs = async (id: string) => {
+    const result = await fetch(`https://www.googleapis.com/youtube/v3/videos?part=contentDetails,statistics&id=${id}&key=${process.env.YOUTUBE_KEY}`)
+    const data = await result.json();
+    const durationRaw = data.items[0].contentDetails.duration;
+    const durationObj = duration.parse(durationRaw)
+    const { viewCount, likeCount, commentCount } = data.items[0].statistics
+
+    return {
+      duration: `${durationObj.minutes}:${durationObj.seconds}`,
+      views: Number(viewCount),
+      likes: Number(likeCount),
+      comments: Number(commentCount)
+    }
+  }
+
+  const enhanceTutorials = async () => {
+    const result = await Promise.all(parameter.value.map(async (tutorial) => {
+      const videoSpecs = await getVideoSpecs(tutorial.videoId)
+
+      return {
+        ...tutorial,
+        ...videoSpecs
+      }
+    }))
+
+    return result;
+  }
+
+  parameter.value = await enhanceTutorials();
+  return parameter.value;
 }
 
 export const contentfulModelConverter = ({ parameter }) => {

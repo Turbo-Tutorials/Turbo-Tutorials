@@ -13,12 +13,12 @@ const text = computed(() => props.component.parameters.text.value);
 </script>
 
 <template>
-  <section class="component component-richtext">
+  <section class="mb-8">
     <AtomsLeTitle
       v-if="title"
       :as="titleType"
       :lines="title"
-      class="text-3xl md:text-5xl font-bold uppercase leading-none mb-4"
+      class="text-3xl md:text-6xl font-bold uppercase leading-none mb-4"
     />
     <div v-html="text" v-if="text" />
   </section>

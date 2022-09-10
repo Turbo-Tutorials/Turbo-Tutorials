@@ -18,7 +18,8 @@ export default defineNuxtConfig({
 		public: {
 			contentfulSpaceId: process.env.CONTENTFUL_SPACE_ID,
 			contentfulDeliveryApiKey: process.env.CONTENTFUL_DELIVERY_API_KEY,
-			contentfulEnvironment: process.env.CONTENTFUL_ENVIRONMENT
+			contentfulEnvironment: process.env.CONTENTFUL_ENVIRONMENT,
+			youTubeKey: process.env.YOUTUBE_KEY
 		},
 	},
 })
