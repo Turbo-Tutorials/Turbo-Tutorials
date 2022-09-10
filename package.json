@@ -23,6 +23,7 @@
     "@uniformdev/canvas-cloudinary": "^17.1.0",
     "@uniformdev/canvas-contentful": "^17.1.0",
     "contentful": "^9.1.34",
-    "duration-fns": "^3.0.1"
+    "duration-fns": "^3.0.1",
+    "nuxt-full-static": "^0.2.1"
   }
 }

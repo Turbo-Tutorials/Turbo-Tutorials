@@ -52,7 +52,8 @@ defineProps<Tutorial>();
       </h3>
       <ul class="flex space-x-3">
         <li v-for="tag in tags" class="uppercase text-sm">
-          <nuxt-link class="text-grey" :to="`/tag/${tag}`">{{ tag }}</nuxt-link>
+          <!-- <nuxt-link class="text-grey" :to="`/tag/${tag}`">{{ tag }}</nuxt-link> -->
+          <a class="text-grey" href="#">{{ tag }}</a>
         </li>
       </ul>
     </article>

@@ -5,19 +5,24 @@
         class="space-x-6 leading-8 items-center mr-4 flex font-bold absolute bottom-4 left-0"
       >
         <li>
-          <nuxt-link rel="noopener" to="/">HOME</nuxt-link>
+          <!-- <nuxt-link rel="noopener" to="/">HOME</nuxt-link> -->
+          <a href="#">HOME</a>
         </li>
         <li>
-          <nuxt-link rel="noopener" to="/tutorials">TURBO TUTORIALS</nuxt-link>
+          <!-- <nuxt-link rel="noopener" to="/tutorials">TURBO TUTORIALS</nuxt-link> -->
+          <a href="#">TURBO TUTORIALS</a>
         </li>
         <li>
-          <nuxt-link rel="noopener" to="/bootcamps">TURBO BOOTCAMPS</nuxt-link>
+          <!-- <nuxt-link rel="noopener" to="/bootcamps">TURBO BOOTCAMPS</nuxt-link> -->
+          <a href="#">TURBO BOOTCAMPS</a>
         </li>
         <li>
-          <nuxt-link rel="noopener" to="/about">ABOUT</nuxt-link>
+          <!-- <nuxt-link rel="noopener" to="/about">ABOUT</nuxt-link> -->
+          <a href="#">ABOUT</a>
         </li>
         <li>
-          <nuxt-link rel="noopener" to="/sponsor">SPONSOR</nuxt-link>
+          <!-- <nuxt-link rel="noopener" to="/sponsor">SPONSOR</nuxt-link> -->
+          <a href="#">SPONSOR</a>
         </li>
       </ul>
       <AtomsImage

@@ -6,6 +6,7 @@ export default defineNuxtConfig({
 	modules: [
 		'@nuxtjs/tailwindcss',
 		'@uniformdev/uniform-nuxt',
+		'nuxt-full-static',
 	],
 	uniform: {
 		projectId: process.env.UNIFORM_PROJECT_ID,
