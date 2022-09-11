@@ -18,7 +18,7 @@
   }
 
   .fancy-image {
-    @apply border-4;
+    @apply border-2;
     border-image-slice: 1;
     border-image-source: linear-gradient(89.87deg, #256AD1 7.57%, #D1258C 95.58%);
   }

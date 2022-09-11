@@ -20,6 +20,6 @@ const text = computed(() => props.component.parameters.text.value);
       :lines="title"
       class="text-3xl md:text-6xl font-bold uppercase leading-none mb-4"
     />
-    <div v-html="text" v-if="text" />
+    <div v-html="text" v-if="text" class="max-w-3xl text-xl" />
   </section>
 </template>

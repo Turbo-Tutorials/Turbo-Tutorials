@@ -41,7 +41,9 @@ defineProps<Tutorial>();
         />
         <div class="absolute left-1 bottom-1 space-x-1 text-sm">
           <span class="bg-black bg-opacity-50 px-1">{{ duration }}</span>
-          <span class="bg-black bg-opacity-50 px-1">{{ views }} views</span>
+          <span class="bg-black bg-opacity-50 px-1"
+            >{{ views }} {{ views === 1 ? "view" : "views" }}</span
+          >
           <span class="bg-black bg-opacity-50 px-1"
             >{{ comments }} comments</span
           >
