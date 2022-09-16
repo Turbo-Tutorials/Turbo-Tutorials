@@ -1,9 +1,33 @@
 <script lang="ts" setup>
+import { CommentRaws } from "postcss/lib/comment";
+
 type Poster = {
   src: string;
   alt: string;
   width: number;
   height: number;
+};
+
+type Meta = {
+  duration: string;
+  views: number;
+  likes: number;
+  comments: number;
+};
+
+type Comments = {
+  topLevel: {
+    author: string;
+    image: string;
+    text: string;
+    date: string;
+  };
+  replies: {
+    author: string;
+    image: string;
+    text: string;
+    date: string;
+  };
 };
 
 type Tutorial = {
@@ -15,11 +39,10 @@ type Tutorial = {
   videoId: string;
   githubLink?: string;
   content?: string;
-  duration: string;
-  views: number;
-  likes: number;
-  comments: number;
+  meta: Meta;
+  comments?: Comments;
   tags: [];
+  transcript: string;
 };
 
 defineProps<Tutorial>();
@@ -40,12 +63,12 @@ defineProps<Tutorial>();
           class="fancy-image"
         />
         <div class="absolute left-1 bottom-1 space-x-1 text-sm">
-          <span class="bg-black bg-opacity-50 px-1">{{ duration }}</span>
+          <span class="bg-black bg-opacity-50 px-1">{{ meta.duration }}</span>
           <span class="bg-black bg-opacity-50 px-1"
-            >{{ views }} {{ views === 1 ? "view" : "views" }}</span
+            >{{ meta.views }} {{ meta.views === 1 ? "view" : "views" }}</span
           >
           <span class="bg-black bg-opacity-50 px-1"
-            >{{ comments }} comments</span
+            >{{ meta.comments }} comments</span
           >
         </div>
       </div>
@@ -58,6 +81,7 @@ defineProps<Tutorial>();
           <a class="text-grey" href="#">{{ tag }}</a>
         </li>
       </ul>
+      <!-- <div v-html="transcript" /> -->
     </article>
   </div>
 </template>

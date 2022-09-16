@@ -9,8 +9,6 @@ import pkg from "contentful";
 const { createClient } = pkg;
 
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
-import * as duration from 'duration-fns'
-
 export { CANVAS_CONTENTFUL_PARAMETER_TYPES, CANVAS_CONTENTFUL_QUERY_PARAMETER_TYPES } from "@uniformdev/canvas-contentful";
 
 export const contentfulEnhancer = () => {
@@ -95,32 +93,33 @@ export const tutorialYouTubeEnhancer = async ({ component, parameter }) => {
     return parameter.value
   }
 
-  const getVideoSpecs = async (id: string) => {
-    const result = await fetch(`https://www.googleapis.com/youtube/v3/videos?part=contentDetails,statistics&id=${id}&key=${process.env.YOUTUBE_KEY}`)
-    const data = await result.json();
-    const durationRaw = data.items[0].contentDetails.duration;
-    const durationObj = duration.parse(durationRaw)
-    const { viewCount, likeCount, commentCount } = data.items[0].statistics
+  const getVideoMeta = async (id: string, withComments: boolean) => {
+    const url = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : process.env.BASE_URL
+    const result = await fetch(`${url}/api/video?videoId=${id}&withComments=${withComments}`)
+    const res = await result.json();
 
-    return {
-      duration: `${durationObj.minutes}:${durationObj.seconds}`,
-      views: Number(viewCount),
-      likes: Number(likeCount),
-      comments: Number(commentCount)
-    }
+    return res
   }
 
   const enhanceTutorials = async () => {
     const result = await Promise.all(parameter.value.map(async (tutorial) => {
-      const videoSpecs = await getVideoSpecs(tutorial.videoId)
+      const videoMeta = await getVideoMeta(tutorial.videoId, component.parameters?.withComments?.value || false)
 
       return {
         ...tutorial,
-        ...videoSpecs
+        ...videoMeta
       }
     }))
 
-    return result;
+    function orderByPopularity(tutorials) {
+      return tutorials.sort((a, b) => (a.meta.views > b.meta.views ? -1 : 1));
+    }
+
+    const popular = component.parameters?.popular?.value || false
+
+    return popular
+      ? orderByPopularity(result)
+      : result
   }
 
   parameter.value = await enhanceTutorials();

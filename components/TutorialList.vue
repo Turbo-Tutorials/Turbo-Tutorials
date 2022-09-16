@@ -5,18 +5,7 @@ const props = defineProps<{
   component: ComponentInstance;
 }>();
 
-const popular = props.component.parameters?.popular?.value || false;
-
-function orderByPopularity(tutorials) {
-  return tutorials.sort((a, b) => (a.views > b.views ? -1 : 1));
-}
-
-const list = computed(() =>
-  popular
-    ? orderByPopularity(props.component.parameters.entry.value)
-    : props.component.parameters.entry.value
-);
-
+const list = computed(() => props.component.parameters.entry.value);
 const title = computed(() => props.component.parameters.title.value);
 </script>
 
