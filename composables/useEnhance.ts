@@ -1,13 +1,13 @@
 import type { Ref } from "vue"
 import { compose, enhance, CompositionGetResponse, EnhancerBuilder } from "@uniformdev/canvas";
 import { cloudinaryEnhancer, CLOUDINARY_PARAMETER_TYPES } from "../enhancers/cloudinary";
+import { contentfulModelConverter } from "../enhancers/helpers"
+import { tutorialYouTubeEnhancer } from "../enhancers/youtube"
 
 import {
   contentfulEnhancer,
   contentfulQueryEnhancer,
-  contentfulModelConverter,
   contentfulTutorialListByTagsEnhancer,
-  tutorialYouTubeEnhancer,
   CANVAS_CONTENTFUL_PARAMETER_TYPES,
   CANVAS_CONTENTFUL_QUERY_PARAMETER_TYPES
 } from "../enhancers/contentful";

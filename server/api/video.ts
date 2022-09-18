@@ -21,7 +21,6 @@ const getVideoComments = async (id: string) => {
 
   const comments = data.items?.map((comment) => {
     return {
-
       topLevel: {
         author: comment.snippet.topLevelComment.snippet.authorDisplayName,
         image: comment.snippet.topLevelComment.snippet.authorProfileImageUrl,

@@ -23,4 +23,9 @@ export default defineNuxtConfig({
 			youTubeKey: process.env.YOUTUBE_KEY
 		},
 	},
+	build: {
+		transpile: [
+			process.env.NODE_ENV === 'production' && 'contentful',
+		],
+	},
 })
