@@ -6,7 +6,6 @@ export default defineNuxtConfig({
 	modules: [
 		'@nuxtjs/tailwindcss',
 		'@uniformdev/uniform-nuxt',
-		// 'nuxt-full-static',
 	],
 	uniform: {
 		projectId: process.env.UNIFORM_PROJECT_ID,
@@ -20,7 +19,10 @@ export default defineNuxtConfig({
 			contentfulSpaceId: process.env.CONTENTFUL_SPACE_ID,
 			contentfulDeliveryApiKey: process.env.CONTENTFUL_DELIVERY_API_KEY,
 			contentfulEnvironment: process.env.CONTENTFUL_ENVIRONMENT,
-			youTubeKey: process.env.YOUTUBE_KEY
+			youTubeKey: process.env.YOUTUBE_KEY,
+			algoliaId: process.env.ALGOLIA_ID,
+			algoliaSearchApi: process.env.ALGOLIA_SEARCH_API_KEY,
+			algoliaIndex: process.env.ALGOLIA_INDEX
 		},
 	},
 	build: {

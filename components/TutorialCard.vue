@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-import { CommentRaws } from "postcss/lib/comment";
-
 type Poster = {
   src: string;
   alt: string;
@@ -43,15 +41,21 @@ type Tutorial = {
   comments?: Comments;
   tags: [];
   transcript: string;
+  complexity: "Easy" | "Intermediate" | "Complex";
+  small?: Boolean;
 };
 
 defineProps<Tutorial>();
 </script>
 <template>
-  <div class="flex w-full">
-    <article class="tutorial">
-      <div class="relative mb-2">
+  <div class="flex w-full" :class="{ 'flex-row': small, 'flex-col': !small }">
+    <div
+      class="relative mb-2 aspect-[16/9]"
+      :class="{ 'max-w-[280px] mr-4': small }"
+    >
+      <nuxt-link :to="`/tutorials/${slug}`">
         <AtomsImage
+          v-if="poster"
           :alt="poster.alt"
           :width="poster.width"
           :height="poster.height"
@@ -62,26 +66,36 @@ defineProps<Tutorial>();
           :fetch="true"
           class="fancy-image"
         />
-        <div class="absolute left-1 bottom-1 space-x-1 text-sm">
-          <span class="bg-black bg-opacity-50 px-1">{{ meta.duration }}</span>
-          <span class="bg-black bg-opacity-50 px-1"
-            >{{ meta.views }} {{ meta.views === 1 ? "view" : "views" }}</span
-          >
-          <span class="bg-black bg-opacity-50 px-1"
-            >{{ meta.comments }} comments</span
-          >
-        </div>
+      </nuxt-link>
+      <div class="absolute left-1 bottom-1 space-x-1 text-sm">
+        <span v-if="meta.duration" class="bg-black bg-opacity-50 px-1">{{
+          meta.duration
+        }}</span>
+        <span v-if="meta.views" class="bg-black bg-opacity-50 px-1"
+          >{{ meta.views }} {{ meta.views === 1 ? "view" : "views" }}</span
+        >
+        <span v-if="meta.comments" class="bg-black bg-opacity-50 px-1"
+          >{{ meta.comments }} comments</span
+        >
       </div>
-      <h3 class="text-xl font-bold mb-2">
-        {{ title }}
+    </div>
+    <article>
+      <h3 class="text-xl font-bold mb-1" v-if="title">
+        <nuxt-link :to="`/tutorials/${slug}`" class="no-underline">{{
+          title
+        }}</nuxt-link>
       </h3>
+      <p
+        v-if="small && description"
+        v-html="description"
+        class="mb-4 line-clamp-2"
+      />
       <ul class="flex space-x-3">
-        <li v-for="tag in tags" class="uppercase text-sm">
+        <li v-if="tags" v-for="tag in tags" class="uppercase text-sm">
           <!-- <nuxt-link class="text-grey" :to="`/tag/${tag}`">{{ tag }}</nuxt-link> -->
           <a class="text-grey" href="#">{{ tag }}</a>
         </li>
       </ul>
-      <!-- <div v-html="transcript" /> -->
     </article>
   </div>
 </template>

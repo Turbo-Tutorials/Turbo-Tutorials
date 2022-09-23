@@ -16,14 +16,15 @@
     "@uniformdev/context": "17.1.0",
     "@uniformdev/context-vue": "17.1.0",
     "@uniformdev/uniform-nuxt": "17.1.0",
-    "nuxt": "3.0.0-rc.9"
+    "nuxt": "3.0.0-rc.11"
   },
   "dependencies": {
     "@contentful/rich-text-html-renderer": "^15.13.1",
+    "@uniformdev/canvas-algolia": "^17.2.0",
     "@uniformdev/canvas-cloudinary": "^17.1.0",
     "@uniformdev/canvas-contentful": "^17.1.0",
+    "algoliasearch": "^4.14.2",
     "contentful": "^9.1.34",
-    "duration-fns": "^3.0.1",
-    "nuxt-full-static": "^0.2.1"
+    "duration-fns": "^3.0.1"
   }
 }

@@ -6,6 +6,7 @@ import {
 
 import { getContentfulClient, enhanceContentfulItem } from './helpers'
 export { CANVAS_CONTENTFUL_PARAMETER_TYPES, CANVAS_CONTENTFUL_QUERY_PARAMETER_TYPES } from "@uniformdev/canvas-contentful";
+import { getVideoMeta } from "./youtube"
 
 export const contentfulEnhancer = () => {
   return createContentfulEnhancer({
@@ -45,5 +46,19 @@ export const contentfulTutorialListByTagsEnhancer = async ({ component }) => {
     limit: limit.value,
   });
 
-  return tutorialListByTags.items.map(item => enhanceContentfulItem(item))
+  const enhanceTutorials = async () => {
+    const result = await Promise.all(tutorialListByTags.items.map(async (item) => {
+      const tutorial = enhanceContentfulItem(item)
+      const videoMeta = await getVideoMeta(tutorial.videoId, false)
+
+      return {
+        ...tutorial,
+        ...videoMeta
+      }
+    }))
+
+    return result
+  }
+
+  return await enhanceTutorials()
 }

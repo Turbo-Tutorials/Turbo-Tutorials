@@ -62,7 +62,7 @@ function transformContentfulFields(entry) {
         content[fieldKey] = transformContentfulImage(content[fieldKey]);
       } else if (content[fieldKey]?.nodeType === "document") {
         const html = documentToHtmlString(content[fieldKey]);
-        content[fieldKey] = html;
+        content[fieldKey] = html.replace(/\n/g, "<br />");
       }
     });
 

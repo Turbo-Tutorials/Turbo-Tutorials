@@ -50,7 +50,7 @@ export default defineEventHandler(async (event: H3Event) => {
     comments: []
   }
 
-  if (withComments) {
+  if (withComments && withComments !== "false") {
     result.comments = await getVideoComments(videoId as string)
   }
 

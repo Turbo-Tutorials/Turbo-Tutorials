@@ -1,5 +1,4 @@
 import { H3Event } from 'h3';
-import { createClient } from "contentful";
 
 import {
   EnhancerBuilder,
@@ -10,6 +9,7 @@ import {
 } from "@uniformdev/canvas";
 
 import { getContentfulClient, enhanceContentfulItem } from "../../enhancers/helpers"
+import { getVideoMeta } from "../../enhancers/youtube"
 
 export default defineEventHandler(async (event: H3Event) => {
   const { slug } = useQuery(event)
@@ -33,6 +33,13 @@ export default defineEventHandler(async (event: H3Event) => {
   });
 
   const tutorial = enhanceContentfulItem(tutorials.items[0]);
+  const videoMeta = await getVideoMeta(tutorial.videoId, true)
+
+  const video = {
+    ...tutorial,
+    ...videoMeta
+  }
+
   const selectedTags = tutorial.tags.join(",");
 
   const tutorialsForTagsData = await ctfClient.getEntries({
@@ -72,14 +79,12 @@ export default defineEventHandler(async (event: H3Event) => {
     )
     .component("ttTitle", (ttTitle) =>
       ttTitle.data("title", () => {
-        return {
-          title: tutorial.title,
-        };
+        return tutorial.title
       })
     )
     .component("ttVideo", (ttVideo) =>
       ttVideo.data("video", () => {
-        return tutorial;
+        return video;
       })
     )
     .component("ttSimilar", (ttSimilar) =>

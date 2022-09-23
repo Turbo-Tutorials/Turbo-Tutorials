@@ -10,7 +10,6 @@ const title = computed(() => props.component.parameters?.title?.value || false);
 const titleType = computed(
   () => props.component.parameters?.titleType?.value || "h3"
 );
-
 const variant = computed(() => props.component?.variant || false);
 </script>
 

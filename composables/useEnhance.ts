@@ -1,6 +1,7 @@
 import type { Ref } from "vue"
 import { compose, enhance, CompositionGetResponse, EnhancerBuilder } from "@uniformdev/canvas";
 import { cloudinaryEnhancer, CLOUDINARY_PARAMETER_TYPES } from "../enhancers/cloudinary";
+import { algoliaQueryEnhancer, CANVAS_ALGOLIA_QUERY_PARAMETER_TYPES } from "../enhancers/algolia";
 import { contentfulModelConverter } from "../enhancers/helpers"
 import { tutorialYouTubeEnhancer } from "../enhancers/youtube"
 
@@ -31,6 +32,7 @@ export async function useEnhance(composition: Ref<CompositionGetResponse>) {
             tutorialYouTubeEnhancer)
         )
         .parameterType(CLOUDINARY_PARAMETER_TYPES, cloudinaryEnhancer())
+        .parameterType(CANVAS_ALGOLIA_QUERY_PARAMETER_TYPES, algoliaQueryEnhancer())
         .component("tutoriallistbytags", (tutoriallistbytags) =>
           tutoriallistbytags.data("entry", contentfulTutorialListByTagsEnhancer)
         ),

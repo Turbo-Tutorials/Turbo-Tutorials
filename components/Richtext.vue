@@ -5,15 +5,17 @@ const props = defineProps<{
   component: ComponentInstance;
 }>();
 
-const title = computed(() => props.component.parameters.title.value as string);
-const titleType = computed(
-  () => props.component.parameters.titleType.value as string
+const title = computed(
+  () => (props.component.parameters?.title?.value as string) || false
 );
-const text = computed(() => props.component.parameters.text.value);
+const titleType = computed(
+  () => (props.component.parameters?.titleType?.value as string) || "h3"
+);
+const text = computed(() => props.component.parameters?.text?.value || false);
 </script>
 
 <template>
-  <section class="mb-8">
+  <section class="mb-12">
     <AtomsLeTitle
       v-if="title"
       :as="titleType"
