@@ -618,7 +618,7 @@
     unimport "^0.6.7"
     untyped "^0.5.0"
 
-"@nuxt/kit@^3.0.0-rc.4", "@nuxt/kit@^3.0.0-rc.9":
+"@nuxt/kit@^3.0.0-rc.9":
   version "3.0.0-rc.9"
   resolved "https://registry.yarnpkg.com/@nuxt/kit/-/kit-3.0.0-rc.9.tgz#05d9721a7b7bf8538cd6f501ed0692cf0171bc2f"
   integrity sha512-Y+db0iw/1pKiLMEG7L/6HCq8O9xsbVJT/ksePY1Q8o3fV40Q9gCWI0YumCIzVdBiAFFEOCNASsxmGj7kPSdpCA==
@@ -912,40 +912,40 @@
   dependencies:
     "@uniformdev/canvas" "17.1.0"
 
-"@uniformdev/canvas-contentful@^17.1.0":
-  version "17.1.0"
-  resolved "https://registry.yarnpkg.com/@uniformdev/canvas-contentful/-/canvas-contentful-17.1.0.tgz#d9ac36b627ce30e29c0e133b76956b1d60097f77"
-  integrity sha512-mO8ClEB7ZQ7SiISc93qTHdZqPEJa2macF82vLL6IO0eEmZWSG3VBRhqOeELcJa+WEziOpBubdPW40oF0ieSh1g==
+"@uniformdev/canvas-contentful@^17.2.0":
+  version "17.2.0"
+  resolved "https://registry.yarnpkg.com/@uniformdev/canvas-contentful/-/canvas-contentful-17.2.0.tgz#8446e9d0d849ca96f0dca6c0839ca790f8041349"
+  integrity sha512-UsvEm+PjddUki8p5O5lhk7oo2pInwMiZIE5btVPYweHSGI2D5K1jE5nButdtuvuvgmdf52IsKfH1yTpr680gxw==
   dependencies:
-    "@uniformdev/canvas" "^17.1.0"
+    "@uniformdev/canvas" "^17.2.0"
 
-"@uniformdev/canvas-vue@17.1.0":
-  version "17.1.0"
-  resolved "https://registry.yarnpkg.com/@uniformdev/canvas-vue/-/canvas-vue-17.1.0.tgz#c5f2b6e87f4645e6ea0c2be93b5a61a39fc8a6b2"
-  integrity sha512-82+8WJTqn+INWJk0zDp+f5pLle4R6ccGBO4JXstmp18wakgtwat3t5YkY/Xwc0n7c2jaoh+QhTjwya/CtUw3yA==
+"@uniformdev/canvas-vue@17.2.0":
+  version "17.2.0"
+  resolved "https://registry.yarnpkg.com/@uniformdev/canvas-vue/-/canvas-vue-17.2.0.tgz#a06a99378704e41382bd3db1458cc6a29658a03f"
+  integrity sha512-Dx7TsHhEAymGHDsx3wO49QqGQh+AuYRqFaX/8afIyw5KP+kLXqsMwwYCiqZWRKGBgPqTAYwcyN9y4YHAqjg6rA==
   dependencies:
-    "@uniformdev/canvas" "^17.1.0"
+    "@uniformdev/canvas" "^17.2.0"
     "@vue/test-utils" "2.0.2"
     vue-demi "^0.13.0"
 
-"@uniformdev/canvas@17.1.0", "@uniformdev/canvas@^17.1.0":
+"@uniformdev/canvas@17.1.0":
   version "17.1.0"
   resolved "https://registry.yarnpkg.com/@uniformdev/canvas/-/canvas-17.1.0.tgz#4752c15a02c4108019cdbdd1e59ff4cb971dca4e"
   integrity sha512-EumhKAVEd6/H9m+OHEJ3nsOrg9A3nx6zUn98L9z9Z1pYYtmH+KWBk6skdVu8HSkEaxk4TrDUgX63I8XGH8DefQ==
   dependencies:
     "@uniformdev/context" "^17.1.0"
 
-"@uniformdev/canvas@^17.2.0":
+"@uniformdev/canvas@17.2.0", "@uniformdev/canvas@^17.2.0":
   version "17.2.0"
   resolved "https://registry.yarnpkg.com/@uniformdev/canvas/-/canvas-17.2.0.tgz#bb68d0e7664b22fd3fa7b12edac7c0f60497d4d0"
   integrity sha512-ood68prffXuj1rw36AonlJvgM5P4aGp5IaHPRxE3KOHcudf3ZdK8jFWUnxgmtnGCnO/GyC0dxzpdBoLTUmSlmA==
   dependencies:
     "@uniformdev/context" "^17.2.0"
 
-"@uniformdev/cli@17.1.0":
-  version "17.1.0"
-  resolved "https://registry.yarnpkg.com/@uniformdev/cli/-/cli-17.1.0.tgz#135fbfe89f3928c907a1371bade364ee6cba3ec8"
-  integrity sha512-50HrdSL8+VJaw17h7/9OS+CPVT9Qj0iEYSMrt5cpw6T6lDcy6tR6fJiCESyfbflcihfwWwMLo2iX9ncPYAEyvA==
+"@uniformdev/cli@17.2.0":
+  version "17.2.0"
+  resolved "https://registry.yarnpkg.com/@uniformdev/cli/-/cli-17.2.0.tgz#61716b5e9fad21bbfa119403bd6b59810863b32e"
+  integrity sha512-Nip/gaRem7alFZ93AweNV7qsTCQ3n/mv+R/z3Yxk4SfP+lKs4Vy/6NrKLky73nbMMhCtJCopVPl0plaW2RYO6Q==
   dependencies:
     diff "^5.0.0"
     dotenv "^16.0.1"
@@ -955,29 +955,18 @@
     lodash.isequalwith "^4.4.0"
     yargs "^17.5.1"
 
-"@uniformdev/context-vue@17.1.0":
-  version "17.1.0"
-  resolved "https://registry.yarnpkg.com/@uniformdev/context-vue/-/context-vue-17.1.0.tgz#956f67be8614d3975bcc76669bea660a176bba00"
-  integrity sha512-1e5lsDjQRgqlhMi77ckMWJF+bkcZZpFjy4p6ByWoBC/NEKuxqbVByVSL4E1Q+N7PJbUvEFOuG9lemvVxDvSAlQ==
+"@uniformdev/context-vue@17.2.0":
+  version "17.2.0"
+  resolved "https://registry.yarnpkg.com/@uniformdev/context-vue/-/context-vue-17.2.0.tgz#af6eb42b7432f768b13acdc3279aa7fbe50413b2"
+  integrity sha512-QYHTTlt2/0o75uzQqP5UyjXex75pLEA2Z4wu+NqqGMANYZo7Q2PGXZuZhiCzEXdMxmSvE3Im9qddIhaPp8c00A==
   dependencies:
-    "@uniformdev/context" "^17.1.0"
+    "@uniformdev/context" "^17.2.0"
     cookie-es "^0.5.0"
     dequal "^2.0.2"
     uuid "8.3.2"
     vue-demi "^0.13.0"
 
-"@uniformdev/context@17.1.0", "@uniformdev/context@^17.1.0":
-  version "17.1.0"
-  resolved "https://registry.yarnpkg.com/@uniformdev/context/-/context-17.1.0.tgz#3b80a6fb826c2df8488791219980b398058696a6"
-  integrity sha512-fyKN6butFll6561QqMbYWIeHpNndLGiHK55KJQYHmBaERhiSVDdkyEeGrXw+5bj9dGbRdlLXhackX64z/g3PMA==
-  dependencies:
-    dequal "^2.0.2"
-    js-cookie "3.0.1"
-    mitt "^3.0.0"
-    p-limit "^3.1.0"
-    rfdc "^1.3.0"
-
-"@uniformdev/context@^17.2.0":
+"@uniformdev/context@17.2.0", "@uniformdev/context@^17.2.0":
   version "17.2.0"
   resolved "https://registry.yarnpkg.com/@uniformdev/context/-/context-17.2.0.tgz#458f41b106b9df0acfbe097c10dd3a4f0357e176"
   integrity sha512-5d0Xxh7t+usf1EsLAONEE2ukQ8EXzpcLw7F1O4SntcbRkv6SQeGoqCnC9T+CJ4lmAOM/seWwMQWT33CMKI/+Fg==
@@ -988,13 +977,24 @@
     p-limit "^3.1.0"
     rfdc "^1.3.0"
 
-"@uniformdev/uniform-nuxt@17.1.0":
+"@uniformdev/context@^17.1.0":
   version "17.1.0"
-  resolved "https://registry.yarnpkg.com/@uniformdev/uniform-nuxt/-/uniform-nuxt-17.1.0.tgz#c632961c21e57d0d559e92eb771f954f0ea85540"
-  integrity sha512-Y4qbY4ayzShvxA9r863w5Lue95tWboJ8QuW2g08jZDVlPAOI2Ma5MGIEKo5dOZLx2pysazDMlFwV3KpiAPRpjg==
+  resolved "https://registry.yarnpkg.com/@uniformdev/context/-/context-17.1.0.tgz#3b80a6fb826c2df8488791219980b398058696a6"
+  integrity sha512-fyKN6butFll6561QqMbYWIeHpNndLGiHK55KJQYHmBaERhiSVDdkyEeGrXw+5bj9dGbRdlLXhackX64z/g3PMA==
   dependencies:
-    "@nuxt/kit" "^3.0.0-rc.4"
-    vue-demi "^0.13.0"
+    dequal "^2.0.2"
+    js-cookie "3.0.1"
+    mitt "^3.0.0"
+    p-limit "^3.1.0"
+    rfdc "^1.3.0"
+
+"@uniformdev/uniform-nuxt@17.2.0":
+  version "17.2.0"
+  resolved "https://registry.yarnpkg.com/@uniformdev/uniform-nuxt/-/uniform-nuxt-17.2.0.tgz#489817ad114ad1652701fb0fb5e3d208492e5cea"
+  integrity sha512-344olHnAZZ6xymn08HJ/02/3RmQaofgTyh6Ox85U4Js0lcaxpI0wCJJQKEdt9Aeeh21HpgX9cEC2FHpazfxmyw==
+  dependencies:
+    "@nuxt/kit" "^3.0.0-rc.9"
+    vue-demi "^0.13.11"
 
 "@vercel/nft@^0.22.1":
   version "0.22.1"
@@ -1854,10 +1854,10 @@ contentful-sdk-core@^7.0.1:
     p-throttle "^4.1.1"
     qs "^6.9.4"
 
-contentful@^9.1.34:
-  version "9.1.34"
-  resolved "https://registry.yarnpkg.com/contentful/-/contentful-9.1.34.tgz#9ead56a54fee67ccef5e6720d1ad4f2392c207d9"
-  integrity sha512-UlwDpCt9IS9ZK3OhE8enC2R4ZYp72GvH94cTpfIRWSst7dmctWQUY57z1UkMrzp8NT2/4b2CSxnGx5ev5bV3Sw==
+contentful@^9.2.5:
+  version "9.2.5"
+  resolved "https://registry.yarnpkg.com/contentful/-/contentful-9.2.5.tgz#64279fd347670c2add7d25690890799427f7c00d"
+  integrity sha512-BXDmO5oWubZsKVHcXxPBCEcAH6bhtgfav3uMXCS7NBtSmFVSiAFbJjR/yJyLs7fNHJP9Ktq2F7qAznwwnyOTjQ==
   dependencies:
     axios "^0.27.0"
     contentful-resolve-response "^1.3.0"
@@ -5591,7 +5591,7 @@ vue-bundle-renderer@^0.4.3:
   dependencies:
     ufo "^0.8.3"
 
-vue-demi@*, vue-demi@^0.13.0:
+vue-demi@*, vue-demi@^0.13.0, vue-demi@^0.13.11:
   version "0.13.11"
   resolved "https://registry.yarnpkg.com/vue-demi/-/vue-demi-0.13.11.tgz#7d90369bdae8974d87b1973564ad390182410d99"
   integrity sha512-IR8HoEEGM65YY3ZJYAjMlKygDQn25D5ajNFNoKh9RSDMQtlzCxtfQjdQgv9jjK+m3377SsJXY8ysq8kLCZL25A==

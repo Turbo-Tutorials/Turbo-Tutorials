@@ -12,16 +12,17 @@ if (!data.value) {
 }
 
 const { data: composition } = await useEnhance(data);
-const { title, description, image } = composition.value.parameters;
+const { title, description, image } = composition?.value?.parameters;
 
 usePageMeta({
-  title: title.value as string,
-  description: description.value as string,
+  title: (title?.value as string) || "No Title",
+  description: (description?.value as string) || "No Description",
   slug: route.params.slug as string,
-  image: image.value[0].baseurl.replace(
-    "image/upload/",
-    "image/upload/w_1200,"
-  ) as string,
+  image:
+    (image?.value[0]?.baseurl.replace(
+      "image/upload/",
+      "image/upload/w_1200,"
+    ) as string) || "",
 });
 </script>
 <template>
