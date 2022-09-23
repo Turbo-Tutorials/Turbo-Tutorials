@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { resolveRenderer } from "../../components/componentMapping";
+// import { resolveRenderer } from "../../components/componentMapping";
 
 const route = useRoute();
-const { $useComposition } = useNuxtApp();
+// const { $useComposition } = useNuxtApp();
 const { data } = await useFetch(`/api/tutorial?slug=${route.params.slug}`);
 
 // if (!data.value) {
