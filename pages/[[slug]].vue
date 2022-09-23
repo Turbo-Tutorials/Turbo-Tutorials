@@ -12,11 +12,14 @@ if (!data.value) {
 }
 
 const { data: composition } = await useEnhance(data);
-const { title, description, image } = composition?.value?.parameters;
+const title = composition.value.parameters?.title?.value || "No Title";
+const description =
+  composition.value.parameters?.description?.value || "No Description";
+const image = composition.value.parameters.image;
 
 usePageMeta({
-  title: (title?.value as string) || "No Title",
-  description: (description?.value as string) || "No Description",
+  title: title as string,
+  description: description as string,
   slug: route.params.slug as string,
   image:
     (image?.value[0]?.baseurl.replace(
