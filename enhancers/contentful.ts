@@ -33,32 +33,3 @@ export const contentfulQueryEnhancer = () => {
     },
   });
 };
-
-export const contentfulTutorialListByTagsEnhancer = async ({ component }) => {
-  const { tags, limit } = component.parameters
-
-  const client = getContentfulClient()
-
-  const tutorialListByTags = await client.getEntries({
-    content_type: "turboTutorial",
-    "metadata.tags.sys.id[all]": tags.value,
-    order: "-fields.publicationDate",
-    limit: limit.value,
-  });
-
-  const enhanceTutorials = async () => {
-    const result = await Promise.all(tutorialListByTags.items.map(async (item) => {
-      const tutorial = enhanceContentfulItem(item)
-      const videoMeta = await getVideoMeta(tutorial.videoId, false)
-
-      return {
-        ...tutorial,
-        ...videoMeta
-      }
-    }))
-
-    return result
-  }
-
-  return await enhanceTutorials()
-}

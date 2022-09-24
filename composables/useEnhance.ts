@@ -8,7 +8,6 @@ import { tutorialYouTubeEnhancer } from "../enhancers/youtube"
 import {
   contentfulEnhancer,
   contentfulQueryEnhancer,
-  contentfulTutorialListByTagsEnhancer,
   CANVAS_CONTENTFUL_PARAMETER_TYPES,
   CANVAS_CONTENTFUL_QUERY_PARAMETER_TYPES
 } from "../enhancers/contentful";
@@ -33,9 +32,6 @@ export async function useEnhance(composition: Ref<CompositionGetResponse>) {
         )
         .parameterType(CLOUDINARY_PARAMETER_TYPES, cloudinaryEnhancer())
         .parameterType(CANVAS_ALGOLIA_QUERY_PARAMETER_TYPES, algoliaQueryEnhancer()),
-      // .component("tutoriallistbytags", (tutoriallistbytags) =>
-      //   tutoriallistbytags.data("entry", contentfulTutorialListByTagsEnhancer)
-      // ),
       context: {},
     });
 
