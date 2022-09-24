@@ -7,7 +7,7 @@
     "preview": "nuxt preview",
     "context:manifest": "uniform context manifest download --output ./lib/context/context-manifest.json"
   },
-  "devDependencies": {
+  "dependencies": {
     "@nuxtjs/tailwindcss": "^5.3.3",
     "@tailwindcss/line-clamp": "^0.4.2",
     "@uniformdev/canvas": "17.2.0",
@@ -16,9 +16,7 @@
     "@uniformdev/context": "17.2.0",
     "@uniformdev/context-vue": "17.2.0",
     "@uniformdev/uniform-nuxt": "17.2.0",
-    "nuxt": "3.0.0-rc.11"
-  },
-  "dependencies": {
+    "nuxt": "3.0.0-rc.11",
     "@contentful/rich-text-html-renderer": "^15.13.1",
     "@uniformdev/canvas-algolia": "^17.2.0",
     "@uniformdev/canvas-cloudinary": "^17.1.0",
