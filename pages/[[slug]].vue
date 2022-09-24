@@ -31,13 +31,12 @@ usePageMeta({
 <template>
   <main class="max-w-[1440px] mx-auto pt-36">
     <GlobalHeader />
-    <pre>{{ composition }}</pre>
-    <!-- <Composition
+    <Composition
       v-if="composition"
       :data="composition"
       :resolve-renderer="resolveRenderer"
     >
       <SlotContent name="content" />
-    </Composition> -->
+    </Composition>
   </main>
 </template>
