@@ -1,13 +1,10 @@
-// import pkg from "contentful";
-// const { createClient } = pkg
-
-import { createClient } from "contentful";
+import contentful from "contentful"
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 
 export function getContentfulClient() {
   const { public: { contentfulSpaceId, contentfulDeliveryApiKey, contentfulEnvironment } } = useRuntimeConfig()
 
-  return createClient({
+  return contentful.createClient({
     space: contentfulSpaceId,
     environment: contentfulEnvironment,
     accessToken: contentfulDeliveryApiKey,

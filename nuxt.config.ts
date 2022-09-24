@@ -1,4 +1,3 @@
-import { defineNuxtConfig } from 'nuxt'
 import manifestJson from './lib/context/context-manifest.json';
 import type { ManifestV2 } from '@uniformdev/context';
 
@@ -24,10 +23,5 @@ export default defineNuxtConfig({
 			algoliaSearchApi: process.env.ALGOLIA_SEARCH_API_KEY,
 			algoliaIndex: process.env.ALGOLIA_INDEX
 		},
-	},
-	build: {
-		transpile: [
-			process.env.NODE_ENV === 'production' && 'contentful',
-		],
-	},
+	}
 })

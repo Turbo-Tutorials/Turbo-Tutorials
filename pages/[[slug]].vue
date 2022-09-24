@@ -9,38 +9,36 @@ const { data } = await $useComposition({
 
 console.log("##############", data.value.composition._name, data.value);
 
-// if (!data.value) {
-//   throw createError({ statusCode: 404, statusMessage: "Page Not Found" });
-// }
+if (!data.value) {
+  throw createError({ statusCode: 404, statusMessage: "Page Not Found" });
+}
 
 const { data: composition } = await useEnhance(data);
-// const title = composition.value.parameters?.title?.value || "No Title";
-// const description =
-//   composition.value.parameters?.description?.value || "No Description";
-// const image = composition.value.parameters.image;
+const title = composition.value.parameters?.title?.value || "No Title";
+const description =
+  composition.value.parameters?.description?.value || "No Description";
+const image = composition.value.parameters.image;
 
 usePageMeta({
-  title: "",
-  description: "",
+  title: title as string,
+  description: description as string,
   slug: route.params.slug as string,
-  image: "",
-  // image:
-  //   (image?.value[0]?.baseurl.replace(
-  //     "image/upload/",
-  //     "image/upload/w_1200,"
-  //   ) as string) || "",
+  image:
+    (image?.value[0]?.baseurl.replace(
+      "image/upload/",
+      "image/upload/w_1200,"
+    ) as string) || "",
 });
 </script>
 <template>
   <main class="max-w-[1440px] mx-auto pt-36">
     <GlobalHeader />
-    <pre>{{ composition }}</pre>
-    <!-- <Composition
+    <Composition
       v-if="composition"
       :data="composition"
       :resolve-renderer="resolveRenderer"
     >
       <SlotContent name="content" />
-    </Composition> -->
+    </Composition>
   </main>
 </template>
