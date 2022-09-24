@@ -27,8 +27,8 @@ export async function useEnhance(composition: Ref<CompositionGetResponse>) {
         .parameterType(CANVAS_CONTENTFUL_QUERY_PARAMETER_TYPES,
           compose(
             contentfulQueryEnhancer(),
-            contentfulModelConverter)
-          //tutorialYouTubeEnhancer)
+            contentfulModelConverter,
+            tutorialYouTubeEnhancer)
         )
         .parameterType(CLOUDINARY_PARAMETER_TYPES, cloudinaryEnhancer())
         .parameterType(CANVAS_ALGOLIA_QUERY_PARAMETER_TYPES, algoliaQueryEnhancer()),
