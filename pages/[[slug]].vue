@@ -11,7 +11,7 @@ if (!data.value) {
   throw createError({ statusCode: 404, statusMessage: "Page Not Found" });
 }
 
-// const { data: composition } = await useEnhance(data);
+const { data: composition } = await useEnhance(data);
 // const title = composition.value.parameters?.title?.value || "No Title";
 // const description =
 //   composition.value.parameters?.description?.value || "No Description";
@@ -32,7 +32,7 @@ usePageMeta({
 <template>
   <main class="max-w-[1440px] mx-auto pt-36">
     <GlobalHeader />
-    <pre>{{ data }}</pre>
+    <pre>{{ composition }}</pre>
     <!-- <Composition
       v-if="composition"
       :data="composition"
