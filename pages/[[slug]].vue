@@ -9,9 +9,9 @@ const { data } = await $useComposition({
 
 console.log("##############", data.value.composition._name, data.value);
 
-if (!data.value) {
-  throw createError({ statusCode: 404, statusMessage: "Page Not Found" });
-}
+// if (!data.value) {
+//   throw createError({ statusCode: 404, statusMessage: "Page Not Found" });
+// }
 
 const { data: composition } = await useEnhance(data);
 // const title = composition.value.parameters?.title?.value || "No Title";
