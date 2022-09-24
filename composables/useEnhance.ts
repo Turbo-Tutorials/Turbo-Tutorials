@@ -30,8 +30,8 @@ export async function useEnhance(composition: Ref<CompositionGetResponse>) {
             contentfulQueryEnhancer(),
             contentfulModelConverter)
           //tutorialYouTubeEnhancer)
-        ),
-      // .parameterType(CLOUDINARY_PARAMETER_TYPES, cloudinaryEnhancer())
+        )
+        .parameterType(CLOUDINARY_PARAMETER_TYPES, cloudinaryEnhancer()),
       // .parameterType(CANVAS_ALGOLIA_QUERY_PARAMETER_TYPES, algoliaQueryEnhancer())
       // .component("tutoriallistbytags", (tutoriallistbytags) =>
       //   tutoriallistbytags.data("entry", contentfulTutorialListByTagsEnhancer)
