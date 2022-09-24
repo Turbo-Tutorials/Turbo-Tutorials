@@ -1,6 +1,7 @@
-import pkg from "contentful";
-const { createClient } = pkg
+// import pkg from "contentful";
+// const { createClient } = pkg
 
+import { createClient } from "contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 
 export function getContentfulClient() {
