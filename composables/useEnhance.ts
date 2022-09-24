@@ -20,11 +20,11 @@ export async function useEnhance(composition: Ref<CompositionGetResponse>) {
     await enhance({
       composition: compositionClone,
       enhancers: new EnhancerBuilder()
-        // .parameterType(CANVAS_CONTENTFUL_PARAMETER_TYPES,
-        //   compose(
-        //     contentfulEnhancer(),
-        //     contentfulModelConverter)
-        // )
+        .parameterType(CANVAS_CONTENTFUL_PARAMETER_TYPES,
+          compose(
+            contentfulEnhancer(),
+            contentfulModelConverter)
+        )
         .parameterType(CANVAS_CONTENTFUL_QUERY_PARAMETER_TYPES,
           compose(
             contentfulQueryEnhancer(),
