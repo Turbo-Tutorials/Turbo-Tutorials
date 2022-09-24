@@ -4,9 +4,8 @@ import {
   ContentfulClientList,
 } from "@uniformdev/canvas-contentful";
 
-import { getContentfulClient, enhanceContentfulItem } from './helpers'
+import { getContentfulClient } from './helpers'
 export { CANVAS_CONTENTFUL_PARAMETER_TYPES, CANVAS_CONTENTFUL_QUERY_PARAMETER_TYPES } from "@uniformdev/canvas-contentful";
-import { getVideoMeta } from "./youtube"
 
 export const contentfulEnhancer = () => {
   return createContentfulEnhancer({

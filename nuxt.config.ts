@@ -2,9 +2,6 @@ import manifestJson from './lib/context/context-manifest.json';
 import type { ManifestV2 } from '@uniformdev/context';
 
 export default defineNuxtConfig({
-	nitro: {
-		preset: "vercel",
-	},
 	modules: [
 		'@nuxtjs/tailwindcss',
 		'@uniformdev/uniform-nuxt',
