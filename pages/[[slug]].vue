@@ -7,6 +7,8 @@ const { data } = await $useComposition({
   slug: route.params.slug ? route.params.slug : "/",
 });
 
+console.log("##############", data);
+
 if (!data.value) {
   throw createError({ statusCode: 404, statusMessage: "Page Not Found" });
 }

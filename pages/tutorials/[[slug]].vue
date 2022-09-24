@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 // import { resolveRenderer } from "../../components/componentMapping";
 
-const route = useRoute();
+// const route = useRoute();
 // const { $useComposition } = useNuxtApp();
-const { data } = await useFetch(`/api/tutorial?slug=${route.params.slug}`);
+// const { data } = await useFetch(`/api/tutorial?slug=${route.params.slug}`);
 
 // if (!data.value) {
 //   throw createError({ statusCode: 404, statusMessage: "Page Not Found" });
@@ -25,7 +25,7 @@ const { data } = await useFetch(`/api/tutorial?slug=${route.params.slug}`);
 <template>
   <main class="max-w-[1440px] mx-auto pt-36">
     <GlobalHeader />
-    <pre>{{ data }}</pre>
+    <!-- <pre>{{ data }}</pre> -->
     <!-- <Composition
       v-if="composition"
       :data="composition"
