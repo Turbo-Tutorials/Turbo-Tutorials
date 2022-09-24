@@ -1,11 +1,12 @@
-import * as duration from 'duration-fns'
+// import * as duration from 'duration-fns'
 import { H3Event } from 'h3';
 
 const getVideoSpecs = async (id: string) => {
   const result = await fetch(`https://www.googleapis.com/youtube/v3/videos?part=contentDetails,statistics&id=${id}&key=${process.env.YOUTUBE_KEY}`)
   const data = await result.json();
   const durationRaw = data.items[0].contentDetails.duration;
-  const durationObj = duration.parse(durationRaw)
+  //const durationObj = duration.parse(durationRaw)
+  const durationObj = durationRaw
   const { viewCount, likeCount, commentCount } = data.items[0].statistics
   return {
     duration: `${durationObj.minutes}:${durationObj.seconds}`,
@@ -42,7 +43,6 @@ const getVideoComments = async (id: string) => {
 }
 
 export default defineEventHandler(async (event: H3Event) => {
-  console.log('#######################', useQuery(event))
   const { videoId, withComments } = useQuery(event)
   const meta = await getVideoSpecs(videoId as string)
 
