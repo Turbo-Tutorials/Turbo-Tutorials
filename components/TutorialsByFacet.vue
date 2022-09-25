@@ -18,13 +18,14 @@ const variant = computed(() => props.component?.variant || false);
 </script>
 
 <template>
-  <div class="max-w-[1440px] mx-auto px-4 lg:p-0 mb-16 md:mb-24">
-    <AtomsLeTitle
-      v-if="title"
-      :as="titleType"
-      :lines="title"
-      class="text-3xl md:text-4xl font-bold uppercase leading-none mb-4"
-    />
+  <div
+    class="max-w-[1440px] mx-auto px-4 xl:p-0"
+    :class="{
+      'mb-0': variant === 'list',
+      'mb-16 md:mb-24': variant !== 'list',
+    }"
+  >
+    <AtomsLeTitle v-if="title" :as="titleType" :lines="title" />
 
     <section
       class="grid grid-cols-1 gap-8"

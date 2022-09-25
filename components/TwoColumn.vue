@@ -46,22 +46,16 @@ const variant = computed(() => {
 
 <template>
   <div class="bg-lblue mb-24">
-    <article class="mb-12 p-6">
-      <AtomsLeTitle
-        v-if="title"
-        :as="titleType"
-        :lines="title"
-        class="text-3xl md:text-4xl font-bold uppercase leading-none mb-4"
-      />
-
-      <div v-if="description" v-html="description"></div>
+    <article class="p-6 pb-0 mb-8" v-if="title || description">
+      <AtomsLeTitle v-if="title" :as="titleType" :lines="title" />
+      <p v-if="description" v-html="description"></p>
     </article>
 
     <div class="flex flex-col lg:flex-row lg:p-6">
-      <div class="lg:pr-4" :class="variant.left">
+      <div class="lg:pr-6" :class="variant.left">
         <SlotContent name="columnA" />
       </div>
-      <div class="lg:pl-4" :class="variant.right">
+      <div class="lg:pl-6" :class="variant.right">
         <SlotContent name="columnB" />
       </div>
     </div>

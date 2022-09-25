@@ -1,7 +1,7 @@
 <template>
   <header class="bg-blue h-32 bg-opacity-80 fixed w-full top-0 left-0 z-20">
     <div
-      class="mx-auto max-w-[1440px] relative h-32 flex justify-between px-8 lg:p-0"
+      class="mx-auto max-w-[1440px] relative h-32 flex justify-between px-8 xl:p-0"
     >
       <button
         class="w-12 h-12 relative mt-10 bg-lblue md:hidden"
@@ -54,17 +54,20 @@
           <a href="#">SPONSOR</a>
         </li>
       </ul>
-      <AtomsImage
-        alt="Turbo Tutorials"
-        width="277"
-        height="204"
-        public-id="Turbo%20Tutorials/logo.png"
-        :widths="[300, 400, 500, 600]"
-        loading="eager"
-        fetchpriority="high"
-        class="self-center max-w-[160px] md:max-w-[220px] top-2 absolute right-0"
-        :fetch="false"
-      />
+
+      <nuxt-link to="/">
+        <AtomsImage
+          alt="Turbo Tutorials"
+          width="277"
+          height="204"
+          public-id="Turbo%20Tutorials/logo.png"
+          :widths="[300, 400, 500, 600]"
+          loading="eager"
+          fetchpriority="high"
+          class="self-center max-w-[160px] md:max-w-[220px] top-2 absolute right-0"
+          :fetch="false"
+        />
+      </nuxt-link>
     </div>
   </header>
 </template>
