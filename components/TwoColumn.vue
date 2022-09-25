@@ -3,6 +3,14 @@ import type { ComponentInstance } from "@uniformdev/canvas";
 
 const props = defineProps<{
   component: ComponentInstance;
+  title?: string;
+  titleType?: string;
+  text?: string;
+  description?: string;
+  variant?: {
+    left: string;
+    right: string;
+  };
 }>();
 
 const title = computed(() => props.component.parameters?.title?.value || false);
@@ -37,8 +45,8 @@ const variant = computed(() => {
 </script>
 
 <template>
-  <div class="bg-lblue p-6 mb-12">
-    <article class="mb-12">
+  <div class="bg-lblue mb-24">
+    <article class="mb-12 p-6">
       <AtomsLeTitle
         v-if="title"
         :as="titleType"
@@ -50,7 +58,7 @@ const variant = computed(() => {
     </article>
 
     <div class="flex flex-col md:flex-row">
-      <div class="pb-8 md:pb-0 md:pr-4" :class="variant.left">
+      <div class="md:pr-4" :class="variant.left">
         <SlotContent name="columnA" />
       </div>
       <div class="md:pl-4" :class="variant.right">

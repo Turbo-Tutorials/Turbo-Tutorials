@@ -1,8 +1,37 @@
 <template>
   <header class="bg-blue h-32 bg-opacity-80 fixed w-full top-0 left-0 z-20">
-    <div class="mx-auto max-w-[1440px] relative h-32 flex justify-between">
+    <div
+      class="mx-auto max-w-[1440px] relative h-32 flex justify-between px-8 lg:p-0"
+    >
+      <button
+        class="w-12 h-12 relative mt-10 bg-lblue md:hidden"
+        :aria-expanded="open"
+        @click="open = !open"
+      >
+        <span class="sr-only">Open main menu</span>
+        <div
+          class="block w-6 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+        >
+          <span
+            aria-hidden="true"
+            class="hamburger-bar"
+            :class="{ 'rotate-45': open, ' -translate-y-1.5': !open }"
+          ></span>
+          <span
+            aria-hidden="true"
+            class="hamburger-bar"
+            :class="{ 'opacity-0': open }"
+          ></span>
+          <span
+            aria-hidden="true"
+            class="hamburger-bar"
+            :class="{ '-rotate-45': open, ' translate-y-1.5': !open }"
+          ></span>
+        </div>
+      </button>
       <ul
-        class="space-x-6 leading-8 items-center mr-4 flex font-bold absolute bottom-4 left-0"
+        class="space-x-6 items-end mr-4 font-bold mb-4 hidden md:flex"
+        :class="{ 'nav-open': open }"
       >
         <li>
           <!-- <nuxt-link rel="noopener" to="/">HOME</nuxt-link> -->
@@ -33,7 +62,7 @@
         :widths="[300, 400, 500, 600]"
         loading="eager"
         fetchpriority="high"
-        class="self-center max-w-[220px] top-2 absolute right-0"
+        class="self-center max-w-[160px] md:max-w-[220px] top-2 absolute right-0"
         :fetch="false"
       />
     </div>
@@ -53,5 +82,32 @@ export default {
 <style lang="postcss" scoped>
 header {
   backdrop-filter: blur(6px);
+}
+
+.nav-open {
+  @apply absolute
+          w-full
+          top-32
+          left-0
+          flex
+          bg-lblue
+          p-4
+          overflow-auto;
+
+  li {
+    white-space: nowrap;
+  }
+}
+
+.hamburger-bar {
+  @apply block
+        absolute
+        h-0.5
+        w-6
+        bg-white
+        transform
+        transition
+        duration-500
+        ease-in-out;
 }
 </style>

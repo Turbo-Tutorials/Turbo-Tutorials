@@ -30,6 +30,8 @@ type Comments = {
 
 type Tutorial = {
   slug: string;
+  objectID?: string;
+  _highlightresult?: {};
   title: string;
   description: string;
   poster: Poster;
@@ -48,10 +50,13 @@ type Tutorial = {
 defineProps<Tutorial>();
 </script>
 <template>
-  <div class="flex w-full" :class="{ 'flex-row': small, 'flex-col': !small }">
+  <div
+    class="flex w-full"
+    :class="{ 'flex-col md:flex-row': small, 'flex-col': !small }"
+  >
     <div
       class="relative mb-2 aspect-[16/9]"
-      :class="{ 'max-w-[280px] mr-4': small }"
+      :class="{ 'md:max-w-[280px] md:mr-4': small }"
     >
       <nuxt-link :to="`/tutorials/${slug}`">
         <AtomsImage
@@ -88,7 +93,7 @@ defineProps<Tutorial>();
       <p
         v-if="small && description"
         v-html="description"
-        class="mb-4 line-clamp-2"
+        class="mb-4 md:line-clamp-2 hidden md:block"
       />
       <ul class="flex space-x-3">
         <li v-if="tags" v-for="tag in tags" class="uppercase text-sm">

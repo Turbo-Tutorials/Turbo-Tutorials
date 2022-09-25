@@ -29,12 +29,13 @@ usePageMeta({
 });
 </script>
 <template>
-  <main class="max-w-[1440px] mx-auto pt-36">
+  <main class="max-w-[1440px] mx-auto pt-36 md:pt-48">
     <GlobalHeader />
     <Composition
       v-if="composition"
       :data="composition"
       :resolve-renderer="resolveRenderer"
+      behaviorTracking="onLoad"
     >
       <SlotContent name="content" />
     </Composition>

@@ -3,6 +3,10 @@ import type { ComponentInstance } from "@uniformdev/canvas";
 
 const props = defineProps<{
   component: ComponentInstance;
+  title?: string;
+  titleType?: string;
+  variant?: string;
+  list?: [];
 }>();
 
 const list = computed(() => props.component.parameters?.entry?.value || false);
@@ -15,7 +19,7 @@ const variant = computed(() => props.component?.variant || false);
 </script>
 
 <template>
-  <div class="max-w-[1440px] mx-auto px-8 lg:p-0 mb-12">
+  <div class="max-w-[1440px] mx-auto px-4 lg:p-0 mb-16 md:mb-24">
     <AtomsLeTitle
       v-if="title"
       :as="titleType"
