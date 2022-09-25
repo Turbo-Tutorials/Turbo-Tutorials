@@ -85,7 +85,7 @@ defineProps<Tutorial>();
       </div>
     </div>
     <article>
-      <h3 class="text-xl font-bold mb-1" v-if="title">
+      <h3 class="text-xl font-bold mb-1 md:line-clamp-2" v-if="title">
         <nuxt-link :to="`/tutorials/${slug}`" class="no-underline">{{
           title
         }}</nuxt-link>

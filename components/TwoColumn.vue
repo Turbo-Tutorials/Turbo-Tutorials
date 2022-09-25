@@ -24,17 +24,17 @@ const description = computed(
 const variant = computed(() => {
   const variant = props.component?.variant;
 
-  let left = "w-full md:w-2/4";
-  let right = "w-full md:w-2/4";
+  let left = "w-full lg:w-2/4";
+  let right = "w-full lg:w-2/4";
 
   if (variant === "rightSmall") {
-    left = "w-full md:w-3/5";
-    right = "w-full md:w-2/5";
+    left = "w-full lg:w-3/5";
+    right = "w-full lg:w-2/5";
   }
 
   if (variant === "leftSmall") {
-    left = "w-full md:w-3/5";
-    right = "w-full md:w-2/5";
+    left = "w-full lg:w-3/5";
+    right = "w-full lg:w-2/5";
   }
 
   return {
@@ -57,11 +57,11 @@ const variant = computed(() => {
       <div v-if="description" v-html="description"></div>
     </article>
 
-    <div class="flex flex-col md:flex-row">
-      <div class="md:pr-4" :class="variant.left">
+    <div class="flex flex-col lg:flex-row lg:p-6">
+      <div class="lg:pr-4" :class="variant.left">
         <SlotContent name="columnA" />
       </div>
-      <div class="md:pl-4" :class="variant.right">
+      <div class="lg:pl-4" :class="variant.right">
         <SlotContent name="columnB" />
       </div>
     </div>
