@@ -45,10 +45,10 @@ const variant = computed(() => {
 </script>
 
 <template>
-  <div class="bg-lblue mb-24">
+  <div class="bg-lblue mb-24 two-column">
     <article class="p-6 pb-0 mb-8" v-if="title || description">
       <AtomsLeTitle v-if="title" :as="titleType" :lines="title" />
-      <p v-if="description" v-html="description"></p>
+      <p v-if="description" v-html="description" class="text-xl"></p>
     </article>
 
     <div class="flex flex-col lg:flex-row lg:p-6">

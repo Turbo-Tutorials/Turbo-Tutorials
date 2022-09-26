@@ -22,6 +22,7 @@
     "@uniformdev/uniform-nuxt": "17.2.0",
     "algoliasearch": "^4.14.2",
     "contentful": "^9.2.5",
+    "draft-convert": "^2.1.13",
     "duration-fns": "^3.0.1",
     "node-fetch-native": "^0.1.7",
     "nuxt": "3.0.0-rc.11"

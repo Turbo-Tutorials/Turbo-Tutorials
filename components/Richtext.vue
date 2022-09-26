@@ -18,7 +18,7 @@ const text = computed(() => props.component.parameters?.text?.value || false);
 </script>
 
 <template>
-  <div class="max-w-[1440px] mx-auto px-4 xl:p-0 mb-16">
+  <div class="max-w-[1440px] mx-auto px-4 xl:p-0 mb-16 rich-text">
     <AtomsLeTitle v-if="title" :as="titleType" :lines="title" />
     <div v-html="text" v-if="text" class="max-w-3xl text-xl" />
   </div>

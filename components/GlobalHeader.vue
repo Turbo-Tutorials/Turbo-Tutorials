@@ -34,24 +34,19 @@
         :class="{ 'nav-open': open }"
       >
         <li>
-          <!-- <nuxt-link rel="noopener" to="/">HOME</nuxt-link> -->
-          <a href="#">HOME</a>
+          <nuxt-link to="/">HOME</nuxt-link>
         </li>
         <li>
-          <!-- <nuxt-link rel="noopener" to="/tutorials">TURBO TUTORIALS</nuxt-link> -->
           <a href="#">TURBO TUTORIALS</a>
         </li>
         <li>
-          <!-- <nuxt-link rel="noopener" to="/bootcamps">TURBO BOOTCAMPS</nuxt-link> -->
-          <a href="#">TURBO BOOTCAMPS</a>
-        </li>
-        <li>
-          <!-- <nuxt-link rel="noopener" to="/about">ABOUT</nuxt-link> -->
           <a href="#">ABOUT</a>
         </li>
         <li>
-          <!-- <nuxt-link rel="noopener" to="/sponsor">SPONSOR</nuxt-link> -->
-          <a href="#">SPONSOR</a>
+          <a href="#">BECOME A SPONSOR</a>
+        </li>
+        <li>
+          <a href="#">WATCH ON YOUTUBE</a>
         </li>
       </ul>
 

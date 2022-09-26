@@ -39,5 +39,6 @@ usePageMeta({
     >
       <SlotContent name="content" />
     </Composition>
+    <GlobalFooter />
   </main>
 </template>

@@ -15,7 +15,7 @@ defineProps<{
   >
     <template v-if="icon === 'twitter'">
       <svg
-        class="w-7 h-7 fill-white"
+        class="w-5 h-5 fill-white"
         role="img"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -29,7 +29,7 @@ defineProps<{
 
     <template v-if="icon === 'linkedin'">
       <svg
-        class="w-7 h-7 fill-white"
+        class="w-5 h-5 fill-white"
         role="img"
         viewBox="0 0 256 256"
         xmlns="http://www.w3.org/2000/svg"
@@ -43,7 +43,7 @@ defineProps<{
 
     <template v-if="icon === 'youtube'">
       <svg
-        class="w-7 h-7 fill-white"
+        class="w-5 h-5 fill-white"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 16 16"
       >
@@ -60,7 +60,7 @@ defineProps<{
         xmlns:xlink="http://www.w3.org/1999/xlink"
         aria-hidden="true"
         role="img"
-        class="w-7"
+        class="w-5"
         preserveAspectRatio="xMidYMid meet"
         viewBox="0 0 24 24"
       >
@@ -77,7 +77,7 @@ defineProps<{
 
     <template v-if="icon === 'timbenniks'">
       <img
-        class="w-7 h-7 rounded-full"
+        class="w-5 h-5 rounded-full"
         src="https://res.cloudinary.com/dwfcofnrd/image/fetch/ar_1:1,c_fill,f_auto,q_auto,w_56/https://images.prismic.io/timbenniks/375f865f-188c-4f83-9462-c8600aff4061_favicon.png"
         loading="lazy"
         alt="Tim Benniks Logo"

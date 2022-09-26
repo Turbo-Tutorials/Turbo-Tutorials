@@ -14,7 +14,7 @@
   }
 
   a {
-    @apply underline underline-offset-2;
+    @apply underline underline-offset-2 hover:opacity-70;
   }
 
   .fancy-image {
@@ -36,5 +36,13 @@
 
   .cta {
     @apply py-1 px-2 border-2 text-white bg-black underline font-black uppercase text-sm;
+  }
+
+  .two-column .rich-text {
+    @apply mb-8
+  }
+
+  .rich-text p {
+    @apply mb-4
   }
 }
