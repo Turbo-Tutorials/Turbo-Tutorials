@@ -1,8 +1,13 @@
 <script lang="ts" setup>
-const props = defineProps<{
+export interface Props {
   lines: string;
   as: string;
-}>();
+  uppercase: boolean;
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  uppercase: true,
+});
 
 const lines = computed(() => {
   return props.lines.split("_");
@@ -12,11 +17,12 @@ const lines = computed(() => {
 <template>
   <component
     :is="as"
-    class="text-3xl font-bold uppercase leading-none mb-4"
+    class="text-3xl font-bold leading-none mb-4"
     :class="{
       'md:text-6xl': as === 'h1',
       'md:text-5xl': as === 'h2',
       'md:text-4xl': as === 'h3',
+      uppercase: uppercase,
     }"
   >
     <template v-for="line in lines">

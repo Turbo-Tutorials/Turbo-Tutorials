@@ -1,19 +1,19 @@
 <script lang="ts" setup>
-type Poster = {
+export type Poster = {
   src: string;
   alt: string;
   width: number;
   height: number;
 };
 
-type Meta = {
+export type Meta = {
   duration: string;
   views: number;
   likes: number;
   comments: number;
 };
 
-type Comments = {
+export type Comments = {
   topLevel: {
     author: string;
     image: string;
@@ -28,7 +28,7 @@ type Comments = {
   };
 };
 
-type Tutorial = {
+export type Tutorial = {
   slug: string;
   objectID?: string;
   _highlightresult?: {};

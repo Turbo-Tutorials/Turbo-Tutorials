@@ -1,7 +1,7 @@
 <template>
   <header class="bg-blue h-32 bg-opacity-80 fixed w-full top-0 left-0 z-20">
     <div
-      class="mx-auto max-w-[1440px] relative h-32 flex justify-between px-8 xl:p-0"
+      class="mx-auto max-w-[1440px] relative h-32 flex justify-between px-4 xl:p-0"
     >
       <button
         class="w-12 h-12 relative mt-10 bg-lblue md:hidden"

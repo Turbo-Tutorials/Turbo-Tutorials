@@ -2,10 +2,11 @@ export type meta = {
   title: string;
   description: string;
   slug: string;
-  image: string
+  image: string;
+  structuredData?: {}
 }
 
-export const usePageMeta = ({ title, description, slug, image }: meta) => {
+export const usePageMeta = ({ title, description, slug, image, structuredData }: meta) => {
   return useHead({
     viewport: "width=device-width, initial-scale=1",
     charset: "utf-8",
@@ -13,6 +14,13 @@ export const usePageMeta = ({ title, description, slug, image }: meta) => {
     htmlAttrs: {
       lang: "en",
     },
+    script: [
+      {
+        hid: 'json-ld',
+        children: JSON.stringify(structuredData),
+        type: 'application/ld+json'
+      }
+    ],
     style: [
       { href: "https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap" }
     ],
