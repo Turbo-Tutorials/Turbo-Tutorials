@@ -6,20 +6,20 @@ export default defineNuxtConfig({
 		'@nuxtjs/tailwindcss',
 		'@uniformdev/uniform-nuxt',
 		'@nuxtjs/robots',
-		'vue-plausible'
+		//'vue-plausible'
 	],
 	robots: {
 		UserAgent: '*',
 		Disallow: '',
 		Sitemap: (req) => `https://${req.headers.host}/sitemap.xml`
 	},
-	plausible: {
-		domain: process.env.PLAUSIBLE_DOMAIN,
-		trackLocalhost: false,
-		hashMode: false,
-		enableAutoPageviews: true,
-		enableAutoOutboundTracking: false
-	},
+	// plausible: {
+	// 	domain: process.env.PLAUSIBLE_DOMAIN,
+	// 	trackLocalhost: false,
+	// 	hashMode: false,
+	// 	enableAutoPageviews: true,
+	// 	enableAutoOutboundTracking: false
+	// },
 	uniform: {
 		projectId: process.env.UNIFORM_PROJECT_ID,
 		readOnlyApiKey: process.env.UNIFORM_API_KEY,
