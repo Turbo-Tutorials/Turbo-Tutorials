@@ -2,8 +2,14 @@
 import { resolveRenderer } from "../../components/componentMapping";
 
 const route = useRoute();
-const { data: composition } = await useFetch(
-  `/api/tutorial?slug=${route.params.slug}`
+const slug = route.params.slug;
+// const { data: composition } = await useFetch(
+//   `composition-${slug}`,
+//   () => `/api/tutorial?slug=${slug}`
+// );
+
+const { data: composition } = await useAsyncData(`composition-${slug}`, () =>
+  $fetch(`/api/tutorial?slug=${slug}`)
 );
 
 if (!composition.value) {
@@ -13,7 +19,7 @@ if (!composition.value) {
 usePageMeta({
   title: `Turbo Tutorial - ${composition.value.data.metadata?.title}` as string,
   description: composition.value.data.metadata?.description as string,
-  slug: route.params.slug as string,
+  slug: slug as string,
   image: `https://res.cloudinary.com/dwfcofnrd/image/fetch/w_1200,q_auto/${
     composition.value.data.metadata?.image as string
   }`,

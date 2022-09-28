@@ -12,8 +12,8 @@ import {
   CANVAS_CONTENTFUL_QUERY_PARAMETER_TYPES
 } from "../enhancers/contentful";
 
-export async function useEnhance(composition: Ref<CompositionGetResponse>) {
-  const { data, pending, error } = await useAsyncData('composition', async () => {
+export async function useEnhance(composition: Ref<CompositionGetResponse>, slug: string) {
+  const { data, pending, error } = await useAsyncData(`composition-enhancer-${slug}`, async () => {
     const compositionClone = { ...composition.value.composition }
 
     await enhance({

@@ -3,15 +3,17 @@ import { resolveRenderer } from "../components/componentMapping";
 
 const route = useRoute();
 const { $useComposition } = useNuxtApp();
+const slug = route.params.slug ? route.params.slug : "/";
 const { data } = await $useComposition({
-  slug: route.params.slug ? route.params.slug : "/",
+  slug,
 });
 
 if (!data.value) {
   throw createError({ statusCode: 404, statusMessage: "Page Not Found" });
 }
 
-const { data: composition } = await useEnhance(data);
+const { data: composition } = await useEnhance(data, slug as string);
+
 const title = composition.value.parameters?.title?.value || "No Title";
 const description =
   composition.value.parameters?.description?.value || "No Description";
