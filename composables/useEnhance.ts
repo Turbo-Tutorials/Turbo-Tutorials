@@ -31,9 +31,6 @@ export async function useEnhance(composition: Ref<CompositionGetResponse>, slug:
             tutorialYouTubeEnhancer)
         )
         .parameterType(CLOUDINARY_PARAMETER_TYPES, cloudinaryEnhancer())
-        // .parameterType('RichTextEntry', ({ parameter }) => {
-        //   return convertToHTML(parameter.value)
-        // })
         .parameterType(CANVAS_ALGOLIA_QUERY_PARAMETER_TYPES, algoliaQueryEnhancer()),
       context: {},
     });
