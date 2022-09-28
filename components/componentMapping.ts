@@ -7,8 +7,8 @@ import TutorialsByFacet from "./TutorialsByFacet.vue"
 import TwoColumn from './TwoColumn.vue';
 import TtTitle from './TtTitle.vue';
 import TtVideo from './TtVideo.vue';
-// import Media from './Media.vue';
-// import MyDetails from './MyDetails.vue';
+import TtComments from './TtComments.vue';
+import TtSimilar from './TtSimilar.vue';
 // import Talks from './Talks.vue';
 
 const mapping = {
@@ -18,7 +18,8 @@ const mapping = {
   twoColumn: TwoColumn,
   ttTitle: TtTitle,
   ttVideo: TtVideo,
-  // details: MyDetails,
+  ttComments: TtComments,
+  ttSimilar: TtSimilar,
   // talks: Talks,
 };
 

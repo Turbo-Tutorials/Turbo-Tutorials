@@ -2,7 +2,7 @@
 export interface Props {
   lines: string;
   as: string;
-  uppercase: boolean;
+  uppercase?: boolean;
 }
 
 const props = withDefaults(defineProps<Props>(), {

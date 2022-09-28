@@ -13,8 +13,8 @@
     height: auto;
   }
 
-  a {
-    @apply underline underline-offset-2 hover:opacity-70;
+  a, button {
+    @apply bg-none underline underline-offset-2 hover:opacity-70;
   }
 
   .fancy-image {
@@ -42,8 +42,16 @@
     @apply mb-8
   }
 
-  .rich-text p {
+  .rich-text p, .rich-text ul  {
     @apply mb-4
+  }
+
+  .rich-text ul {
+    @apply list-disc list-inside
+  }
+
+  .rich-text ul li p {
+    @apply inline;
   }
 
   lite-youtube {

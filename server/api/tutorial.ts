@@ -40,6 +40,8 @@ export default defineEventHandler(async (event: H3Event) => {
     ...videoMeta
   }
 
+  const comments = video.comments
+
   const selectedTags = tutorial.tags.join(",");
 
   const tutorialsForTagsData = await ctfClient.getEntries({
@@ -82,9 +84,24 @@ export default defineEventHandler(async (event: H3Event) => {
         return tutorial.title
       })
     )
+    .component("ttComments", (ttComments) =>
+      ttComments.data("commentsData", () => {
+        return {
+          videoId: video.videoId,
+          meta: video.meta,
+          comments
+        }
+
+      })
+    )
     .component("ttVideo", (ttVideo) =>
       ttVideo.data("video", () => {
-        return video;
+        const res = video
+
+        video.comments = null
+        delete video.comments
+
+        return res;
       })
     )
     .component("ttSimilar", (ttSimilar) =>

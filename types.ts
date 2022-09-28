@@ -12,19 +12,16 @@ export type Meta = {
   comments: number;
 };
 
+export type Comment = {
+  author: string;
+  image: string;
+  text: string;
+  date: string;
+}
+
 export type Comments = {
-  topLevel: {
-    author: string;
-    image: string;
-    text: string;
-    date: string;
-  };
-  replies: {
-    author: string;
-    image: string;
-    text: string;
-    date: string;
-  };
+  topLevel: Comment,
+  replies: Comment;
 };
 
 export type Tutorial = {

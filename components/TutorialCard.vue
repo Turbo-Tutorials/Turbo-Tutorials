@@ -39,7 +39,7 @@ export type Tutorial = {
   videoId: string;
   githubLink?: string;
   content?: string;
-  meta: Meta;
+  meta?: Meta;
   comments?: Comments;
   tags: [];
   transcript: string;
@@ -72,7 +72,7 @@ defineProps<Tutorial>();
           class="fancy-image"
         />
       </nuxt-link>
-      <div class="absolute left-1 bottom-1 space-x-1 text-sm">
+      <div v-if="meta" class="absolute left-1 bottom-1 space-x-1 text-sm">
         <span v-if="meta.duration" class="bg-black bg-opacity-50 px-1">{{
           meta.duration
         }}</span>
