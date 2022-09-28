@@ -3,13 +3,10 @@ import { resolveRenderer } from "../../components/componentMapping";
 
 const route = useRoute();
 const slug = route.params.slug;
-// const { data: composition } = await useFetch(
-//   `composition-${slug}`,
-//   () => `/api/tutorial?slug=${slug}`
-// );
 
-const { data: composition } = await useAsyncData(`composition-${slug}`, () =>
-  $fetch(`/api/tutorial?slug=${slug}`)
+const { data: composition } = await useAsyncData(
+  `composition-tutorial-${slug}`,
+  () => $fetch(`/api/tutorial?slug=${slug}`)
 );
 
 if (!composition.value) {
