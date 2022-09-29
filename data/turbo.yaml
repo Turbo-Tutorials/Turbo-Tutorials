@@ -1,0 +1,23 @@
+enrichments:
+  - id: '1'
+    name: Interest
+    cap: 100
+    values:
+      - id: '3'
+        value: fetch
+      - id: '4'
+        value: head
+      - id: '2'
+        value: nuxt3
+      - id: '1'
+        value: vue3
+  - id: '2'
+    name: Complexity
+    cap: 100
+    values:
+      - id: '3'
+        value: complex
+      - id: '1'
+        value: easy
+      - id: '2'
+        value: intermediate

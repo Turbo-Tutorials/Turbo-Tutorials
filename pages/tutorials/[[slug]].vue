@@ -13,6 +13,11 @@ if (!composition.value) {
   throw createError({ statusCode: 404, statusMessage: "Page Not Found" });
 }
 
+usePersonalization({
+  interests: composition.value.data?.selectedTags as string,
+  complexity: composition.value.data.complexity as string,
+});
+
 usePageMeta({
   title: `Turbo Tutorial - ${composition.value.data.metadata?.title}` as string,
   description: composition.value.data.metadata?.description as string,

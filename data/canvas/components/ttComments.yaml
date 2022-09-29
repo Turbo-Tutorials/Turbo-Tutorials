@@ -1,0 +1,9 @@
+id: ttComments
+name: 'TT: Comments'
+icon: comment
+parameters: []
+useTeamPermissions: true
+slots: []
+canBeComposition: false
+created: '2022-09-28T14:10:26.057577+00:00'
+updated: '2022-09-28T14:10:26.057577+00:00'

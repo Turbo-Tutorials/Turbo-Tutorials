@@ -1,0 +1,310 @@
+composition:
+  _name: Home
+  _id: 5c5e402a-8d87-4654-a906-bb2a385b9f53
+  _slug: /
+  type: page
+  parameters:
+    image:
+      type: cloudinary-media-selector
+      value:
+        - alt: Turbo Tutorials
+          url: >-
+            https://res.cloudinary.com/dwfcofnrd/image/upload/v1662715221/Turbo%20Tutorials/share-image.png
+          ratio: ''
+          width: '1920'
+          format: png
+          height: '1080'
+          widths: '1200'
+          caption: Turbo Tutorials
+          options: q_auto,f_auto
+          version: 1662715221
+          publicId: Turbo Tutorials/share-image
+          createdAt: '2022-09-09T09:20:21Z'
+          previewUrl: >-
+            https://res.cloudinary.com/dwfcofnrd/image/upload/q_auto:low,f_auto,w_150/Turbo%20Tutorials/share-image.png
+          resourceType: image
+          transformation: ''
+          globalImageOptions: q_auto,f_auto
+    title:
+      type: text
+      value: Turbo Tutorials - Learn hard stuff at turbo speed
+    description:
+      type: text
+      value: >-
+        You can find short instructional videos at Turbo Tutorials that teach
+        you the most common things in modern JavaScript and its meta frameworks.
+  slots:
+    content:
+      - _id: a0791f83-4e8f-4313-95e9-095bf8e66d68
+        type: richtext
+        parameters:
+          text:
+            type: text
+            value: >+
+              <p>Welcome to Turbo Tutorials! On this site, you can find short
+              tutorials that teach you the most common things in modern
+              JavaScript and its meta frameworks. Feel free to browse around.
+              Based on your browsing behavior, the website will personalize for
+              your interests.</p>
+
+          title:
+            type: text
+            value: TURBO TUTORIALS_LEARN HARD STUFF AT TURBO SPEED
+          titleType:
+            type: select
+            value: h1
+          richtextentry:
+            type: RichTextEntry
+            value:
+              blocks:
+                - key: 7lbdj
+                  data: {}
+                  text: >-
+                    Welcome to Turbo Tutorials! On this site, you can find short
+                    tutorials that teach you the most common things in modern
+                    JavaScript and its meta frameworks. Feel free to browse
+                    around. Based on your browsing behavior, the website will
+                    personalize for your interests.
+                  type: unstyled
+                  depth: 0
+                  entityRanges: []
+                  inlineStyleRanges: []
+              entityMap: {}
+      - _id: 8a43bd01-100f-4421-9625-bf12e34cbf45
+        type: tutorialList
+        variant: ''
+        parameters:
+          entry:
+            type: contentfulQuery
+            value:
+              count: 3
+              sortBy: fields.publicationDate
+              source: default
+              sortOrder: desc
+              contentType: turboTutorial
+          title:
+            type: text
+            value: Latest Tutorials
+          titleType:
+            type: select
+            value: h2
+      - _id: 61537eff-6a14-4040-afe7-858a56b33a7c
+        type: twoColumn
+        slots:
+          columnA:
+            - _id: c3ecc3db-2c4d-46d0-bf33-95f28c4918d8
+              type: richtext
+              parameters:
+                text:
+                  type: text
+                  value: >-
+                    <p>Most tutorials on this website are 5 minutes or less.
+                    They explain a complex topic clearly and straightforwardly.
+                    After watching a turbo tutorial, you know the basics and can
+                    start coding immediately.</p>
+                title:
+                  type: text
+                  value: Turbo learning_watch less and code more
+                titleType:
+                  type: select
+                  value: h3
+                richtextentry:
+                  type: RichTextEntry
+                  value:
+                    blocks:
+                      - key: 8e70v
+                        data: {}
+                        text: >-
+                          Most tutorials on this website are 5 minutes or less.
+                          They explain a complex topic clearly and
+                          straightforwardly. After watching a turbo tutorial,
+                          you know the basics, and you can start coding
+                          immediately.
+                        type: unstyled
+                        depth: 0
+                        entityRanges: []
+                        inlineStyleRanges: []
+                    entityMap: {}
+            - _id: 229deb3f-aacd-4035-acdd-e0f79ebf7346
+              type: richtext
+              parameters:
+                text:
+                  type: text
+                  value: >-
+                    <p>Tutorials are categorized by subject, language,
+                    framework, and complexity. Based on what you watch, the site
+                    will personalize just for you. Next to serving content, it
+                    thinks you like, it will show you badges based on your
+                    consumption. You can clear a badge to remove the
+                    personalization and reset the content.</p>
+                title:
+                  type: text
+                  value: How this website works
+                titleType:
+                  type: select
+                  value: h4
+                richtextentry:
+                  type: RichTextEntry
+                  value:
+                    blocks:
+                      - key: 56d7v
+                        data: {}
+                        text: >-
+                          Tutorials are categorized by subject, language,
+                          framework, and complexity. Based on what you watch,
+                          the site will personalize just for you. Next to
+                          serving content, it thinks you like, it will show you
+                          badges based on your consumption. You can clear a
+                          badge to remove the personalization and reset the
+                          content.
+                        type: unstyled
+                        depth: 0
+                        entityRanges: []
+                        inlineStyleRanges: []
+                    entityMap: {}
+          columnB:
+            - _id: 01579382-a337-4d44-a789-22a77a35c817
+              type: richtext
+              parameters:
+                text:
+                  type: text
+                  value: >-
+                    <p>This website is created and maintained by <a
+                    href="https://timbenniks.dev" title="Tim's Website"
+                    rel="noopener" target="_blank">Tim Benniks</a>. It will
+                    always be free and it uses the <a
+                    href="https://en.wikipedia.org/wiki/Pay_what_you_want"
+                    rel="noopener" title="PWYW Wikipedia" target="_blank">Pay
+                    What You Want</a> model.</p><p>If the content helps you in
+                    any way, feel free to donate by buying Tim a few coffee's
+                    at: <a href="https://www.buymeacoffee.com/timbenniks" 
+                    rel="noopener" title="Buy Me A Coffee" target="_blank"><img
+                    loading="lazy" style="width:
+                    180px;display:block;margin-top:1rem;" width="180"
+                    height="50"
+                    src="https://timbenniks.dev/_nuxt/image/300411.png" alt="Buy
+                    Me A Coffee" /> </a></p>
+
+
+                    <p>Another way to support Turbo Tutorials is by asking the
+                    company you work for to become a <a
+                    href="/sponsor">sponsor</a>.</p>
+                title:
+                  type: text
+                  value: Support the creator_with PWYW
+                titleType:
+                  type: select
+                  value: h3
+                richtextentry:
+                  type: RichTextEntry
+                  value:
+                    blocks:
+                      - key: 73bf6
+                        data: {}
+                        text: >-
+                          This website is created and maintained by <a
+                          href="https://timbenniks.dev">Tim Benniks</a> and it
+                          will always be free.
+                        type: unstyled
+                        depth: 0
+                        entityRanges: []
+                        inlineStyleRanges: []
+                      - key: 4nm6j
+                        data: {}
+                        text: >-
+                          If the content helps you in any way, feel free to
+                          donate by buying Tim a few coffee's at
+                          buymeacoffee/timbenniks
+                        type: unstyled
+                        depth: 0
+                        entityRanges: []
+                        inlineStyleRanges: []
+                      - key: ct0dd
+                        data: {}
+                        text: >-
+                          Another way to support Turbo Tutorials is by asking
+                          the company you work for to become a sponsor
+                        type: unstyled
+                        depth: 0
+                        entityRanges: []
+                        inlineStyleRanges: []
+                    entityMap: {}
+        variant: rightSmall
+      - _id: 78bd3439-f2c4-43b2-8d1f-48d434f3dac3
+        type: tutorialsByFacet
+        variant: ''
+        parameters:
+          entry:
+            type: algoliaQuery
+            value:
+              count: 3
+              source: default
+              searchText: ''
+              facetsValues:
+                tags:
+                  - nuxt3
+          title:
+            type: text
+            value: Nuxt 3 turbo's
+          titleType:
+            type: select
+            value: h3
+      - _id: c68604b4-0b61-4f14-a8f7-26ec26fafa28
+        type: twoColumn
+        slots:
+          columnA:
+            - _id: e47aa4a7-da57-4e65-8c26-66b24c2ed387
+              type: tutorialsByFacet
+              variant: list
+              parameters:
+                entry:
+                  type: algoliaQuery
+                  value:
+                    count: 3
+                    source: default
+                    searchText: ''
+                    facetsValues:
+                      tags:
+                        - fetch
+                title:
+                  type: text
+                  value: Fetch API turbo's
+                titleType:
+                  type: select
+                  value: h3
+          columnB:
+            - _id: a6bd6b6c-a12a-4cb9-886c-d4fae7582476
+              type: tutorialsByFacet
+              variant: list
+              parameters:
+                entry:
+                  type: algoliaQuery
+                  value:
+                    count: 3
+                    source: default
+                    searchText: ''
+                    facetsValues:
+                      complexity:
+                        - Easy
+                title:
+                  type: text
+                  value: For beginners
+                titleType:
+                  type: select
+                  value: h3
+        variant: ''
+        parameters:
+          title:
+            type: text
+            value: The latest stuff for you!
+          titleType:
+            type: select
+            value: h2
+          description:
+            type: text
+            value: >-
+              These tutorials are selected based on your consumption of other
+              tutorials.
+created: '2022-09-09T09:17:41.405333+00:00'
+modified: '2022-09-28T18:38:27.402199+00:00'
+pattern: false

@@ -1,0 +1,62 @@
+id: twoColumn
+name: Two Column
+icon: view-split
+parameters:
+  - id: title
+    name: Title
+    type: text
+    helpText: ''
+    typeConfig: null
+  - id: titleType
+    name: Title Type
+    type: select
+    helpText: ''
+    typeConfig:
+      options:
+        - text: h1
+          value: h1
+        - text: h2
+          value: h2
+        - text: h3
+          value: h3
+        - text: h4
+          value: h4
+      required: false
+  - id: description
+    name: Description
+    type: text
+    helpText: ''
+    typeConfig:
+      multiline: true
+      linesCount: '1'
+useTeamPermissions: true
+slots:
+  - id: columnA
+    name: Column A
+    allowedComponents:
+      - richtext
+      - tutorialList
+      - tutorialsByFacet
+      - $personalization
+      - ttComments
+      - ttSimilar
+    inheritAllowedComponents: false
+  - id: columnB
+    name: Column B
+    allowedComponents:
+      - richtext
+      - tutorialList
+      - tutorialsByFacet
+      - $personalization
+      - ttComments
+      - ttSimilar
+    inheritAllowedComponents: false
+titleParameter: title
+canBeComposition: false
+created: '2022-09-21T10:08:36.02276+00:00'
+updated: '2022-09-28T14:11:02.294145+00:00'
+variants:
+  - id: leftSmall
+    name: Left Small
+  - id: rightSmall
+    name: Right Small

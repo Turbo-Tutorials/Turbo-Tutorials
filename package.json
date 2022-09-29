@@ -1,11 +1,24 @@
 {
   "private": true,
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "context:manifest": "uniform context manifest download --output ./lib/context/context-manifest.json"
+    "build": "run-s context:manifest pull:enrichments tubro:build",
+    "dev": "run-s context:manifest pull:enrichments tubro:dev",
+    "tubro:dev": "nuxt dev",
+    "tubro:build": "nuxt dbuildev",
+    "context:manifest": "uniform context manifest download --output ./lib/context/context-manifest.json",
+    "pull": "run-s pull:components pull:compositions",
+    "pull:compositions": "uniform presentation composition pull ./data/canvas/compositions",
+    "pull:components": "uniform presentation component pull ./data/canvas/components",
+    "push": "run-s push:components push:compositions",
+    "push:compositions": "uniform presentation composition push ./data/canvas/compositions",
+    "push:components": "uniform presentation component push ./data/canvas/components",
+    "pull:context:signals": "uniform context signal pull ./data/turbo.yaml",
+    "pull:context:enrichments": "uniform context enrichment pull ./data/turbo.yaml",
+    "pull:context:aggregates": "uniform context aggregate pull ./data/turbo.yaml",
+    "pull:context:quirks": "uniform context quirk pull ./data/turbo.yaml",
+    "pull:context:tests": "uniform context test pull ./data/turbo.yaml",
+    "pull:context": "run-s pull:context:signals pull:context:enrichments pull:context:quirks",
+    "pull:enrichments": "node enrichments.mjs"
   },
   "dependencies": {
     "@contentful/rich-text-html-renderer": "^15.13.1",
@@ -23,9 +36,12 @@
     "@uniformdev/uniform-nuxt": "17.2.0",
     "algoliasearch": "^4.14.2",
     "contentful": "^9.2.5",
+    "dotenv": "^16.0.3",
     "draft-convert": "^2.1.13",
     "duration-fns": "^3.0.1",
+    "node-fetch": "^3.2.10",
     "node-fetch-native": "^0.1.7",
+    "npm-run-all": "^4.1.5",
     "nuxt": "3.0.0-rc.11",
     "vue-plausible": "^1.3.2"
   }

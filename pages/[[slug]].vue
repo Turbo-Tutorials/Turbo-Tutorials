@@ -2,7 +2,8 @@
 import { resolveRenderer } from "../components/componentMapping";
 
 const route = useRoute();
-const { $useComposition } = useNuxtApp();
+const { $useComposition, $uniformContext } = useNuxtApp();
+
 const slug = route.params.slug ? route.params.slug : "/";
 const { data } = await $useComposition({
   slug,
@@ -14,9 +15,9 @@ if (!data.value) {
 
 const { data: composition } = await useEnhance(data, slug as string);
 
-const title = composition.value.parameters?.title?.value || "No Title";
+const title = composition.value?.parameters?.title?.value || "No Title";
 const description =
-  composition.value.parameters?.description?.value || "No Description";
+  composition.value?.parameters?.description?.value || "No Description";
 const image = composition.value?.parameters?.image;
 
 usePageMeta({

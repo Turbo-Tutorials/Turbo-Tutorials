@@ -1,0 +1,41 @@
+id: richtext
+name: RichText
+icon: file-document
+parameters:
+  - id: title
+    name: Title
+    type: text
+    helpText: ''
+    typeConfig: null
+  - id: titleType
+    name: Title Type
+    type: select
+    helpText: ''
+    typeConfig:
+      options:
+        - text: h1
+          value: h1
+        - text: h2
+          value: h2
+        - text: h3
+          value: h3
+        - text: h4
+          value: h4
+  - id: text
+    name: Text
+    type: text
+    helpText: Add whatever text you want here
+    typeConfig:
+      multiline: true
+      linesCount: '5'
+  - id: richtextentry
+    name: RichTextEntry
+    type: RichTextEntry
+    helpText: ''
+    typeConfig: null
+useTeamPermissions: true
+slots: []
+titleParameter: title
+canBeComposition: false
+created: '2022-09-09T11:02:39.024395+00:00'
+updated: '2022-09-25T16:42:40.539155+00:00'

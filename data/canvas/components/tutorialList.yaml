@@ -1,0 +1,54 @@
+id: tutorialList
+name: Tutorial List
+icon: layout-list
+parameters:
+  - id: title
+    name: Title
+    type: text
+    helpText: What did you search for?
+    typeConfig: null
+  - id: titleType
+    name: Title Type
+    type: select
+    helpText: ''
+    typeConfig:
+      options:
+        - text: h1
+          value: h1
+        - text: h2
+          value: h2
+        - text: h3
+          value: h3
+        - text: h4
+          value: h4
+      required: true
+  - id: popular
+    name: Popular
+    type: checkbox
+    helpText: Order by amount of views instead
+    typeConfig: null
+  - id: withComments
+    name: With Comments
+    type: checkbox
+    helpText: ''
+    typeConfig: null
+  - id: entry
+    name: Entry
+    type: contentfulQuery
+    helpText: Select tutorials from the CMS
+    typeConfig:
+      source: default
+      required: true
+      allowedContentTypes:
+        turboTutorial:
+          id: turboTutorial
+          name: Turbo Tutorial
+useTeamPermissions: true
+slots: []
+titleParameter: title
+canBeComposition: false
+created: '2022-09-09T11:22:16.043701+00:00'
+updated: '2022-09-21T13:21:37.949681+00:00'
+variants:
+  - id: list
+    name: list

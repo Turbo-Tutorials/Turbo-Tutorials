@@ -57,6 +57,9 @@ export default defineEventHandler(async (event: H3Event) => {
     .data("selectedTags", () => {
       return selectedTags;
     })
+    .data("complexity", () => {
+      return tutorial.complexity;
+    })
     .component("turboTutorial", (turboTutorial) =>
       turboTutorial.data("metadata", () => {
         return {

@@ -1,0 +1,18 @@
+id: turboTutorial
+name: Turbo Tutorial
+icon: bulb
+parameters: []
+useTeamPermissions: true
+slots:
+  - id: content
+    name: content
+    allowedComponents:
+      - ttSimilar
+      - ttTitle
+      - ttVideo
+      - twoColumn
+      - $personalization
+    inheritAllowedComponents: false
+canBeComposition: true
+created: '2022-09-15T07:38:54.126255+00:00'
+updated: '2022-09-28T14:09:55.927378+00:00'

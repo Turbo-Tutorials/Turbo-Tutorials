@@ -1,0 +1,24 @@
+composition:
+  _name: Turbo Tutorial Template
+  _id: 227c31f6-b095-4d1e-ad73-3c0deb06e3b8
+  _slug: /tt
+  type: turboTutorial
+  parameters: {}
+  slots:
+    content:
+      - _id: 6a46fe53-21f8-42df-9db3-a279ab2a278e
+        type: ttTitle
+      - _id: 649fecc7-80af-4c6f-8627-562292feda90
+        type: ttVideo
+      - _id: c9670e7e-2fcc-4e09-87f3-650045ad3dfd
+        type: twoColumn
+        slots:
+          columnA:
+            - _id: 7ec56c1e-6148-4b26-a576-caff93aabc28
+              type: ttComments
+          columnB:
+            - _id: 4b5c1a68-5949-454d-8e49-370f6a4dcd15
+              type: ttSimilar
+created: '2022-09-18T08:27:42.686361+00:00'
+modified: '2022-09-28T14:11:32.525073+00:00'
+pattern: false

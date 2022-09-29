@@ -1,0 +1,47 @@
+id: page
+name: Page
+icon: template
+parameters:
+  - id: title
+    name: Title
+    type: text
+    helpText: Metadata Title
+    typeConfig: null
+  - id: description
+    name: Description
+    type: text
+    helpText: Metadata Description
+    typeConfig:
+      multiline: true
+  - id: image
+    name: Image
+    type: cloudinary-media-selector
+    helpText: Metadata Image
+    typeConfig:
+      ratio: ''
+      widths: '1200'
+      multiSelect: false
+      defaultoptions: q_auto,f_auto
+useTeamPermissions: true
+slots:
+  - id: content
+    name: Content
+    allowedComponents:
+      - $personalization
+      - richtext
+      - tutorialList
+      - tutoriallistbytags
+      - algolia
+      - tutorialsByTags
+      - tutorialsByFacet
+      - twoColumn
+    inheritAllowedComponents: false
+slugSettings:
+  unique: global
+  required: 'yes'
+  regularExpression: ^\S*$
+  regularExpressionMessage: Slug does not allow spaces
+titleParameter: title
+canBeComposition: true
+created: '2022-09-09T09:17:30.994173+00:00'
+updated: '2022-09-21T10:09:03.83222+00:00'
