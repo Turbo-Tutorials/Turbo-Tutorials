@@ -8,6 +8,10 @@ export default defineNuxtConfig({
 		'@nuxtjs/robots',
 		//'vue-plausible'
 	],
+	routes: {
+		'/': { prerender: true },
+		'/tutorials/**': { static: true }
+	},
 	robots: {
 		UserAgent: '*',
 		Disallow: '',
