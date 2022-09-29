@@ -5,6 +5,7 @@ const props = defineProps<{
   component: ComponentInstance;
   title?: string;
   titleType?: string;
+  description?: string;
   variant?: string;
   list?: [];
 }>();
@@ -13,6 +14,9 @@ const list = computed(() => props.component.parameters?.entry?.value || false);
 const title = computed(() => props.component.parameters?.title?.value || false);
 const titleType = computed(
   () => props.component.parameters?.titleType?.value || "h3"
+);
+const description = computed(
+  () => props.component.parameters?.description?.value || false
 );
 const variant = computed(() => props.component?.variant || false);
 </script>
@@ -26,6 +30,7 @@ const variant = computed(() => props.component?.variant || false);
     }"
   >
     <AtomsLeTitle v-if="title" :as="titleType" :lines="title" />
+    <p v-if="description" v-html="description" class="mb-4" />
 
     <section
       class="grid grid-cols-1 gap-8"
