@@ -10,20 +10,20 @@ composition:
         - alt: Turbo Tutorials
           url: >-
             https://res.cloudinary.com/dwfcofnrd/image/upload/v1662715221/Turbo%20Tutorials/share-image.png
-          ratio: ''
-          width: '1920'
+          ratio: ""
+          width: "1920"
           format: png
-          height: '1080'
-          widths: '1200'
+          height: "1080"
+          widths: "1200"
           caption: Turbo Tutorials
           options: q_auto,f_auto
           version: 1662715221
           publicId: Turbo Tutorials/share-image
-          createdAt: '2022-09-09T09:20:21Z'
+          createdAt: "2022-09-09T09:20:21Z"
           previewUrl: >-
             https://res.cloudinary.com/dwfcofnrd/image/upload/q_auto:low,f_auto,w_150/Turbo%20Tutorials/share-image.png
           resourceType: image
-          transformation: ''
+          transformation: ""
           globalImageOptions: q_auto,f_auto
     title:
       type: text
@@ -72,7 +72,7 @@ composition:
               entityMap: {}
       - _id: 8a43bd01-100f-4421-9625-bf12e34cbf45
         type: tutorialList
-        variant: ''
+        variant: ""
         parameters:
           entry:
             type: contentfulQuery
@@ -188,7 +188,7 @@ composition:
 
                     <p>Another way to support Turbo Tutorials is by asking the
                     company you work for to become a <a
-                    href="/sponsor">sponsor</a>.</p>
+                    href="#">sponsor</a>.</p>
                 title:
                   type: text
                   value: Support the creator_with PWYW
@@ -232,14 +232,14 @@ composition:
         variant: rightSmall
       - _id: 78bd3439-f2c4-43b2-8d1f-48d434f3dac3
         type: tutorialsByFacet
-        variant: ''
+        variant: ""
         parameters:
           entry:
             type: algoliaQuery
             value:
               count: 3
               source: default
-              searchText: ''
+              searchText: ""
               facetsValues:
                 tags:
                   - nuxt3
@@ -262,7 +262,7 @@ composition:
                   value:
                     count: 3
                     source: default
-                    searchText: ''
+                    searchText: ""
                     facetsValues:
                       tags:
                         - fetch
@@ -282,7 +282,7 @@ composition:
                   value:
                     count: 3
                     source: default
-                    searchText: ''
+                    searchText: ""
                     facetsValues:
                       complexity:
                         - Easy
@@ -292,7 +292,7 @@ composition:
                 titleType:
                   type: select
                   value: h3
-        variant: ''
+        variant: ""
         parameters:
           title:
             type: text
@@ -305,6 +305,6 @@ composition:
             value: >-
               These tutorials are selected based on your consumption of other
               tutorials.
-created: '2022-09-09T09:17:41.405333+00:00'
-modified: '2022-09-28T18:38:27.402199+00:00'
+created: "2022-09-09T09:17:41.405333+00:00"
+modified: "2022-09-28T18:38:27.402199+00:00"
 pattern: false
