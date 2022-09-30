@@ -47,29 +47,7 @@ export type Tutorial = {
   small?: Boolean;
 };
 
-const props = defineProps<Tutorial>();
-
-const videoMeta = ref({
-  duration: props.meta.duration,
-  views: props.meta.views,
-  likes: props.meta.likes,
-  comments: props.meta.comments,
-});
-
-onMounted(async () => {
-  const { data: metadata } = await useAsyncData(props.videoId, () =>
-    $fetch(`/api/video?videoId=${props.videoId}`)
-  );
-
-  const { meta } = metadata.value;
-
-  videoMeta.value = {
-    duration: meta.duration,
-    views: meta.views,
-    likes: meta.likes,
-    comments: meta.comments,
-  };
-});
+defineProps<Tutorial>();
 </script>
 <template>
   <div
@@ -94,19 +72,15 @@ onMounted(async () => {
           class="fancy-image"
         />
       </nuxt-link>
-      <div
-        v-if="videoMeta.duration || videoMeta.views || videoMeta.comments"
-        class="absolute left-1 bottom-1 space-x-1 text-sm"
-      >
-        <span v-if="videoMeta.duration" class="bg-black bg-opacity-50 px-1">{{
-          videoMeta.duration
+      <div v-if="meta" class="absolute left-1 bottom-1 space-x-1 text-sm">
+        <span v-if="meta.duration" class="bg-black bg-opacity-50 px-1">{{
+          meta.duration
         }}</span>
-        <span v-if="videoMeta.views" class="bg-black bg-opacity-50 px-1"
-          >{{ videoMeta.views }}
-          {{ videoMeta.views === 1 ? "view" : "views" }}</span
+        <span v-if="meta.views" class="bg-black bg-opacity-50 px-1"
+          >{{ meta.views }} {{ meta.views === 1 ? "view" : "views" }}</span
         >
-        <span v-if="videoMeta.comments" class="bg-black bg-opacity-50 px-1"
-          >{{ videoMeta.comments }} comments</span
+        <span v-if="meta.comments" class="bg-black bg-opacity-50 px-1"
+          >{{ meta.comments }} comments</span
         >
       </div>
     </div>
