@@ -47,7 +47,12 @@ export type Tutorial = {
   small?: Boolean;
 };
 
-defineProps<Tutorial>();
+const props = defineProps<Tutorial>();
+
+const { data: metadata } = await useAsyncData(
+  `video-meta--${props.videoId}`,
+  () => $fetch(`/api/video?videoId=${props.videoId}`)
+);
 </script>
 <template>
   <div
@@ -103,6 +108,8 @@ defineProps<Tutorial>();
           <a class="text-grey" href="#">{{ tag }}</a>
         </li>
       </ul>
+
+      <pre>{{ metadata }}</pre>
     </article>
   </div>
 </template>
