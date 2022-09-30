@@ -3,8 +3,10 @@
   "scripts": {
     "build": "run-s context:manifest pull:enrichments tubro:build",
     "dev": "run-s context:manifest pull:enrichments tubro:dev",
+    "generate": "run-s context:manifest pull:enrichments tubro:generate",
     "tubro:dev": "nuxt dev",
-    "tubro:build": "nuxt dbuildev",
+    "tubro:build": "nuxt build",
+    "tubro:generate": "nuxt generate",
     "context:manifest": "uniform context manifest download --output ./lib/context/context-manifest.json",
     "pull": "run-s pull:components pull:compositions",
     "pull:compositions": "uniform presentation composition pull ./data/canvas/compositions",
