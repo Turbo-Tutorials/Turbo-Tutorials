@@ -1,8 +1,7 @@
 export const getVideoMeta = async (id: string, withComments: boolean) => {
   const url = process.env.BASE_URL
-  const result = await fetch(`${url}/api/video?videoId=${id}&withComments=${withComments}`)
-  const res = await result.json();
-  return res
+  const result = await $fetch(`${url}/api/video?videoId=${id}&withComments=${withComments}`)
+  return result
 }
 
 export const tutorialYouTubeEnhancer = async ({ component, parameter }) => {

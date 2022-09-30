@@ -2,9 +2,7 @@ import * as duration from 'duration-fns'
 import { H3Event } from 'h3';
 
 const getVideoSpecs = async (id: string) => {
-  const result = await fetch(`https://www.googleapis.com/youtube/v3/videos?part=contentDetails,statistics&id=${id}&key=${process.env.YOUTUBE_KEY}`)
-  const data = await result.json();
-
+  const data = await $fetch(`https://www.googleapis.com/youtube/v3/videos?part=contentDetails,statistics&id=${id}&key=${process.env.YOUTUBE_KEY}`)
   const durationRaw = data.items[0].contentDetails.duration;
   const durationObj = duration.parse(durationRaw)
   const { viewCount, likeCount, commentCount } = data.items[0].statistics
@@ -17,10 +15,7 @@ const getVideoSpecs = async (id: string) => {
 }
 
 const getVideoComments = async (id: string) => {
-  const result = await fetch(`https://www.googleapis.com/youtube/v3/commentThreads?part=snippet,replies&videoId=${id}&key=${process.env.YOUTUBE_KEY}`)
-  const data = await result.json();
-  console.log('## getVideoComments', data)
-
+  const data = await $fetch(`https://www.googleapis.com/youtube/v3/commentThreads?part=snippet,replies&videoId=${id}&key=${process.env.YOUTUBE_KEY}`)
   const comments = data.items?.map((comment) => {
     return {
       topLevel: {
