@@ -22,13 +22,15 @@ export async function useEnhance(composition: Ref<CompositionGetResponse>, slug:
         .parameterType(CANVAS_CONTENTFUL_PARAMETER_TYPES,
           compose(
             contentfulEnhancer(),
-            contentfulModelConverter)
+            contentfulModelConverter
+          )
         )
         .parameterType(CANVAS_CONTENTFUL_QUERY_PARAMETER_TYPES,
           compose(
             contentfulQueryEnhancer(),
             contentfulModelConverter,
-            tutorialYouTubeEnhancer)
+            tutorialYouTubeEnhancer
+          )
         )
         .parameterType(CLOUDINARY_PARAMETER_TYPES, cloudinaryEnhancer())
         .parameterType(CANVAS_ALGOLIA_QUERY_PARAMETER_TYPES, algoliaQueryEnhancer()),

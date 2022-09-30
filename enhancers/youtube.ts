@@ -6,14 +6,9 @@ export const getVideoMeta = async (id: string, withComments: boolean) => {
 }
 
 export const tutorialYouTubeEnhancer = async ({ component, parameter }) => {
-  if (component.type !== 'tutorialList') {
-    return parameter.value
-  }
-
   const enhanceYouTubeTutorials = async () => {
     const result = await Promise.all(parameter.value.map(async (tutorial) => {
       const videoMeta = await getVideoMeta(tutorial.videoId, component.parameters?.withComments?.value || false)
-
       return {
         ...tutorial,
         ...videoMeta
