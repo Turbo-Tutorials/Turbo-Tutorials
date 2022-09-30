@@ -2,28 +2,23 @@ import manifestJson from './lib/context/context-manifest.json';
 import type { ManifestV2 } from '@uniformdev/context';
 
 export default defineNuxtConfig({
+  nitro: {
+    prerender: {
+      crawlLinks: true,
+      routes: ['/']
+    }
+  },
   modules: [
     '@nuxtjs/tailwindcss',
     '@uniformdev/uniform-nuxt',
     '@nuxtjs/robots',
     //'vue-plausible'
   ],
-  // routes: {
-  // 	'/': { prerender: true },
-  // 	'/tutorials/**': { static: true }
-  // },
   robots: {
     UserAgent: '*',
     Disallow: '',
     Sitemap: (req) => `https://${req.headers.host}/sitemap.xml`
   },
-  // plausible: {
-  // 	domain: process.env.PLAUSIBLE_DOMAIN,
-  // 	trackLocalhost: false,
-  // 	hashMode: false,
-  // 	enableAutoPageviews: true,
-  // 	enableAutoOutboundTracking: false
-  // },
   uniform: {
     projectId: process.env.UNIFORM_PROJECT_ID,
     readOnlyApiKey: process.env.UNIFORM_API_KEY,
@@ -46,5 +41,12 @@ export default defineNuxtConfig({
     compilerOptions: {
       isCustomElement: tag => ['lite-youtube'].includes(tag)
     }
-  }
+  },
+  // plausible: {
+  // 	domain: process.env.PLAUSIBLE_DOMAIN,
+  // 	trackLocalhost: false,
+  // 	hashMode: false,
+  // 	enableAutoPageviews: true,
+  // 	enableAutoOutboundTracking: false
+  // },
 })

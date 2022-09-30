@@ -1,12 +1,9 @@
 {
   "private": true,
   "scripts": {
-    "build": "run-s context:manifest pull:enrichments tubro:build",
-    "dev": "run-s context:manifest pull:enrichments tubro:dev",
+    "build": "yarn run context:manifest && node enrichments.mjs && nuxt build",
+    "dev": "yarn run context:manifest && node enrichments.mjs && nuxt dev",
     "generate": "nuxt generate",
-    "tubro:dev": "nuxt dev",
-    "tubro:build": "nuxt build",
-    "tubro:generate": "nuxt generate",
     "context:manifest": "uniform context manifest download --output ./lib/context/context-manifest.json",
     "pull": "run-s pull:components pull:compositions",
     "pull:compositions": "uniform presentation composition pull ./data/canvas/compositions",
@@ -41,7 +38,7 @@
     "dotenv": "^16.0.3",
     "draft-convert": "^2.1.13",
     "duration-fns": "^3.0.1",
-    "node-fetch": "^3.2.10",
+    "isomorphic-unfetch": "^3.1.0",
     "node-fetch-native": "^0.1.7",
     "npm-run-all": "^4.1.5",
     "nuxt": "3.0.0-rc.11",

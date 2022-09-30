@@ -37,7 +37,7 @@ export default defineEventHandler(async (event: H3Event) => {
 
   const video = {
     ...tutorial,
-    ...videoMeta
+    ...videoMeta as object
   }
 
   const comments = video.comments
@@ -116,6 +116,7 @@ export default defineEventHandler(async (event: H3Event) => {
   await enhance({
     composition,
     enhancers,
+    context: { preview: false }
   });
 
   return composition

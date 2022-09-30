@@ -15,7 +15,6 @@ import {
 export async function useEnhance(composition: Ref<CompositionGetResponse>, slug: string) {
   const { data, pending, error } = await useAsyncData(`composition-enhancer-${slug}`, async () => {
     const compositionClone = { ...composition.value.composition }
-
     await enhance({
       composition: compositionClone,
       enhancers: new EnhancerBuilder()
