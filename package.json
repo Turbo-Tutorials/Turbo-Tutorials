@@ -3,7 +3,7 @@
   "scripts": {
     "build": "run-s context:manifest pull:enrichments tubro:build",
     "dev": "run-s context:manifest pull:enrichments tubro:dev",
-    "generate": "run-s context:manifest pull:enrichments tubro:generate",
+    "generate": "nuxt generate",
     "tubro:dev": "nuxt dev",
     "tubro:build": "nuxt build",
     "tubro:generate": "nuxt generate",
