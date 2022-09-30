@@ -1,32 +1,32 @@
 export const getVideoMeta = async (id: string, withComments: boolean) => {
-  // const url = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : process.env.BASE_URL
-  // const result = await fetch(`${url}/api/video?videoId=${id}&withComments=${withComments}`)
-  // const res = await result.json();
-  // return res
-
-  // res:
-  // {
-  //   meta: { 
-  //     duration: '3:13', 
-  //     views: 1, 
-  //     likes: 0, 
-  //     comments: 0 
-  //   },
-  //   comments: []
-  // }
-
-  return new Promise(resolve => {
-    resolve({
-      meta: {
-        duration: "0:00",
-        views: 1,
-        likes: 1,
-        comments: 0
-      },
-      comments: []
-    });
-  });
+  const url = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : process.env.BASE_URL
+  const result = await fetch(`${url}/api/video?videoId=${id}&withComments=${withComments}`)
+  const res = await result.json();
+  return res
 }
+// res:
+// {
+//   meta: { 
+//     duration: '3:13', 
+//     views: 1, 
+//     likes: 0, 
+//     comments: 0 
+//   },
+//   comments: []
+// }
+
+// return new Promise(resolve => {
+//   resolve({
+//     meta: {
+//       duration: "0:00",
+//       views: 1,
+//       likes: 1,
+//       comments: 0
+//     },
+//     comments: []
+//   });
+// });
+//}
 
 export const tutorialYouTubeEnhancer = async ({ component, parameter }) => {
   const enhanceYouTubeTutorials = async () => {
