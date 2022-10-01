@@ -2093,11 +2093,6 @@ domutils@^2.8.0:
     domelementtype "^2.2.0"
     domhandler "^4.2.0"
 
-donutty@^2.3.1:
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/donutty/-/donutty-2.3.1.tgz#85169649bfdd3029bfd46d3469b871e1d6d7fbcc"
-  integrity sha512-N4QcKsL6aiwq8MTG25+G9HNeHuFqs8VmrvFs1ownJ7ODRGUNc785XzCVJp8Bwrj0GODfSvMXAXWCgkLKcwTFaw==
-
 dot-prop@^7.2.0:
   version "7.2.0"
   resolved "https://registry.yarnpkg.com/dot-prop/-/dot-prop-7.2.0.tgz#468172a3529779814d21a779c1ba2f6d76609809"

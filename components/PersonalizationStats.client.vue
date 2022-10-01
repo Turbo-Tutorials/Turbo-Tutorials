@@ -5,7 +5,7 @@ useHead({
   script: [
     {
       hid: "donutty",
-      src: "node_modules/donutty/dist/donutty.min.js",
+      src: "https://cdn.jsdelivr.net/npm/donutty@2.3.1/dist/donutty.min.js",
       defer: true,
     },
   ],
