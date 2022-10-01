@@ -83,6 +83,10 @@ const video = computed(() => props.component.data.video);
             <li v-if="video.meta.comments">
               {{ video.meta.comments }} comments
             </li>
+            <li v-if="video.meta.likes">
+              {{ video.meta.likes }}
+              {{ video.meta.likes === 1 ? "like" : "likes" }}
+            </li>
           </ul>
         </section>
       </figcaption>

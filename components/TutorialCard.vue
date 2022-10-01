@@ -72,17 +72,7 @@ defineProps<Tutorial>();
           class="fancy-image"
         />
       </nuxt-link>
-      <div v-if="meta" class="absolute left-1 bottom-1 space-x-1 text-sm">
-        <span v-if="meta.duration" class="bg-black bg-opacity-50 px-1">{{
-          meta.duration
-        }}</span>
-        <span v-if="meta.views" class="bg-black bg-opacity-50 px-1"
-          >{{ meta.views }} {{ meta.views === 1 ? "view" : "views" }}</span
-        >
-        <span v-if="meta.comments" class="bg-black bg-opacity-50 px-1"
-          >{{ meta.comments }} comments</span
-        >
-      </div>
+      <AtomsVideoMeta :video-id="videoId" />
     </div>
     <article>
       <h3 class="text-xl font-bold mb-1 md:line-clamp-2" v-if="title">
