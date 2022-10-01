@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 const scores = usePersonalizationScores();
-
 useHead({
   script: [
     {
@@ -13,7 +12,7 @@ useHead({
 </script>
 
 <template>
-  <ul class="grid grid-cols-3 gap-8">
+  <ul v-if="scores.length > 0" class="grid grid-cols-3 gap-8">
     <li v-for="score in scores" :key="score.value" class="relative block">
       <p class="text-center font-bold text-xl mb-2">{{ score.category }}</p>
       <div
@@ -35,4 +34,10 @@ useHead({
       <p class="text-center relative -top-[2rem]">{{ score.value }}</p>
     </li>
   </ul>
+  <div v-else>
+    <AtomsLeTitle as="h4" lines="Couldn't find a Turbo profile yet" />
+    <p class="max-w-3xl text-xl">
+      Start watching some Turbo's! We'll optimize the content to your liking!
+    </p>
+  </div>
 </template>
