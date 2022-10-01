@@ -14,24 +14,30 @@ function getCategoryIdByCategory(category: string) {
 }
 
 export async function usePersonalization(options: {
-  interests: string,
-  complexity: string
+  interests: {
+    interest: string;
+    strength: number
+  },
+  complexity: {
+    value: string,
+    strength: number
+  }
 }) {
-  const { $useUniformContext } = useNuxtApp();
-  const { context } = $useUniformContext();
+  const { $useUniformContext } = useNuxtApp()
+  const { context } = $useUniformContext()
 
-  const enrichments = options.interests.split(",").map((interest) => {
+  const enrichments = options.interests.interest.split(",").map((interest) => {
     return {
-      str: 1,
+      str: options.interests.strength,
       cat: getCategoryIdByCategory('Interest'),
       key: getEnrichmentIdByTag(interest, 'Interest'),
     };
   });
 
   const complexity = {
-    str: 1,
+    str: options.complexity.strength,
     cat: getCategoryIdByCategory('Complexity'),
-    key: getEnrichmentIdByTag(options.complexity.toLowerCase(), 'Complexity'),
+    key: getEnrichmentIdByTag(options.complexity.value.toLowerCase(), 'Complexity'),
   }
 
   enrichments.push(complexity)

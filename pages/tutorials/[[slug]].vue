@@ -14,8 +14,14 @@ if (!composition.value) {
 }
 
 usePersonalization({
-  interests: composition.value.data?.selectedTags as string,
-  complexity: composition.value.data.complexity as string,
+  interests: {
+    interest: composition.value.data?.selectedTags as string,
+    strength: 1,
+  },
+  complexity: {
+    value: composition.value.data.complexity as string,
+    strength: 1,
+  },
 });
 
 usePageMeta({

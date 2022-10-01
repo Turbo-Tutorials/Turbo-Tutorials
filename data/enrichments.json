@@ -24,14 +24,6 @@
     "cap": 100,
     "values": [
       {
-        "id": "3",
-        "value": "fetch"
-      },
-      {
-        "id": "4",
-        "value": "head"
-      },
-      {
         "id": "2",
         "value": "nuxt3"
       },

@@ -9,7 +9,7 @@ import TtTitle from './TtTitle.vue';
 import TtVideo from './TtVideo.vue';
 import TtComments from './TtComments.vue';
 import TtSimilar from './TtSimilar.vue';
-// import Talks from './Talks.vue';
+import PersonalizationStatus from './PersonalizationStatus.vue';
 
 const mapping = {
   richtext: Richtext,
@@ -20,7 +20,7 @@ const mapping = {
   ttVideo: TtVideo,
   ttComments: TtComments,
   ttSimilar: TtSimilar,
-  // talks: Talks,
+  personalizationStatus: PersonalizationStatus,
 };
 
 export function resolveRenderer(componentInstance: ComponentInstance) {
