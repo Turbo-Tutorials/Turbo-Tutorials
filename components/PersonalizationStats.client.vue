@@ -1,44 +1,93 @@
 <script lang="ts" setup>
-function hashCode(str: string) {
-  let hash = 0;
-  for (var i = 0; i < str.length; i++) {
-    hash = str.charCodeAt(i) + ((hash << 5) - hash);
-  }
-  return hash;
-}
-
-function pickColor(str: string) {
-  return `hsl(${hashCode(str) % 360}, 100%, 50%)`;
-}
-
 function parseScores() {
+  const chartOptions = {
+    plotOptions: {
+      radar: {
+        polygons: {
+          strokeColor: "#fefefe",
+          fill: {
+            colors: ["rgba(37,106,209,0.3)"],
+          },
+        },
+      },
+    },
+    tooltip: {
+      enabled: false,
+    },
+    stroke: {
+      show: true,
+      width: 2,
+      colors: ["#d1258c"],
+      dashArray: 0,
+    },
+    fill: {
+      opacity: 0.8,
+      type: "solid",
+    },
+    colors: ["#d1258c"],
+    yaxis: {
+      show: false,
+    },
+    markers: {
+      size: 0,
+    },
+    chart: {
+      foreColor: "#fff",
+      type: "radar",
+      toolbar: {
+        show: false,
+      },
+      animations: {
+        enabled: false,
+      },
+    },
+  };
+
   const scores = usePersonalizationScores();
 
-  if (scores.length === 0) {
-    return {
-      interests: false,
-      complexity: false,
-    };
-  }
-
-  const interestValues = scores.filter((c) => c.category === "Interest");
-  const complexityValues = scores.filter((c) => c.category === "Complexity");
-
-  const interests = {
-    cap: interestValues[0].cap,
-    label: interestValues[0].category,
-    values: interestValues,
+  const interestOptions = {
+    ...chartOptions,
+    xaxis: {
+      categories: scores.radars.interests.names,
+      labels: {
+        style: {
+          colors: ["#fff", "#fff", "#fff", "#fff", "#fff"],
+          fontSize: "14px",
+          fontFamily: "Lato, sans-serif",
+          fontWeight: 700,
+        },
+      },
+    },
   };
 
-  const complexity = {
-    cap: complexityValues[0].cap,
-    label: complexityValues[0].category,
-    values: complexityValues,
+  const interestSeries = [{ data: scores.radars.interests.scores }];
+
+  const complexityOptions = {
+    ...chartOptions,
+    xaxis: {
+      categories: scores.radars.complexity.names,
+      labels: {
+        style: {
+          colors: ["#fff", "#fff", "#fff", "#fff", "#fff"],
+          fontSize: "14px",
+          fontFamily: "Lato, sans-serif",
+          fontWeight: 700,
+        },
+      },
+    },
   };
+
+  const complexitySeries = [{ data: scores.radars.complexity.scores }];
 
   return {
-    interests,
-    complexity,
+    interest: {
+      options: interestOptions,
+      series: interestSeries,
+    },
+    complexity: {
+      options: complexityOptions,
+      series: complexitySeries,
+    },
   };
 }
 
@@ -46,70 +95,57 @@ const { $useUniformContext } = useNuxtApp();
 const { context } = $useUniformContext();
 const scores = ref(parseScores());
 
+const showGraphs = computed(() => {
+  const interestHasScore = scores.value.interest.series[0].data.find(
+    (score) => score > 0
+  );
+
+  const complexityHasScore = scores.value.complexity.series[0].data.find(
+    (score) => score > 0
+  );
+
+  if (interestHasScore || complexityHasScore) {
+    return true;
+  } else {
+    return false;
+  }
+});
+
 async function forgetMe() {
   await context.forget(true);
   scores.value = parseScores();
 }
-
-const interestDonut = ref({});
-const complexityDonut = ref({});
-
-if (scores.value.interests) {
-  interestDonut.value = {
-    size: 160,
-    sections: scores.value.interests.values.map((val) => {
-      return {
-        label: val.value,
-        value: val.score,
-        color: pickColor(val.value),
-      };
-    }),
-    thickness: 40,
-    hasLegend: true,
-    foreground: "rgba(37, 106, 209, 1)",
-    background: "rgba(24, 51, 87, 1)",
-    total: scores.value.interests?.cap || 100,
-    legendPlacement: "bottom",
-  };
-}
-
-if (scores.value.complexity) {
-  complexityDonut.value = {
-    size: 160,
-    sections: scores.value.complexity.values.map((val) => {
-      return {
-        label: val.value,
-        value: val.score,
-        color: pickColor(val.value),
-      };
-    }),
-    thickness: 40,
-    hasLegend: true,
-    foreground: "rgba(37, 106, 209, 1)",
-    background: "rgba(24, 51, 87, 1)",
-    total: scores.value.complexity?.cap || 100,
-    legendPlacement: "bottom",
-  };
-}
 </script>
 
 <template>
-  <div v-if="scores.interests || scores.complexity">
-    <div class="grid grid-cols-2 gap-8 mb-4">
-      <vc-donut v-bind="interestDonut">{{ scores.interests.label }}</vc-donut>
-      <vc-donut v-bind="complexityDonut">{{
-        scores.complexity.label
-      }}</vc-donut>
-    </div>
-    <p>
-      Not entirly happy with your profile? Click
-      <button @click="forgetMe">forget me</button> to start over.
-    </p>
+  <div class="grid grid-col-1 md:grid-cols-2 gap-8 mb-4" v-if="showGraphs">
+    <figure>
+      <figcaption class="text-center font-bold text-xl uppercase">
+        Interest
+      </figcaption>
+      <apexchart
+        class="relative left-[15px]"
+        height="400"
+        :options="scores.interest.options"
+        :series="scores.interest.series"
+      />
+    </figure>
+    <figure>
+      <figcaption class="text-center font-bold text-xl uppercase">
+        Complexity
+      </figcaption>
+      <apexchart
+        class="relative left-[15px]"
+        height="400"
+        :options="scores.complexity.options"
+        :series="scores.complexity.series"
+      />
+    </figure>
   </div>
 
   <div v-else>
-    <AtomsLeTitle as="h3" lines="You don't have a profile yet" />
-    <p class="max-w-3xl text-xl">
+    <AtomsLeTitle as="h4" lines="You don't have a profile yet" />
+    <p class="max-w-4xl text-xl">
       Start watching some Turbo's! We'll create you a profile to optimize the
       content to your liking!
     </p>

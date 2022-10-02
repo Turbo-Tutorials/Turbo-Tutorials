@@ -21,14 +21,10 @@ const description = computed(
 
 <template>
   <div class="bg-lblue max-w-[1440px] mx-auto p-8 mb-16">
-    <div class="flex flex-col lg:flex-row">
-      <div class="lg:pr-6 w-full md:w-2/4">
-        <AtomsLeTitle v-if="title" :as="titleType" :lines="title" />
-        <p v-html="description" v-if="description" class="max-w-3xl text-xl" />
-      </div>
-      <div class="lg:pl-6 w-full md:w-2/4">
-        <PersonalizationStats />
-      </div>
+    <div class="mb-12">
+      <AtomsLeTitle v-if="title" :as="titleType" :lines="title" />
+      <p v-html="description" v-if="description" class="max-w-4xl text-xl" />
     </div>
+    <PersonalizationStats />
   </div>
 </template>

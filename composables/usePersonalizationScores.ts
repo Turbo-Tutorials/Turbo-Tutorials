@@ -1,35 +1,39 @@
 import enrichmentsMap from '../data/enrichments.json'
 
-function getCategoryForScore(score: string) {
-  const cat = score.split("_")[0]
-  return enrichmentsMap.find(enrichment => enrichment.id === String(cat)).name
-}
+function getRadarsforEnrichment(enrichments: any, enrichment: string) {
+  const category = enrichments.find(cat => cat.name === enrichment)
+  const names = category.values.map(value => value.value)
+  const scores = category.values.map(value => value.score)
 
-function getCapForScore(score: string) {
-  const cat = score.split("_")[0]
-  return enrichmentsMap.find(enrichment => enrichment.id === String(cat)).cap
-}
-
-function getValueForScore(score: string) {
-  const cat = score.split("_")[0]
-  const val = score.split("_")[1]
-  const category = enrichmentsMap.find(enrichment => enrichment.id === String(cat))
-  return category.values.find(value => value.id === String(val)).value
+  return {
+    names,
+    scores
+  }
 }
 
 export function usePersonalizationScores() {
   const { $uniformContext } = useNuxtApp()
   const { scores } = $uniformContext
-  const result = []
 
-  for (const score in scores) {
-    result.push({
-      category: getCategoryForScore(score),
-      value: getValueForScore(score),
-      score: scores[score],
-      cap: getCapForScore(score)
+  const enrichments = enrichmentsMap.map(enrichment => {
+    const enrichmentId = enrichment.id
+
+    const values = enrichment.values.map(value => {
+      const valueId = value.id
+      value.score = scores[`${enrichmentId}_${valueId}`] || 0
+
+      return value
     })
-  }
 
-  return result
+    enrichment.values = values
+    return enrichment
+  })
+
+  return {
+    enrichments,
+    radars: {
+      interests: getRadarsforEnrichment(enrichments, 'Interest'),
+      complexity: getRadarsforEnrichment(enrichments, 'Complexity'),
+    }
+  }
 }

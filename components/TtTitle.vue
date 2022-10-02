@@ -8,6 +8,13 @@ const props = defineProps<{
 }>();
 
 const title = computed(() => props.component.data?.title || false);
+const complexity = computed(() =>
+  props.component.data?.complexity.toLowerCase()
+);
+const tags = computed(() => {
+  return props.component.data?.selectedTags.replace(/,/g, ", ");
+});
+
 const crumbs = computed(() => {
   const route = useRoute();
   const pathArray = route.path.split("/");
@@ -74,6 +81,10 @@ const crumbs = computed(() => {
       </li>
     </ol>
     <AtomsLeTitle v-if="title" as="h1" :lines="title" :uppercase="false" />
+    <p class="text-grey">
+      Personalizing for interest: {{ tags }} and complexity: {{ complexity }}.
+      Manage your <a href="#">personalisation profile</a>.
+    </p>
   </div>
 </template>
 
