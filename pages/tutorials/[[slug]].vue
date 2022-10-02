@@ -33,6 +33,10 @@ usePageMeta({
   }`,
   structuredData: composition.value.data.metadata?.structuredData,
 });
+
+if (!process.server) {
+  useSetVideoWatched(composition.value.data?.videoId as string);
+}
 </script>
 <template>
   <main class="max-w-[1440px] mx-auto pt-36 md:pt-48">

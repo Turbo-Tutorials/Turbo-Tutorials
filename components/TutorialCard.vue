@@ -73,6 +73,7 @@ defineProps<Tutorial>();
         />
       </nuxt-link>
       <AtomsVideoMeta :video-id="videoId" />
+      <AtomsVideoWatched :video-id="videoId" />
     </div>
     <article>
       <h3 class="text-xl font-bold mb-1 md:line-clamp-2" v-if="title">
