@@ -45,8 +45,10 @@ if (!process.server) {
       v-if="composition"
       :data="composition"
       :resolve-renderer="resolveRenderer"
+      behaviorTracking="onLoad"
     >
       <SlotContent name="content" />
     </Composition>
+    <GlobalFooter />
   </main>
 </template>

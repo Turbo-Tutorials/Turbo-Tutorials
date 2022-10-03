@@ -18,6 +18,7 @@ export default defineNuxtConfig({
     apiKey: process.env.ALGOLIA_SEARCH_API_KEY,
     applicationId: process.env.ALGOLIA_ID,
     lite: true,
+    recommend: true,
     instantSearch: {
       theme: 'reset'
     }

@@ -10,6 +10,16 @@ import TtVideo from './TtVideo.vue';
 import TtComments from './TtComments.vue';
 import TtSimilar from './TtSimilar.vue';
 import PersonalizationStatus from './PersonalizationStatus.vue';
+import SearchWrapper from './SearchWrapper.vue';
+
+import Searchbox from './Searchbox.vue';
+import SearchClearRefinements from './SearchClearRefinements.vue';
+import SearchMenu from './SearchMenu.vue';
+import SearchStats from './SearchStats.vue';
+import SearchCurrentRefinements from './SearchCurrentRefinements.vue';
+import SearchResults from './SearchResults.vue';
+
+
 
 const mapping = {
   richtext: Richtext,
@@ -21,6 +31,14 @@ const mapping = {
   ttComments: TtComments,
   ttSimilar: TtSimilar,
   personalizationStatus: PersonalizationStatus,
+
+  searchwrapper: SearchWrapper,
+  searchbox: Searchbox,
+  searchClearRefinements: SearchClearRefinements,
+  searchMenu: SearchMenu,
+  searchStats: SearchStats,
+  searchCurrentRefinements: SearchCurrentRefinements,
+  searchResults: SearchResults
 };
 
 export function resolveRenderer(componentInstance: ComponentInstance) {

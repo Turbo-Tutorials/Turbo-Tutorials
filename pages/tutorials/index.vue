@@ -1,37 +1,43 @@
-<script setup>
-import {
-  AisInstantSearch,
-  AisSearchBox,
-  AisHits,
-  AisRefinementList,
-  AisClearRefinements,
-} from "vue-instantsearch/vue3/es/index.js";
+<script setup lang="ts">
+import { resolveRenderer } from "../../components/componentMapping";
 
-const indexName = ref("turbo_tutorials");
-const algolia = useAlgoliaRef();
+const route = useRoute();
+const { $useComposition } = useNuxtApp();
+const slug = "/tutorials";
+const { data } = await $useComposition({ slug });
+
+if (!data.value) {
+  throw createError({ statusCode: 404, statusMessage: "Page Not Found" });
+}
+
+const { data: composition } = await useEnhance(data, slug as string);
+const title = composition.value?.parameters?.title?.value || "No Title";
+const description = composition.value?.parameters?.description?.value || "";
+const image = composition.value?.parameters?.image;
+
+usePageMeta({
+  title: title as string,
+  description: description as string,
+  slug: route.params.slug as string,
+  image:
+    (image?.value[0]?.baseurl.replace(
+      "image/upload/",
+      "image/upload/w_1200,"
+    ) as string) || "",
+});
 </script>
 
 <template>
   <main class="max-w-[1440px] mx-auto pt-36 md:pt-48">
     <GlobalHeader />
-
-    <client-only>
-      <ais-instant-search :index-name="indexName" :search-client="algolia">
-        <ais-search-box />
-        <ais-clear-refinements />
-        <ais-refinement-list attribute="tags" />
-        <ais-refinement-list attribute="complexity" />
-        <ais-hits
-          :class-names="{
-            'ais-Hits-list': 'grid grid-cols-1 gap-8 md:grid-cols-3',
-          }"
-        >
-          <template v-slot:item="{ item }">
-            <TutorialCard v-bind="item" />
-          </template>
-        </ais-hits>
-      </ais-instant-search>
-    </client-only>
+    <Composition
+      v-if="composition"
+      :data="composition"
+      :resolve-renderer="resolveRenderer"
+      behaviorTracking="onLoad"
+    >
+      <SlotContent name="content" />
+    </Composition>
     <GlobalFooter />
   </main>
 </template>
