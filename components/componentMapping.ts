@@ -13,10 +13,10 @@ import PersonalizationStatus from './PersonalizationStatus.vue';
 
 import SearchWrapper from './SearchWrapper.vue';
 import Searchbox from './SearchBox.vue';
-import SearchClearRefinements from './searchClearRefinements.vue';
+import SearchClearRefinements from './SearchClearRefinements.vue';
 import SearchMenu from './SearchMenu.vue';
 import SearchStats from './searchStats.vue';
-import SearchCurrentRefinements from './SearchCurrentRefinements.vue';
+import SearchCurrentRefinements from './searchCurrentRefinements.vue';
 import SearchResults from './searchResults.vue';
 
 const mapping = {
