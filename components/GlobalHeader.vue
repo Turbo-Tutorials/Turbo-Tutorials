@@ -37,7 +37,7 @@
           <nuxt-link to="/">HOME</nuxt-link>
         </li>
         <li>
-          <a href="#">TURBO TUTORIALS</a>
+          <nuxt-link to="/tutorials">ALL TUTORIALS</nuxt-link>
         </li>
         <li>
           <a href="#">ABOUT</a>

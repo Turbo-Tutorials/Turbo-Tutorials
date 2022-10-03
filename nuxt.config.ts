@@ -12,8 +12,16 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@uniformdev/uniform-nuxt',
     '@nuxtjs/robots',
-    //'vue-plausible'
+    '@nuxtjs/algolia'
   ],
+  algolia: {
+    apiKey: process.env.ALGOLIA_SEARCH_API_KEY,
+    applicationId: process.env.ALGOLIA_ID,
+    lite: true,
+    instantSearch: {
+      theme: 'reset'
+    }
+  },
   robots: {
     UserAgent: '*',
     Disallow: '',
@@ -34,7 +42,7 @@ export default defineNuxtConfig({
       youTubeKey: process.env.YOUTUBE_KEY,
       algoliaId: process.env.ALGOLIA_ID,
       algoliaSearchApi: process.env.ALGOLIA_SEARCH_API_KEY,
-      algoliaIndex: process.env.ALGOLIA_INDEX
+      algoliaIndex: process.env.ALGOLIA_INDEX,
     },
   },
   vue: {
