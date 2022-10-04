@@ -92,7 +92,7 @@ defineProps<Tutorial>();
         <li v-if="tags" v-for="tag in tags" class="uppercase text-sm">
           <nuxt-link
             class="text-grey text-sm"
-            :to="`/tutorials?turbo_tutorials[refinementList][tags]=${tag}`"
+            :to="`/tutorials?turbo_tutorials[refinementList][tags][0]=${tag}`"
             >{{ tag }}</nuxt-link
           >
         </li>
