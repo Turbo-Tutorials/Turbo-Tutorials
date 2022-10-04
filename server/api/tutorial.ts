@@ -10,7 +10,6 @@ import {
 
 import { getContentfulClient, enhanceContentfulItem } from "../../enhancers/helpers"
 import { getVideoMeta } from "../../enhancers/youtube"
-import { P } from '~~/dist/_nuxt/entry.7ba8a21a';
 
 export default defineEventHandler(async (event: H3Event) => {
   const { slug } = useQuery(event)

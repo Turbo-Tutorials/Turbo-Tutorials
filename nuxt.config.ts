@@ -51,6 +51,18 @@ export default defineNuxtConfig({
       isCustomElement: tag => ['lite-youtube'].includes(tag)
     }
   },
+  // build: {
+  //   transpile: [
+  //     'contentful',
+  //   ],
+  // },
+  // vite: {
+  //   optimizeDeps: {
+  //     include: [
+  //       'contentful',
+  //     ]
+  //   },
+  // }
   // plausible: {
   // 	domain: process.env.PLAUSIBLE_DOMAIN,
   // 	trackLocalhost: false,

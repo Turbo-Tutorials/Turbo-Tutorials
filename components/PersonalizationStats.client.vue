@@ -91,8 +91,8 @@ function parseScores() {
   };
 }
 
-const { $useUniformContext } = useNuxtApp();
-const { context } = $useUniformContext();
+const { $useUniformContext: useUniformContext } = useNuxtApp();
+const { context } = useUniformContext();
 const scores = ref(parseScores());
 
 const showGraphs = computed(() => {

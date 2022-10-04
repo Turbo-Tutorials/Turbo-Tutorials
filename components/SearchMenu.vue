@@ -7,7 +7,5 @@ const attribute = computed(
 );
 </script>
 <template>
-  <client-only>
-    <ais-menu :attribute="attribute" v-if="attribute" class="mb-4" />
-  </client-only>
+  <ais-menu :attribute="attribute" v-if="attribute" class="mb-4" />
 </template>

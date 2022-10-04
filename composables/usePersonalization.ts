@@ -23,8 +23,8 @@ export async function usePersonalization(options: {
     strength: number
   }
 }) {
-  const { $useUniformContext } = useNuxtApp()
-  const { context } = $useUniformContext()
+  const { $useUniformContext: useUniformContext } = useNuxtApp();
+  const { context } = useUniformContext()
 
   const enrichments = options.interests.interest.split(",").map((interest) => {
     return {
