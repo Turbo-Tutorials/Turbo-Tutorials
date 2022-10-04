@@ -52,7 +52,10 @@ const video = computed(() => props.component.data.video);
           </p>
           <ul class="flex space-x-2">
             <li class="uppercase" v-for="tag in video.tags" :key="tag">
-              <a href="#">{{ tag }}</a>
+              <nuxt-link
+                :to="`/tutorials?turbo_tutorials[menu][tags]=${tag}`"
+                >{{ tag }}</nuxt-link
+              >
             </li>
           </ul>
         </section>

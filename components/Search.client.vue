@@ -21,7 +21,7 @@ const routing = {
     :search-client="algolia"
     :routing="routing"
   >
-    <div class="flex flex-col lg:flex-row p-4">
+    <div class="flex flex-col lg:flex-row p-4 mb-12">
       <div class="lg:pr-4 w-full md:w-1/6">
         <SlotContent name="sidebar" />
       </div>

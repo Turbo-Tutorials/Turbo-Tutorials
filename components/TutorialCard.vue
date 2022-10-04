@@ -90,8 +90,11 @@ defineProps<Tutorial>();
       />
       <ul class="flex space-x-3">
         <li v-if="tags" v-for="tag in tags" class="uppercase text-sm">
-          <!-- <nuxt-link class="text-grey" :to="`/tag/${tag}`">{{ tag }}</nuxt-link> -->
-          <a class="text-grey" href="#">{{ tag }}</a>
+          <nuxt-link
+            class="text-grey text-sm"
+            :to="`/tutorials?turbo_tutorials[menu][tags]=${tag}`"
+            >{{ tag }}</nuxt-link
+          >
         </li>
       </ul>
     </article>
