@@ -20,7 +20,7 @@ const description = computed(
 </script>
 
 <template>
-  <div class="bg-lblue max-w-[1440px] mx-auto p-8 mb-16">
+  <div class="bg-lblue max-w-[1440px] mx-auto p-8 pb-4 mb-16">
     <div class="mb-12">
       <AtomsLeTitle v-if="title" :as="titleType" :lines="title" />
       <p v-html="description" v-if="description" class="max-w-4xl text-xl" />

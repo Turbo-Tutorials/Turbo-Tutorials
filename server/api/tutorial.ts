@@ -33,7 +33,7 @@ export default defineEventHandler(async (event: H3Event) => {
   });
 
   const tutorial = enhanceContentfulItem(tutorials.items[0]);
-  const videoMeta = await getVideoMeta(tutorial.videoId, true)
+  const videoMeta = await getVideoMeta(tutorial.videoId, false)
 
   const video = {
     ...tutorial,
@@ -95,7 +95,6 @@ export default defineEventHandler(async (event: H3Event) => {
         return {
           videoId: video.videoId,
           meta: video.meta,
-          comments
         }
 
       })

@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+const { bus, emit } = useEventBus();
+
 function parseScores() {
   const chartOptions = {
     plotOptions: {
@@ -114,12 +116,20 @@ const showGraphs = computed(() => {
 async function forgetMe() {
   await context.forget(true);
   scores.value = parseScores();
+  emit("ResetEnrichment");
 }
+
+watch(
+  () => bus.value.get("EnrichmentsUpdated"),
+  () => {
+    scores.value = parseScores();
+  }
+);
 </script>
 
 <template>
-  <div class="grid grid-col-1 md:grid-cols-2 gap-8 mb-4" v-if="showGraphs">
-    <figure>
+  <div class="grid grid-col-1 md:grid-cols-2 mb-4">
+    <figure class="relative">
       <figcaption class="text-center font-bold text-xl uppercase">
         Interest
       </figcaption>
@@ -129,6 +139,16 @@ async function forgetMe() {
         :options="scores.interest.options"
         :series="scores.interest.series"
       />
+      <div class="relative -top-28 text-white mx-auto w-2/4">
+        <p
+          class="bg-black py-2 px-3 fancy-image uppercase table mb-4 font-bold text-sm"
+        >
+          Create your own Interest profile
+        </p>
+        <AtomsEnrichmentSlider enrichment="Interest" value="nuxt3" />
+        <AtomsEnrichmentSlider enrichment="Interest" value="vue3" />
+        <AtomsEnrichmentSlider enrichment="Interest" value="data-fetching" />
+      </div>
     </figure>
     <figure>
       <figcaption class="text-center font-bold text-xl uppercase">
@@ -140,14 +160,24 @@ async function forgetMe() {
         :options="scores.complexity.options"
         :series="scores.complexity.series"
       />
+      <div class="relative -top-28 text-white mx-auto w-2/4">
+        <p
+          class="bg-black py-2 px-3 fancy-image uppercase table mb-4 font-bold text-sm"
+        >
+          Create your own Complexity profile
+        </p>
+        <AtomsEnrichmentSlider enrichment="Complexity" value="easy" />
+        <AtomsEnrichmentSlider enrichment="Complexity" value="intermediate" />
+        <AtomsEnrichmentSlider enrichment="Complexity" value="complex" />
+      </div>
     </figure>
-  </div>
 
-  <div v-else>
-    <AtomsLeTitle as="h4" lines="You don't have a profile yet" />
-    <p class="max-w-4xl text-xl">
-      Start watching some Turbo's! We'll create you a profile to optimize the
-      content to your liking!
+    <p v-if="showGraphs" class="p-4 bg-blue">
+      Want to start fresh?<br />Click
+      <button @click="forgetMe">forget me</button> to reset all
+      personalization.<br />
+      It's advised to <button @click="forgetMe">reset</button> your
+      personalization profile before using these sliders.
     </p>
   </div>
 </template>

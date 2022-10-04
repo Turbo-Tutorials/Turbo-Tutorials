@@ -2,7 +2,7 @@
   {
     "id": "2",
     "name": "Complexity",
-    "cap": 100,
+    "cap": 20,
     "values": [
       {
         "id": "3",
@@ -21,7 +21,7 @@
   {
     "id": "1",
     "name": "Interest",
-    "cap": 100,
+    "cap": 20,
     "values": [
       {
         "id": "3",
