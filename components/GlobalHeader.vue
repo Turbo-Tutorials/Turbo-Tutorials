@@ -40,13 +40,18 @@
           <nuxt-link to="/tutorials">ALL TUTORIALS</nuxt-link>
         </li>
         <li>
-          <a href="#">ABOUT</a>
+          <nuxt-link to="/about" rel="noopener">ABOUT</nuxt-link>
         </li>
         <li>
-          <a href="#">BECOME A SPONSOR</a>
+          <nuxt-link to="/sponsor" rel="noopener">BECOME A SPONSOR</nuxt-link>
         </li>
         <li>
-          <a href="#">WATCH ON YOUTUBE</a>
+          <a
+            href="https://youtube.com/timbenniks"
+            target="_blank"
+            rel="noopener"
+            >WATCH ON YOUTUBE</a
+          >
         </li>
       </ul>
 

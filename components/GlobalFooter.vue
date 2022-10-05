@@ -6,26 +6,37 @@
       <ul
         class="md:self-center space-y-2 mb-6 md:mb-0 text-center md:text-left"
       >
-        <li><nuxt-link to="/tutorials">All tutorials</nuxt-link></li>
         <li>
-          <nuxt-link to="/personalization-profile"
+          <nuxt-link to="/tutorials" rel="noopener">All tutorials</nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/personalization-profile" rel="noopener"
             >Personalization profile</nuxt-link
           >
         </li>
-        <li><a href="#">Watch on YouTube</a></li>
+        <li>
+          <a
+            href="https://youtube.com/timbenniks"
+            target="_blank"
+            rel="noopener"
+            >Watch on YouTube</a
+          >
+        </li>
       </ul>
       <ul
         class="md:self-center space-y-2 mb-6 md:mb-0 text-center md:text-left"
       >
-        <li><a href="#">About</a></li>
-        <li><a href="#">Become a sponsor</a></li>
-        <li><a href="#">PWYW</a></li>
+        <li><nuxt-link to="/about" rel="noopener">About</nuxt-link></li>
+        <li>
+          <nuxt-link to="/sponsor" rel="noopener">Become a sponsor</nuxt-link>
+        </li>
+        <li><nuxt-link to="/pwyw" rel="noopener">PWYW</nuxt-link></li>
       </ul>
       <ul
         class="md:self-center space-y-2 mb-6 md:mb-0 text-center md:text-left"
       >
-        <li><a href="#">Privacy</a></li>
-        <li><a href="#">Cookies</a></li>
+        <li><nuxt-link to="/privacy" rel="noopener">Privacy</nuxt-link></li>
+        <li><nuxt-link to="/cookies" rel="noopener">Cookies</nuxt-link></li>
         <li class="inline-flex space-x-2">
           <AtomsLeIcon url="https://twitter.com/timbenniks" icon="twitter" />
           <AtomsLeIcon url="https://youtube.com/timbenniks" icon="youtube" />

@@ -1,4 +1,5 @@
 import { H3Event } from 'h3';
+import algoliasearch from 'algoliasearch';
 
 import {
   EnhancerBuilder,
@@ -40,9 +41,22 @@ export default defineEventHandler(async (event: H3Event) => {
     ...videoMeta as object
   }
 
-  const comments = video.comments
-
   const selectedTags = tutorial.tags.join(",");
+
+  // const { public: { algoliaId, algoliaSearchApi, algoliaIndex } } = useRuntimeConfig()
+  // const algoliaClient = algoliasearch(
+  //   algoliaId,
+  //   algoliaSearchApi
+  // ).initIndex(algoliaIndex);
+
+  // const related = await algoliaClient.getRelatedProducts([
+  //   {
+  //     indexName: algoliaIndex,
+  //     objectID: tutorial.slug,
+  //   },
+  // ])
+
+  // console.log(related)
 
   const tutorialsForTagsData = await ctfClient.getEntries({
     content_type: "turboTutorial",
@@ -90,6 +104,7 @@ export default defineEventHandler(async (event: H3Event) => {
         return tutorial.title
       })
     )
+    // there are fetched client side
     .component("ttComments", (ttComments) =>
       ttComments.data("commentsData", () => {
         return {
