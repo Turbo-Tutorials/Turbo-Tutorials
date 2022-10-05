@@ -2,7 +2,6 @@ import manifestJson from './lib/context/context-manifest.json';
 import type { ManifestV2 } from '@uniformdev/context';
 
 export default defineNuxtConfig({
-  preset: 'netlify-builder',
   nitro: {
     prerender: {
       crawlLinks: true,
