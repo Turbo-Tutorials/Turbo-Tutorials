@@ -86,7 +86,6 @@ export default {
 header {
   backdrop-filter: blur(6px);
 }
-
 .nav-open {
   @apply absolute
           w-full
