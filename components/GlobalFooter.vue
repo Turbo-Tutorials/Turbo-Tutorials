@@ -7,7 +7,11 @@
         class="md:self-center space-y-2 mb-6 md:mb-0 text-center md:text-left"
       >
         <li><nuxt-link to="/tutorials">All tutorials</nuxt-link></li>
-        <li><a href="#">Personalization settings</a></li>
+        <li>
+          <nuxt-link to="/personalization-profile"
+            >Personalization profile</nuxt-link
+          >
+        </li>
         <li><a href="#">Watch on YouTube</a></li>
       </ul>
       <ul

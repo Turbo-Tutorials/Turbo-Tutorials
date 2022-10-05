@@ -18,6 +18,7 @@ import SearchMenu from './SearchMenu.vue';
 import SearchStats from './searchStats.vue';
 import SearchCurrentRefinements from './searchCurrentRefinements.vue';
 import SearchResults from './searchResults.vue';
+import TutorialsByBestMatch from './TutorialsByBestMatch.vue'
 
 const mapping = {
   richtext: Richtext,
@@ -29,6 +30,7 @@ const mapping = {
   ttComments: TtComments,
   ttSimilar: TtSimilar,
   personalizationStatus: PersonalizationStatus,
+  tutorialsByBestMatch: TutorialsByBestMatch,
 
   searchwrapper: SearchWrapper,
   searchbox: Searchbox,

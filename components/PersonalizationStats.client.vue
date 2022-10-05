@@ -1,4 +1,8 @@
 <script lang="ts" setup>
+defineProps<{
+  controls: boolean;
+}>();
+
 const { bus, emit } = useEventBus();
 
 function parseScores() {
@@ -53,7 +57,7 @@ function parseScores() {
       categories: scores.radars.interests.names,
       labels: {
         style: {
-          colors: ["#fff", "#fff", "#fff", "#fff", "#fff"],
+          colors: ["#fff", "#fff", "#fff", "#fff", "#fff", "#fff"],
           fontSize: "14px",
           fontFamily: "Lato, sans-serif",
           fontWeight: 700,
@@ -70,7 +74,7 @@ function parseScores() {
       categories: scores.radars.complexity.names,
       labels: {
         style: {
-          colors: ["#fff", "#fff", "#fff", "#fff", "#fff"],
+          colors: ["#fff", "#fff", "#fff", "#fff", "#fff", "#fff", "#fff"],
           fontSize: "14px",
           fontFamily: "Lato, sans-serif",
           fontWeight: 700,
@@ -96,22 +100,6 @@ function parseScores() {
 const { $useUniformContext: useUniformContext } = useNuxtApp();
 const { context } = useUniformContext();
 const scores = ref(parseScores());
-
-const showGraphs = computed(() => {
-  const interestHasScore = scores.value.interest.series[0].data.find(
-    (score) => score > 0
-  );
-
-  const complexityHasScore = scores.value.complexity.series[0].data.find(
-    (score) => score > 0
-  );
-
-  if (interestHasScore || complexityHasScore) {
-    return true;
-  } else {
-    return false;
-  }
-});
 
 async function forgetMe() {
   await context.forget(true);
@@ -139,15 +127,18 @@ watch(
         :options="scores.interest.options"
         :series="scores.interest.series"
       />
-      <div class="relative -top-28 text-white mx-auto w-2/4">
+      <div v-if="controls" class="relative -top-12 text-white mx-auto w-2/4">
         <p
           class="bg-black py-2 px-3 fancy-image uppercase table mb-4 font-bold text-sm"
         >
           Create your own Interest profile
         </p>
-        <AtomsEnrichmentSlider enrichment="Interest" value="nuxt3" />
-        <AtomsEnrichmentSlider enrichment="Interest" value="vue3" />
-        <AtomsEnrichmentSlider enrichment="Interest" value="data-fetching" />
+        <AtomsEnrichmentSlider
+          v-for="cat in scores.interest.options.xaxis.categories"
+          :key="cat"
+          enrichment="Interest"
+          :value="cat"
+        />
       </div>
     </figure>
     <figure>
@@ -160,19 +151,22 @@ watch(
         :options="scores.complexity.options"
         :series="scores.complexity.series"
       />
-      <div class="relative -top-28 text-white mx-auto w-2/4">
+      <div v-if="controls" class="relative -top-12 text-white mx-auto w-2/4">
         <p
           class="bg-black py-2 px-3 fancy-image uppercase table mb-4 font-bold text-sm"
         >
           Create your own Complexity profile
         </p>
-        <AtomsEnrichmentSlider enrichment="Complexity" value="easy" />
-        <AtomsEnrichmentSlider enrichment="Complexity" value="intermediate" />
-        <AtomsEnrichmentSlider enrichment="Complexity" value="complex" />
+        <AtomsEnrichmentSlider
+          v-for="cat in scores.complexity.options.xaxis.categories"
+          :key="cat"
+          enrichment="Complexity"
+          :value="cat"
+        />
       </div>
     </figure>
 
-    <p v-if="showGraphs" class="p-4 bg-blue">
+    <p v-if="controls" class="p-4 bg-blue">
       Want to start fresh?<br />Click
       <button @click="forgetMe">forget me</button> to reset all
       personalization.<br />

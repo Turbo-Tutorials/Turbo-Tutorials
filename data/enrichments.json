@@ -24,12 +24,24 @@
     "cap": 20,
     "values": [
       {
+        "id": "6",
+        "value": "css"
+      },
+      {
         "id": "3",
         "value": "data-fetching"
       },
       {
+        "id": "5",
+        "value": "nextjs"
+      },
+      {
         "id": "2",
         "value": "nuxt3"
+      },
+      {
+        "id": "4",
+        "value": "vanilla-js"
       },
       {
         "id": "1",

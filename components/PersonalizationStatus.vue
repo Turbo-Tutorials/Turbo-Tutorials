@@ -6,6 +6,7 @@ const props = defineProps<{
   title?: string;
   description?: string;
   titleType?: string;
+  variant?: string;
 }>();
 
 const title = computed(
@@ -17,14 +18,16 @@ const titleType = computed(
 const description = computed(
   () => props.component.parameters?.description?.value || false
 );
+
+const variant = computed(() => props.component.variant);
 </script>
 
 <template>
   <div class="bg-lblue max-w-[1440px] mx-auto p-8 pb-4 mb-16">
-    <div class="mb-12">
+    <div class="mb-16">
       <AtomsLeTitle v-if="title" :as="titleType" :lines="title" />
-      <p v-html="description" v-if="description" class="max-w-4xl text-xl" />
+      <div v-html="description" v-if="description" class="text-xl" />
     </div>
-    <PersonalizationStats />
+    <PersonalizationStats :controls="variant !== 'noControls'" />
   </div>
 </template>

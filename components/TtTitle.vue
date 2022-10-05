@@ -83,7 +83,10 @@ const crumbs = computed(() => {
     <AtomsLeTitle v-if="title" as="h1" :lines="title" :uppercase="false" />
     <p class="text-grey">
       Personalizing for interest: {{ tags }} and complexity: {{ complexity }}.
-      Manage your <a href="#">personalisation profile</a>.
+      Manage your
+      <nuxt-link to="/personalization-profile"
+        >personalisation profile</nuxt-link
+      >.
     </p>
   </div>
 </template>

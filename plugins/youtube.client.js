@@ -6,7 +6,7 @@ class LiteYTEmbed extends HTMLElement {
       (playBtnEl && playBtnEl.textContent.trim()) ||
       this.getAttribute("playlabel") ||
       "Play";
-    this.posterUrl = `https://i.ytimg.com/vi/${this.videoId}/maxresdefault.jpg`;
+    this.posterUrl = `https://res.cloudinary.com/dwfcofnrd/image/fetch/q_auto,f_auto/https://i.ytimg.com/vi/${this.videoId}/maxresdefault.jpg`;
     LiteYTEmbed.addPrefetch("preload", this.posterUrl, "image");
     this.style.backgroundImage = `url("${this.posterUrl}")`;
 

@@ -15,7 +15,7 @@ const video = computed(() => props.component.data.video);
 <template>
   <div class="max-w-[1440px] mx-auto px-4 xl:p-0 mb-16">
     <figure class="grid grid-cols-1 md:grid-cols-[2fr,1fr] gap-6 mb-4">
-      <section>
+      <section class="aspect-[16/9]">
         <lite-youtube
           params="modestbranding=2&rel=0"
           :videoid="video.videoId"
