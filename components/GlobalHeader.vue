@@ -30,14 +30,14 @@
         </div>
       </button>
       <ul
-        class="space-x-6 items-end mr-4 font-bold mb-4 hidden md:flex"
+        class="space-x-2 items-end mr-4 font-bold mb-4 hidden md:flex nav"
         :class="{ 'nav-open': open }"
       >
         <li>
           <nuxt-link to="/">HOME</nuxt-link>
         </li>
         <li>
-          <nuxt-link to="/tutorials">ALL TUTORIALS</nuxt-link>
+          <nuxt-link to="/tutorials">TUTORIALS</nuxt-link>
         </li>
         <li>
           <nuxt-link to="/about" rel="noopener">ABOUT</nuxt-link>
@@ -86,6 +86,7 @@ export default {
 header {
   backdrop-filter: blur(6px);
 }
+
 .nav-open {
   @apply absolute
           w-full
@@ -111,5 +112,13 @@ header {
         transition
         duration-500
         ease-in-out;
+}
+
+.nav li a {
+  @apply p-2;
+}
+
+.router-link-active {
+  @apply bg-black;
 }
 </style>

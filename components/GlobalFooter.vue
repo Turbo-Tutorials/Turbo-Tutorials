@@ -7,7 +7,7 @@
         class="md:self-center space-y-2 mb-6 md:mb-0 text-center md:text-left"
       >
         <li>
-          <nuxt-link to="/tutorials" rel="noopener">All tutorials</nuxt-link>
+          <nuxt-link to="/tutorials" rel="noopener">Tutorials</nuxt-link>
         </li>
         <li>
           <nuxt-link to="/personalization-profile" rel="noopener"
@@ -35,8 +35,11 @@
       <ul
         class="md:self-center space-y-2 mb-6 md:mb-0 text-center md:text-left"
       >
-        <li><nuxt-link to="/privacy" rel="noopener">Privacy</nuxt-link></li>
-        <li><nuxt-link to="/cookies" rel="noopener">Cookies</nuxt-link></li>
+        <li>
+          <nuxt-link to="/privacy-policy" rel="noopener"
+            >Privacy policy</nuxt-link
+          >
+        </li>
         <li class="inline-flex space-x-2">
           <AtomsLeIcon url="https://twitter.com/timbenniks" icon="twitter" />
           <AtomsLeIcon url="https://youtube.com/timbenniks" icon="youtube" />

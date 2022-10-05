@@ -23,7 +23,7 @@ const { data: videoData } = await useAsyncData(props.videoId, () =>
 
     <ul v-if="videoData.comments.length > 0">
       <li v-for="comment in videoData.comments" :key="comment.topLevel.date">
-        <article class="mb-4 bg-[#1a2f4b] p-4">
+        <article class="mb-2 bg-[#1a2f4b] p-4">
           <p class="font-bold">
             {{ comment.topLevel.author }}
           </p>
@@ -34,7 +34,7 @@ const { data: videoData } = await useAsyncData(props.videoId, () =>
           <li
             v-for="reply in comment.replies"
             :key="reply.date"
-            class="bg-[#1a3151] p-4 mb-4"
+            class="bg-[#1a3151] p-2 mb-2"
           >
             <p class="font-bold">
               {{ reply.author }}
