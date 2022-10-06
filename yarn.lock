@@ -962,6 +962,22 @@
     lodash.isequalwith "^4.4.0"
     yargs "^17.5.1"
 
+"@uniformdev/context-edge-netlify@^17.3.0":
+  version "17.3.0"
+  resolved "https://registry.yarnpkg.com/@uniformdev/context-edge-netlify/-/context-edge-netlify-17.3.0.tgz#55a625ae23760c80fe3adb1b63d051498de50c78"
+  integrity sha512-EAexvEuN83NE/lr70Evcj0O0hw7hUV8ExevWU5vmRDi7slExJs0WKEbxIDnLljvWsZSOR7QnqBzTGnYatm+hjg==
+  dependencies:
+    "@uniformdev/context" "^17.3.0"
+    "@uniformdev/context-edge" "^17.3.0"
+
+"@uniformdev/context-edge@^17.3.0":
+  version "17.3.0"
+  resolved "https://registry.yarnpkg.com/@uniformdev/context-edge/-/context-edge-17.3.0.tgz#3a2f05778c4febd480c3d83783fd33582bfe39cd"
+  integrity sha512-KxyfdzRNxlrtiMri5qFMdpT6YCKxponkEZbj8Z6NoDKquvKvPpvQrn0LOMM7E7WBaTGiBaADbZA8j0A+Hff+Nw==
+  dependencies:
+    "@uniformdev/context" "^17.3.0"
+    cookie "^0.5.0"
+
 "@uniformdev/context-vue@17.3.0":
   version "17.3.0"
   resolved "https://registry.yarnpkg.com/@uniformdev/context-vue/-/context-vue-17.3.0.tgz#9da480fcb607d48d9380e2043629ae6f1a391ef2"
@@ -1908,6 +1924,11 @@ cookie-es@^0.5.0:
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/cookie-es/-/cookie-es-0.5.0.tgz#a6ad89923e68c542fc9e760b07aefa5ab020d719"
   integrity sha512-RyZrFi6PNpBFbIaQjXDlFIhFVqV42QeKSZX1yQIl6ihImq6vcHNGMtqQ/QzY3RMPuYSkvsRwtnt5M9NeYxKt0g==
+
+cookie@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/cookie/-/cookie-0.5.0.tgz#d1f5d71adec6558c58f389987c366aa47e994f8b"
+  integrity sha512-YZ3GUyn/o8gfKJlnlX7g7xq4gyO6OSuhGPKaaGssGB2qgDUS0gPgtTvoyZLTt9Ab6dC4hfc9dV5arkvc/OCmrw==
 
 cookies@~0.8.0:
   version "0.8.0"

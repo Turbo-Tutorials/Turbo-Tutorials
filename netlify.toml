@@ -1,0 +1,8 @@
+[build]
+  command = 'NITRO_PRESET=netlify yarn build'
+  publish = 'dist'
+
+[[edge_functions]]
+  path = "/*"
+  function = "context-middleware"
+

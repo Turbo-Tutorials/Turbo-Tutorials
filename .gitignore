@@ -9,3 +9,5 @@ dist
 .vercel
 .DS_Store
 .env
+.npmrc
+.netlify
