@@ -19,8 +19,9 @@
             href="https://youtube.com/timbenniks"
             target="_blank"
             rel="noopener"
-            >Watch on YouTube</a
-          >
+            ><span>Watch on YouTube</span>
+            <AtomsIconLink class="inline w-4 h-4 ml-1"
+          /></a>
         </li>
       </ul>
       <ul

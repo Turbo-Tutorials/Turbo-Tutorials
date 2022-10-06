@@ -50,8 +50,10 @@
             href="https://youtube.com/timbenniks"
             target="_blank"
             rel="noopener"
-            >WATCH ON YOUTUBE</a
           >
+            <span>WATCH ON YOUTUBE</span>
+            <AtomsIconLink class="inline w-4 h-4 ml-1" />
+          </a>
         </li>
       </ul>
 

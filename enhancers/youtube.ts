@@ -1,6 +1,5 @@
 export const getVideoMeta = async (id: string, withComments: boolean) => {
-  const url = process.env.BASE_URL
-  const result = await $fetch(`${url}/api/video?videoId=${id}&withComments=${withComments}`)
+  const result = await $fetch(`/api/video?videoId=${id}&withComments=${withComments}`)
   return result
 }
 
