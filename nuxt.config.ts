@@ -14,7 +14,13 @@ export default defineNuxtConfig({
     '@uniformdev/uniform-nuxt',
     '@nuxtjs/algolia',
     '@funken-studio/sitemap-nuxt-3',
+    '@kevinmarrec/nuxt-pwa'
   ],
+  pwa: {
+    workbox: {
+      enabled: true
+    }
+  },
   sitemap: {
     hostname: 'https://turbo-tutorials.dev',
     cacheTime: 1,
