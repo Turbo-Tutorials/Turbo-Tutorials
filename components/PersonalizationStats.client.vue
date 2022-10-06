@@ -122,7 +122,7 @@ watch(
         Interest
       </figcaption>
       <apexchart
-        class="relative left-[15px]"
+        class="relative md:left-[15px]"
         height="400"
         :options="scores.interest.options"
         :series="scores.interest.series"
@@ -146,7 +146,7 @@ watch(
         Complexity
       </figcaption>
       <apexchart
-        class="relative left-[15px]"
+        class="relative md:left-[15px]"
         height="400"
         :options="scores.complexity.options"
         :series="scores.complexity.series"
