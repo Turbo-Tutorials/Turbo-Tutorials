@@ -1,5 +1,6 @@
 import manifestJson from './lib/context/context-manifest.json';
 import type { ManifestV2 } from '@uniformdev/context';
+import dynamicRoutes from './lib/dynamicRoutes'
 
 export default defineNuxtConfig({
   nitro: {
@@ -11,9 +12,14 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     '@uniformdev/uniform-nuxt',
-    '@nuxtjs/robots',
-    '@nuxtjs/algolia'
+    '@nuxtjs/algolia',
+    '@funken-studio/sitemap-nuxt-3',
   ],
+  sitemap: {
+    hostname: 'https://turbo-tutorials.dev',
+    cacheTime: 1,
+    routes: dynamicRoutes,
+  },
   algolia: {
     apiKey: process.env.ALGOLIA_SEARCH_API_KEY,
     applicationId: process.env.ALGOLIA_ID,
@@ -22,11 +28,6 @@ export default defineNuxtConfig({
     instantSearch: {
       theme: 'reset'
     }
-  },
-  robots: {
-    UserAgent: '*',
-    Disallow: '',
-    Sitemap: (req) => `https://${req.headers.host}/sitemap.xml`
   },
   uniform: {
     projectId: process.env.UNIFORM_PROJECT_ID,
@@ -51,18 +52,6 @@ export default defineNuxtConfig({
       isCustomElement: tag => ['lite-youtube'].includes(tag)
     }
   },
-  // build: {
-  //   transpile: [
-  //     'contentful',
-  //   ],
-  // },
-  // vite: {
-  //   optimizeDeps: {
-  //     include: [
-  //       'contentful',
-  //     ]
-  //   },
-  // }
   // plausible: {
   // 	domain: process.env.PLAUSIBLE_DOMAIN,
   // 	trackLocalhost: false,

@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "@contentful/rich-text-html-renderer": "^15.13.1",
+    "@funken-studio/sitemap-nuxt-3": "^3.2.0",
     "@nuxtjs/algolia": "^1.1.4",
     "@nuxtjs/robots": "^2.5.0",
     "@nuxtjs/tailwindcss": "^5.3.3",
