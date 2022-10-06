@@ -2,7 +2,7 @@
   {
     "id": "2",
     "name": "Complexity",
-    "cap": 20,
+    "cap": 50,
     "values": [
       {
         "id": "3",
@@ -21,27 +21,15 @@
   {
     "id": "1",
     "name": "Interest",
-    "cap": 20,
+    "cap": 50,
     "values": [
-      {
-        "id": "6",
-        "value": "css"
-      },
       {
         "id": "3",
         "value": "data-fetching"
       },
       {
-        "id": "5",
-        "value": "nextjs"
-      },
-      {
         "id": "2",
         "value": "nuxt3"
-      },
-      {
-        "id": "4",
-        "value": "vanilla-js"
       },
       {
         "id": "1",
