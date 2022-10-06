@@ -27,9 +27,9 @@
         class="md:self-center space-y-2 mb-6 md:mb-0 text-center md:text-left"
       >
         <li><nuxt-link to="/about" rel="noopener">About</nuxt-link></li>
-        <li>
+        <!-- <li>
           <nuxt-link to="/sponsor" rel="noopener">Become a sponsor</nuxt-link>
-        </li>
+        </li> -->
         <li><nuxt-link to="/pwyw" rel="noopener">PWYW</nuxt-link></li>
       </ul>
       <ul

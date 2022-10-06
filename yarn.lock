@@ -905,21 +905,21 @@
   dependencies:
     "@types/node" "*"
 
-"@uniformdev/canvas-algolia@^17.3.0":
+"@uniformdev/canvas-algolia@17.3.0":
   version "17.3.0"
   resolved "https://registry.yarnpkg.com/@uniformdev/canvas-algolia/-/canvas-algolia-17.3.0.tgz#caa3b5ac8988b8ea1fd672162a071ce9ccce01fb"
   integrity sha512-4JKOQ5SZjplEahY5ZkQuCTrVpqFy3yQ5oDV3dTBkkQkPREbEpzhHzjLXDh/BkhBhR7gZlceHrWBD1Y+DkQoOdg==
   dependencies:
     "@uniformdev/canvas" "^17.3.0"
 
-"@uniformdev/canvas-cloudinary@^17.1.0":
+"@uniformdev/canvas-cloudinary@17.1.0":
   version "17.1.0"
   resolved "https://registry.yarnpkg.com/@uniformdev/canvas-cloudinary/-/canvas-cloudinary-17.1.0.tgz#8a7d41fb53474b01e3a86ab309863f8c170e174d"
   integrity sha512-MOef20Xgar0DsbtkWtqy2YoHudmmNyDez1e5de3WWisuNp73wPp5i2jYP/XCoyRn8Q62IBNuFFSy3SSQQYx+Fg==
   dependencies:
     "@uniformdev/canvas" "17.1.0"
 
-"@uniformdev/canvas-contentful@^17.3.0":
+"@uniformdev/canvas-contentful@17.3.0":
   version "17.3.0"
   resolved "https://registry.yarnpkg.com/@uniformdev/canvas-contentful/-/canvas-contentful-17.3.0.tgz#c084a562f22776747475336a2428c35d2ce168ab"
   integrity sha512-fmVFu+Jb007fMRxlBdyBFQIKZFzfu6iUW7xbqxo/GO7BNfeYUB+cwUJnC9/xJmV6tDGjNeRPxmfPREY6w6V1aQ==

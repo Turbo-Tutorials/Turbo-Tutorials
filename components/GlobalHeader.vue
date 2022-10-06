@@ -43,7 +43,7 @@
           <nuxt-link to="/about" rel="noopener">ABOUT</nuxt-link>
         </li>
         <li>
-          <nuxt-link to="/sponsor" rel="noopener">BECOME A SPONSOR</nuxt-link>
+          <nuxt-link to="/pwyw" rel="noopener">PWYW</nuxt-link>
         </li>
         <li>
           <a
