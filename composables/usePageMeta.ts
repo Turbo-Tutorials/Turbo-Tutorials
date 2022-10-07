@@ -27,10 +27,10 @@ export const usePageMeta = ({ title, description, slug, image, structuredData }:
     link: [
       { rel: "icon", href: "/icon.png" },
       { rel: "apple-touch-icon", href: "/icon.png" },
-      // { rel: "manifest", href: "/manifest.json" },
       { rel: "preconnect", href: "https://res.cloudinary.com" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "canonical", href: `https://turbo-tutorials.dev/${slug === '/' ? '' : slug}` }
+      { rel: "canonical", href: `https://turbo-tutorials.dev/${slug === '/' ? '' : slug}` },
+      { rel: "alternate", type: "application/rss+xml", title: "RSS feed for Turbo Tutorials", href: "/rss.xml" }
     ],
     meta: [
       {
