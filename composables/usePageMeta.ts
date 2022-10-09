@@ -85,6 +85,10 @@ export const usePageMeta = ({ title, description, slug, image, structuredData }:
       {
         property: "twitter:title",
         content: title,
+      },
+      {
+        name: "google-site-verification",
+        content: "5vr9hLlKmd0RdQYqtnqzMOe-DdAMTRxhAy0y25EkXfQ"
       }
     ],
   });

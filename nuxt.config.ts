@@ -36,12 +36,20 @@ export default defineNuxtConfig({
       theme: 'reset'
     }
   },
+  plausible: {
+    domain: process.env.PLAUSIBLE_DOMAIN,
+    trackLocalhost: false,
+    hashMode: false,
+    enableAutoPageviews: true,
+    enableAutoOutboundTracking: false
+  },
   uniform: {
     projectId: process.env.UNIFORM_PROJECT_ID,
     readOnlyApiKey: process.env.UNIFORM_API_KEY,
     outputType: process.env.OUTPUT_TYPE,
     manifest: manifestJson as ManifestV2,
     defaultConsent: true,
+    uniformContextPath: ''
   },
   runtimeConfig: {
     public: {
@@ -58,12 +66,5 @@ export default defineNuxtConfig({
     compilerOptions: {
       isCustomElement: tag => ['lite-youtube'].includes(tag)
     }
-  },
-  plausible: {
-    domain: process.env.PLAUSIBLE_DOMAIN,
-    trackLocalhost: false,
-    hashMode: false,
-    enableAutoPageviews: true,
-    enableAutoOutboundTracking: false
-  },
+  }
 })
