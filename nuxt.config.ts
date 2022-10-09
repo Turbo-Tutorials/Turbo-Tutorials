@@ -14,7 +14,8 @@ export default defineNuxtConfig({
     '@uniformdev/uniform-nuxt',
     '@nuxtjs/algolia',
     '@funken-studio/sitemap-nuxt-3',
-    '@kevinmarrec/nuxt-pwa'
+    '@kevinmarrec/nuxt-pwa',
+    'vue-plausible'
   ],
   pwa: {
     workbox: {
@@ -30,7 +31,7 @@ export default defineNuxtConfig({
     apiKey: process.env.ALGOLIA_SEARCH_API_KEY,
     applicationId: process.env.ALGOLIA_ID,
     lite: true,
-    recommend: true,
+    recommend: false,
     instantSearch: {
       theme: 'reset'
     }
@@ -58,11 +59,11 @@ export default defineNuxtConfig({
       isCustomElement: tag => ['lite-youtube'].includes(tag)
     }
   },
-  // plausible: {
-  // 	domain: process.env.PLAUSIBLE_DOMAIN,
-  // 	trackLocalhost: false,
-  // 	hashMode: false,
-  // 	enableAutoPageviews: true,
-  // 	enableAutoOutboundTracking: false
-  // },
+  plausible: {
+    domain: process.env.PLAUSIBLE_DOMAIN,
+    trackLocalhost: false,
+    hashMode: false,
+    enableAutoPageviews: true,
+    enableAutoOutboundTracking: false
+  },
 })
