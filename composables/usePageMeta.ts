@@ -19,6 +19,11 @@ export const usePageMeta = ({ title, description, slug, image, structuredData }:
         hid: 'json-ld',
         children: JSON.stringify(structuredData),
         type: 'application/ld+json'
+      },
+      {
+        defer: "true",
+        dataDomain: "turbo-tutorials.dev",
+        src: "https://plausible.io/js/script.js"
       }
     ],
     style: [

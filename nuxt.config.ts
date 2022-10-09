@@ -1,6 +1,16 @@
-import manifestJson from './lib/context/context-manifest.json';
-import type { ManifestV2 } from '@uniformdev/context';
 import dynamicRoutes from './lib/dynamicRoutes'
+
+const modules = [
+  '@nuxtjs/tailwindcss',
+  '@uniformdev/uniform-nuxt',
+  '@nuxtjs/algolia',
+  '@funken-studio/sitemap-nuxt-3',
+  //'vue-plausible'
+]
+
+if (process.env.NODE_ENV !== 'development') {
+  modules.push('@kevinmarrec/nuxt-pwa',)
+}
 
 export default defineNuxtConfig({
   nitro: {
@@ -9,14 +19,7 @@ export default defineNuxtConfig({
       routes: ['/', '/tutorials', '/rss.xml']
     }
   },
-  modules: [
-    '@nuxtjs/tailwindcss',
-    '@uniformdev/uniform-nuxt',
-    '@nuxtjs/algolia',
-    '@funken-studio/sitemap-nuxt-3',
-    '@kevinmarrec/nuxt-pwa',
-    'vue-plausible'
-  ],
+  modules,
   pwa: {
     workbox: {
       enabled: true
@@ -36,20 +39,18 @@ export default defineNuxtConfig({
       theme: 'reset'
     }
   },
-  plausible: {
-    domain: process.env.PLAUSIBLE_DOMAIN,
-    trackLocalhost: false,
-    hashMode: false,
-    enableAutoPageviews: true,
-    enableAutoOutboundTracking: false
-  },
+  // plausible: {
+  //   domain: process.env.PLAUSIBLE_DOMAIN,
+  //   trackLocalhost: false,
+  //   hashMode: false,
+  //   enableAutoPageviews: true,
+  //   enableAutoOutboundTracking: false
+  // },
   uniform: {
     projectId: process.env.UNIFORM_PROJECT_ID,
     readOnlyApiKey: process.env.UNIFORM_API_KEY,
     outputType: process.env.OUTPUT_TYPE,
-    manifest: manifestJson as ManifestV2,
-    defaultConsent: true,
-    uniformContextPath: ''
+    uniformContextPath: './lib/context/uniformContext'
   },
   runtimeConfig: {
     public: {

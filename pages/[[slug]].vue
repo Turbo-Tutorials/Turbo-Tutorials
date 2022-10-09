@@ -4,7 +4,6 @@ import { resolveRenderer } from "../components/componentMapping";
 const route = useRoute();
 const { $useComposition } = useNuxtApp();
 const slug = route.params.slug ? `/${route.params.slug}` : "/";
-
 const { data } = await $useComposition({ slug });
 
 if (!data.value) {
