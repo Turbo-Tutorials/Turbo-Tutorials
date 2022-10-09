@@ -105,6 +105,7 @@ async function forgetMe() {
   await context.forget(true);
   scores.value = parseScores();
   emit("ResetEnrichment");
+  window.plausible("ResetEnrichment");
 }
 
 watch(

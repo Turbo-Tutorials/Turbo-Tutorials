@@ -19,6 +19,7 @@ import SearchStats from './searchStats.vue';
 import SearchCurrentRefinements from './searchCurrentRefinements.vue';
 import SearchResults from './searchResults.vue';
 import TutorialsByBestMatch from './TutorialsByBestMatch.vue'
+import SearchAutocomplete from './SearchAutocomplete.vue'
 
 const mapping = {
   richtext: Richtext,
@@ -32,13 +33,15 @@ const mapping = {
   personalizationStatus: PersonalizationStatus,
   tutorialsByBestMatch: TutorialsByBestMatch,
 
+
   searchwrapper: SearchWrapper,
   searchbox: Searchbox,
   searchClearRefinements: SearchClearRefinements,
   searchMenu: SearchMenu,
   searchStats: SearchStats,
   searchCurrentRefinements: SearchCurrentRefinements,
-  searchResults: SearchResults
+  searchResults: SearchResults,
+  search: SearchAutocomplete,
 };
 
 export function resolveRenderer(componentInstance: ComponentInstance) {

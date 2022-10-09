@@ -5,7 +5,6 @@ const modules = [
   '@uniformdev/uniform-nuxt',
   '@nuxtjs/algolia',
   '@funken-studio/sitemap-nuxt-3',
-  //'vue-plausible'
 ]
 
 if (process.env.NODE_ENV !== 'development') {
@@ -39,17 +38,10 @@ export default defineNuxtConfig({
       theme: 'reset'
     }
   },
-  // plausible: {
-  //   domain: process.env.PLAUSIBLE_DOMAIN,
-  //   trackLocalhost: false,
-  //   hashMode: false,
-  //   enableAutoPageviews: true,
-  //   enableAutoOutboundTracking: false
-  // },
   uniform: {
     projectId: process.env.UNIFORM_PROJECT_ID,
     readOnlyApiKey: process.env.UNIFORM_API_KEY,
-    outputType: process.env.OUTPUT_TYPE,
+    outputType: process.env.NODE_ENV === 'development' ? "standard" : "edge",
     uniformContextPath: './lib/context/uniformContext'
   },
   runtimeConfig: {

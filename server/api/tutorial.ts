@@ -43,6 +43,7 @@ export default defineEventHandler(async (event: H3Event) => {
 
   const selectedTags = tutorial.tags.join(",");
 
+  // Algolia recommend. Only possible when more than 10 tutorials
   // const { public: { algoliaId, algoliaSearchApi, algoliaIndex } } = useRuntimeConfig()
   // const algoliaClient = algoliasearch(
   //   algoliaId,
@@ -55,8 +56,6 @@ export default defineEventHandler(async (event: H3Event) => {
   //     objectID: tutorial.slug,
   //   },
   // ])
-
-  // console.log(related)
 
   const tutorialsForTagsData = await ctfClient.getEntries({
     content_type: "turboTutorial",
