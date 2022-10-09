@@ -47,13 +47,6 @@ export const enablePlausibleAnalytics = (options?: {
             is_control_group: result.control ? 1 : 0,
           }
         });
-
-        console.log('UniformPersonalization', {
-          props: {
-            label: result.variantIds.join(', '),
-            is_control_group: result.control ? 1 : 0,
-          }
-        })
       };
 
       // Handle emitting test results to GA4
@@ -70,13 +63,6 @@ export const enablePlausibleAnalytics = (options?: {
         }
 
         theWindow.plausible('UniformABTesting', {
-          props: {
-            name: result.name,
-            label: result.variantId ?? 'No Variant',
-          }
-        })
-
-        console.log('UniformABTesting', {
           props: {
             name: result.name,
             label: result.variantId ?? 'No Variant',
