@@ -43,6 +43,7 @@ export const enablePlausibleAnalytics = (options?: {
 
         theWindow.plausible('UniformPersonalization', {
           props: {
+            name: result.name,
             label: result.variantIds.join(', '),
             is_control_group: result.control ? 1 : 0,
           }
