@@ -15,13 +15,22 @@ const createUniformContext = (() => {
   const cookies = new Cookies();
   const uniformCookie = cookies.get(UNIFORM_DEFAULT_COOKIE_NAME)
 
+  const plugins = [
+    enableContextDevTools(),
+    enablePlausibleAnalytics()
+  ]
+
+  if (process.env.NODE_ENV === 'development') {
+    plugins.push(enableDebugConsoleLogDrain('debug'))
+  }
+
   const context = new Context({
     defaultConsent: true,
     manifest: manifest as ManifestV2,
     transitionStore: new CookieTransitionDataStore({
       serverCookieValue: uniformCookie,
     }),
-    plugins: [enableContextDevTools(), enableDebugConsoleLogDrain('debug'), enablePlausibleAnalytics()],
+    plugins,
   });
   return context
 })()

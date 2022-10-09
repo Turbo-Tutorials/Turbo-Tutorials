@@ -24,6 +24,12 @@ export const usePageMeta = ({ title, description, slug, image, structuredData }:
         defer: "true",
         dataDomain: "turbo-tutorials.dev",
         src: "https://plausible.io/js/script.js"
+      },
+      {
+        hid: 'plausible',
+        children: `window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }`,
+        type: 'text/javascript',
+        charset: 'utf-8'
       }
     ],
     style: [
