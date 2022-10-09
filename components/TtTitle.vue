@@ -68,7 +68,9 @@ const crumbs = computed(() => {
         itemtype="https://schema.org/ListItem"
       >
         <nuxt-link
-          :to="crumb.to.includes('/tag/') ? `/videos${crumb.to}` : crumb.to"
+          :to="
+            crumb.to.includes('/tutotials/') ? `/videos${crumb.to}/` : crumb.to
+          "
           itemtype="https://schema.org/Thing"
           itemprop="item"
         >
@@ -84,7 +86,7 @@ const crumbs = computed(() => {
     <p class="text-grey">
       Personalizing for interest: {{ tags }} and complexity: {{ complexity }}.
       Manage your
-      <nuxt-link to="/personalization-profile"
+      <nuxt-link to="/personalization-profile/"
         >personalisation profile</nuxt-link
       >.
     </p>

@@ -37,13 +37,13 @@
           <nuxt-link to="/">HOME</nuxt-link>
         </li>
         <li>
-          <nuxt-link to="/tutorials">TUTORIALS</nuxt-link>
+          <nuxt-link to="/tutorials/">TUTORIALS</nuxt-link>
         </li>
         <li>
-          <nuxt-link to="/about" rel="noopener">ABOUT</nuxt-link>
+          <nuxt-link to="/about/" rel="noopener">ABOUT</nuxt-link>
         </li>
         <li>
-          <nuxt-link to="/pwyw" rel="noopener">PWYW</nuxt-link>
+          <nuxt-link to="/pwyw/" rel="noopener">PWYW</nuxt-link>
         </li>
         <li>
           <a

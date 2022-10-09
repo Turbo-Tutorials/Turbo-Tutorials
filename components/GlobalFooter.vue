@@ -7,10 +7,10 @@
         class="md:self-center space-y-2 mb-6 md:mb-0 text-center md:text-left"
       >
         <li>
-          <nuxt-link to="/tutorials" rel="noopener">Tutorials</nuxt-link>
+          <nuxt-link to="/tutorials/" rel="noopener">Tutorials</nuxt-link>
         </li>
         <li>
-          <nuxt-link to="/personalization-profile" rel="noopener"
+          <nuxt-link to="/personalization-profile/" rel="noopener"
             >Personalization profile</nuxt-link
           >
         </li>
@@ -27,17 +27,17 @@
       <ul
         class="md:self-center space-y-2 mb-6 md:mb-0 text-center md:text-left"
       >
-        <li><nuxt-link to="/about" rel="noopener">About</nuxt-link></li>
+        <li><nuxt-link to="/about/" rel="noopener">About</nuxt-link></li>
         <!-- <li>
           <nuxt-link to="/sponsor" rel="noopener">Become a sponsor</nuxt-link>
         </li> -->
-        <li><nuxt-link to="/pwyw" rel="noopener">PWYW</nuxt-link></li>
+        <li><nuxt-link to="/pwyw/" rel="noopener">PWYW</nuxt-link></li>
       </ul>
       <ul
         class="md:self-center space-y-2 mb-6 md:mb-0 text-center md:text-left"
       >
         <li>
-          <nuxt-link to="/privacy-policy" rel="noopener"
+          <nuxt-link to="/privacy-policy/" rel="noopener"
             >Privacy policy</nuxt-link
           >
         </li>

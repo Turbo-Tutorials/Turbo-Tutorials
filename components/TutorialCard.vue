@@ -58,7 +58,7 @@ defineProps<Tutorial>();
       class="relative mb-2 aspect-[16/9]"
       :class="{ 'md:max-w-[280px] md:mr-4': small }"
     >
-      <nuxt-link :to="`/tutorials/${slug}`">
+      <nuxt-link :to="`/tutorials/${slug}/`">
         <AtomsImage
           v-if="poster"
           :alt="poster.alt"
@@ -78,7 +78,7 @@ defineProps<Tutorial>();
     <article>
       <h3 class="text-xl font-bold mb-1 md:line-clamp-2" v-if="title">
         <nuxt-link
-          :to="`/tutorials/${slug}`"
+          :to="`/tutorials/${slug}/`"
           :class="{ underline: small, 'no-underline': !small }"
           >{{ title }}</nuxt-link
         >
@@ -92,7 +92,7 @@ defineProps<Tutorial>();
         <li v-if="tags" v-for="tag in tags" class="uppercase text-sm">
           <nuxt-link
             class="text-grey text-sm"
-            :to="`/tutorials?turbo_tutorials[refinementList][tags][0]=${tag}`"
+            :to="`/tutorials/?turbo_tutorials[refinementList][tags][0]=${tag}`"
             >{{ tag }}</nuxt-link
           >
         </li>
