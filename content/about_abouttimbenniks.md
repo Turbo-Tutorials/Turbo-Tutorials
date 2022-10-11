@@ -1,7 +1,5 @@
 ---
-title: "abouttimbenniks"
-route: "/abouttimbenniks"
-type: "richtext"
+title: "About Tim Benniks"
 ---
 
 :le-title{lines="About Tim Benniks" as="h3"}

@@ -1,7 +1,5 @@
 ---
-title: "pwyw"
-route: "/pwyw"
-type: "richtext"
+title: "PWYW"
 ---
 
 :le-title{lines="Pay What You want" as="h1"}

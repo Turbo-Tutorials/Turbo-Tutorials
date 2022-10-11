@@ -1,7 +1,5 @@
 ---
-title: "analytics"
-route: "/analytics"
-type: "richtext"
+title: "Pricacy Policy - Analytics"
 ---
 
 :le-title{lines="Privacy Policy" as="h2"}

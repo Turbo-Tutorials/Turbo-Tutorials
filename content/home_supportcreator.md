@@ -1,7 +1,5 @@
 ---
-title: "supportcreator"
-route: "/supportcreator"
-type: "richtext"
+title: "Home - Support Creator"
 ---
 
 :le-title{lines="Support the creator_with PWYW" as="h3"}

@@ -1,7 +1,5 @@
 ---
-title: "intro"
-route: "/intro"
-type: "richtext"
+title: "Home - Intro"
 ---
 
 <section class="max-w-3xl text-xl">

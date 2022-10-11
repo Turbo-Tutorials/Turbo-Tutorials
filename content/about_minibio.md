@@ -1,7 +1,5 @@
 ---
-title: "minibio"
-route: "/minibio"
-type: "richtext"
+title: "About - Mini Bio"
 ---
 
 :le-title{lines="About Turbo Tutorials" as="h1"}

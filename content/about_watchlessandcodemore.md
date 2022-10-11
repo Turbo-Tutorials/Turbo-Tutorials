@@ -1,7 +1,5 @@
 ---
-title: "watchlessandcodemore"
-route: "/watchlessandcodemore"
-type: "richtext"
+title: "About - Watch less and code more"
 ---
 
 :le-title{lines="Turbo learning_watch less and code more" as="h3"}

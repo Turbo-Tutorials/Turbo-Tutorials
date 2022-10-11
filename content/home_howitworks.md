@@ -1,7 +1,5 @@
 ---
-title: "howitworks"
-route: "/howitworks"
-type: "richtext"
+title: "About -How It Works"
 ---
 
 :le-title{lines="How this website works" as="h4"}

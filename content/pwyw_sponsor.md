@@ -1,7 +1,5 @@
 ---
-title: "sponsor"
-route: "/sponsor"
-type: "richtext"
+title: "PWYW - Sponsor"
 ---
 
 :le-title{lines="Buy Tim a Coffee" as="h2"}

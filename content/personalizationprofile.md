@@ -1,7 +1,5 @@
 ---
-title: "personalizationprofile"
-route: "/personalizationprofile"
-type: "richtext"
+title: "Personalization profile"
 ---
 
 :le-title{lines="Turbo personalization" as="h1"}
