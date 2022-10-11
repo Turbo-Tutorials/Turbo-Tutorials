@@ -3,17 +3,8 @@ import type { ComponentInstance } from "@uniformdev/canvas";
 
 const props = defineProps<{
   component: ComponentInstance;
-  title?: string;
-  text?: string;
-  titleType?: string;
+  entry?: string;
 }>();
-
-const title = computed(
-  () => (props.component.parameters?.title?.value as string) || false
-);
-const titleType = computed(
-  () => (props.component.parameters?.titleType?.value as string) || "h3"
-);
 
 const entry = computed(() => {
   const res = props.component.parameters?.copy?.value.id;
@@ -32,11 +23,6 @@ const { data: richtext } = await useAsyncData(entry.value.toString(), () => {
 
 <template>
   <div class="max-w-[1440px] mx-auto px-4 xl:p-0 mb-12 rich-text">
-    <AtomsLeTitle v-if="title" :as="titleType" :lines="title" />
-    <ContentRenderer
-      v-if="richtext"
-      :value="richtext"
-      class="max-w-3xl text-xl"
-    />
+    <ContentRenderer v-if="richtext" :value="richtext" />
   </div>
 </template>
