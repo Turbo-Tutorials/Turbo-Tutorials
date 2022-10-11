@@ -15,6 +15,8 @@ const titleType = computed(
 );
 </script>
 <template>
-  <AtomsLeTitle v-if="title" :as="titleType" :lines="title" />
-  <Autocomplete />
+  <div class="px-4 lg:p-0">
+    <AtomsLeTitle v-if="title" :as="titleType" :lines="title" />
+    <Autocomplete />
+  </div>
 </template>

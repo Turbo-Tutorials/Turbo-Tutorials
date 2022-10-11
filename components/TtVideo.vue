@@ -33,7 +33,7 @@ const video = computed(() => props.component.data.video);
           <button class="underline pl-2 bg-none">Transcript</button>
         </div>
         <div
-          class="p-4 columns-2 bg-opacity-50 bg-black"
+          class="p-4 md:columns-2 bg-opacity-50 bg-black"
           v-show="transcriptShown"
           v-html="video.transcript"
         ></div>

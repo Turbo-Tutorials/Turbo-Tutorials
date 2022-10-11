@@ -10,7 +10,7 @@ const { data: videoData } = await useAsyncData(props.videoId, () =>
 </script>
 
 <template>
-  <div class="comments">
+  <div class="comments px-4 md:p-0">
     <AtomsLeTitle as="h4" :lines="`Comments (${videoData.meta.comments})`" />
     <p class="mb-4" v-if="videoData.comments.length > 0">
       <a
