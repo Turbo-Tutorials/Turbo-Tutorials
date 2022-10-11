@@ -16,7 +16,7 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       crawlLinks: true,
-      routes: ['/', '/tutorials', '/rss.xml']
+      routes: ['/', '/tutorials/', '/rss.xml']
     }
   },
   modules,

@@ -16,8 +16,8 @@ export default async (req: IncomingMessage, res: ServerResponse) => {
   });
 
   const routes = tutorials.items.map((tutorial) => {
-    return `/tutorials/${tutorial.fields.slug}`
+    return `/tutorials/${tutorial.fields.slug}/`
   })
 
-  return [...routes, '/', '/about', '/pwyw', '/personalization-profile', '/privacy-policy']
+  return [...routes, '/', '/about/', '/pwyw/', '/personalization-profile/', '/privacy-policy/']
 }
