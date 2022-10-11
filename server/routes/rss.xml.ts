@@ -6,7 +6,7 @@ export default defineEventHandler(async (event) => {
     title: 'Turbo Tutorials',
     generator: 'Turbo Tutorials',
     description: 'You can find short instructional videos at Turbo Tutorials that teach you the most common things in modern JavaScript and its meta frameworks.',
-    site_url: 'https://turbo-tutorials.dev',
+    site_url: 'https://turbo-tutorials.dev/',
     feed_url: `https://turbo-tutorials.dev/rss.xml`,
     image_url: 'https://res.cloudinary.com/dwfcofnrd/image/upload/w_1200,q_auto,f_auto/Turbo%20Tutorials/share-image.png',
     language: 'en',
@@ -20,7 +20,7 @@ export default defineEventHandler(async (event) => {
   const tutorials = tutorialData.items.map((tut) => {
     const tutorial = enhanceContentfulItem(tut)
     return {
-      url: `/tutorials/${tutorial.slug}`,
+      url: `/tutorials/${tutorial.slug}/`,
       title: tutorial.title,
       date: tutorial.publicationDate,
       description: tutorial.description,
@@ -32,7 +32,7 @@ export default defineEventHandler(async (event) => {
   tutorials.forEach(tutorial => {
     feed.item({
       title: tutorial.title ?? '-',
-      url: `https://turbo-tutorials.dev${tutorial.url}`,
+      url: `https://turbo-tutorials.dev${tutorial.url}/`,
       date: tutorial.date,
       description: tutorial.description,
       categories: tutorial.categories,

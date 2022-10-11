@@ -1,7 +1,5 @@
 # Nuxt 3 Minimal Starter
 
-https://www.algolia.com/doc/guides/managing-results/rules/merchandising-and-promoting/in-depth/optional-filters/
-
 Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
 
 ## Setup
