@@ -68,9 +68,7 @@ const crumbs = computed(() => {
         itemtype="https://schema.org/ListItem"
       >
         <nuxt-link
-          :to="
-            crumb.to.includes('/tutotials/') ? `/videos${crumb.to}/` : crumb.to
-          "
+          :to="crumb.to"
           itemtype="https://schema.org/Thing"
           itemprop="item"
         >

@@ -1,4 +1,5 @@
 import dynamicRoutes from './lib/dynamicRoutes'
+import staticRoutes from './data/routes.json'
 
 const modules = [
   '@nuxtjs/tailwindcss',
@@ -15,8 +16,8 @@ if (process.env.NODE_ENV !== 'development') {
 export default defineNuxtConfig({
   nitro: {
     prerender: {
-      crawlLinks: true,
-      routes: ['/', '/tutorials/', '/rss.xml']
+      crawlLinks: false,
+      routes: staticRoutes
     }
   },
   modules,

@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "build": "yarn run context:manifest && node enrichments.mjs && nuxt build",
+    "build": "yarn run context:manifest && node enrichments.mjs && node routes.mjs && nuxt build",
     "dev": "yarn run context:manifest && node enrichments.mjs && nuxt dev",
     "generate": "nuxt generate",
     "context:manifest": "uniform context manifest download --output ./lib/context/context-manifest.json",
