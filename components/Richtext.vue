@@ -14,12 +14,29 @@ const title = computed(
 const titleType = computed(
   () => (props.component.parameters?.titleType?.value as string) || "h3"
 );
-const text = computed(() => props.component.parameters?.text?.value || false);
+
+const entry = computed(() => {
+  const res = props.component.parameters?.copy?.value.id;
+
+  if (res) {
+    return res.split("content")[1].replace(".md", "");
+  } else {
+    return false;
+  }
+});
+
+const { data: richtext } = await useAsyncData(entry.value.toString(), () => {
+  return queryContent(`${entry.value}`).findOne();
+});
 </script>
 
 <template>
   <div class="max-w-[1440px] mx-auto px-4 xl:p-0 mb-12 rich-text">
     <AtomsLeTitle v-if="title" :as="titleType" :lines="title" />
-    <div v-html="text" v-if="text" class="max-w-3xl text-xl" />
+    <ContentRenderer
+      v-if="richtext"
+      :value="richtext"
+      class="max-w-3xl text-xl"
+    />
   </div>
 </template>
