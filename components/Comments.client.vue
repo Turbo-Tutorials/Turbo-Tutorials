@@ -4,15 +4,23 @@ const props = defineProps<{
   videoId: string;
 }>();
 
-// no cache for this one
-const { data: videoData } = await useAsyncData(() =>
+const { data: videoData, refresh } = await useAsyncData(props.videoId, () =>
   $fetch(`/api/video?videoId=${props.videoId}&withComments=true`)
 );
+
+function loadComments() {
+  refresh();
+}
 </script>
 
 <template>
   <div class="comments px-4 md:p-0 mb-8 md:mb-0">
+    <p class="mb-4 text-grey">
+      Don't see your comment?
+      <button @click="loadComments">Refresh the comments</button>.
+    </p>
     <AtomsLeTitle as="h4" :lines="`Comments (${videoData.meta.comments})`" />
+
     <p class="mb-4" v-if="videoData.comments.length > 0">
       <a
         target="_blank"
