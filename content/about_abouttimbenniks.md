@@ -2,7 +2,7 @@
 title: "About Tim Benniks"
 ---
 
-:le-title{lines="About Tim Benniks" as="h3"}
+:fancy-title{lines="About Tim Benniks" as="h3"}
 
 <section class="max-w-3xl text-xl">
   <p>

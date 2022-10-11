@@ -2,7 +2,7 @@
 title: "PWYW"
 ---
 
-:le-title{lines="Pay What You want" as="h1"}
+:fancy-title{lines="Pay What You want" as="h1"}
 
 <section class="max-w-3xl text-xl">
 <p><a href="https://en.wikipedia.org/wiki/Pay_what_you_want" rel="noopener" target="_blank">Pay what you want</a> (or PWYW) is a pricing strategy where buyers pay their desired amount for a given commodity. This amount can often include zero.</p>
