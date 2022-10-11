@@ -1,7 +1,6 @@
 ---
 title: "PWYW - Sponsor"
 ---
-
 <h2 class="text-3xl font-bold leading-none mb-4 md:text-5xl uppercase">
   <span class="inline-block bg-black p-2">
     <span class="flowing-title inline">Buy Tim a Coffee</span>
