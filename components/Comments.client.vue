@@ -4,13 +4,14 @@ const props = defineProps<{
   videoId: string;
 }>();
 
-const { data: videoData } = await useAsyncData(props.videoId, () =>
+// no cache for this one
+const { data: videoData } = await useAsyncData(() =>
   $fetch(`/api/video?videoId=${props.videoId}&withComments=true`)
 );
 </script>
 
 <template>
-  <div class="comments px-4 md:p-0">
+  <div class="comments px-4 md:p-0 mb-8 md:mb-0">
     <AtomsLeTitle as="h4" :lines="`Comments (${videoData.meta.comments})`" />
     <p class="mb-4" v-if="videoData.comments.length > 0">
       <a
