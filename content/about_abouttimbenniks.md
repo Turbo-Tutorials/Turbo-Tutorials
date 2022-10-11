@@ -1,12 +1,8 @@
 ---
-title: "About Tim Benniks"
+title: "About: Tim Benniks"
 ---
-<prose-h3 class="text-3xl font-bold leading-none mb-4 md:text-4xl uppercase">
-  <span class="inline-block bg-black p-2">
-    <span class="flowing-title inline">About Tim Benniks</span>
-  </span>
-</prose-h3>
 
+<le-title lines="About Tim Benniks" as="h3"></le-title>
 
 <section class="max-w-3xl text-xl">
   <p>

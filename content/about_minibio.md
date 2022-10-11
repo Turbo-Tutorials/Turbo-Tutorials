@@ -1,12 +1,8 @@
 ---
-title: "About - Mini Bio"
+title: "About: Mini Bio"
 ---
 
-<h3 class="text-3xl font-bold leading-none mb-4 md:text-4xl uppercase">
-  <span class="inline-block bg-black p-2">
-    <span class="flowing-title inline">Mini Bio</span>
-  </span>
-</h3>
+<le-title lines="Mini Bio" as="h3"></le-title>
 
 <section class="max-w-3xl text-xl">
 <p>Over the past 15 years, Tim has worked at various agencies in Amsterdam and Paris with global clients like Nike, Heineken, Google, Tommy Hilfiger, EA Games, CHANEL, L'Oréal, Procter & Gamble, Louis Vuitton, and Hermès.
