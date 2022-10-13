@@ -54,6 +54,10 @@
     @apply inline;
   }
 
+  .rich-text article {
+    @apply max-w-prose text-xl
+  }
+
   lite-youtube {
     position: relative;
     display: block;
