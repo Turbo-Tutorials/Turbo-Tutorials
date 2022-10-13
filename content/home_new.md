@@ -1,5 +1,5 @@
 ---
-title: "Home: Intro"
+title: "Home: new user"
 ---
 
 <le-title lines="hey, you seem to be new here" as="h3"></le-title>
@@ -18,4 +18,6 @@ title: "Home: Intro"
     <li>A server for serving your application in development, but also to support server-side rendering or API routes, Nuxt uses h3 for deployment versatility such as serverless, workers, Node.js and unmatched performance.</li>
     <li>A routing library to handle client-side navigation: vue-router.</li>
   </ul>
+
+  <p>Read more here in the Nuxt 3 <a href="https://v3.nuxtjs.org/getting-started/introduction/" target="_blank" rel="noopener">getting started guide</a>.</p>
 </article>
