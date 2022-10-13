@@ -13,7 +13,7 @@ defineProps<{
 async function setQuirk() {
   await context.update({
     quirks: {
-      coffeeClick: "yes",
+      coffeeClick: true,
     },
   });
 }

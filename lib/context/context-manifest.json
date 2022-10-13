@@ -8,6 +8,28 @@
         "2": {
           "cap": 50
         }
+      },
+      "sig": {
+        "hasClickedOnBmac": {
+          "str": 50,
+          "cap": 50,
+          "dur": "p",
+          "crit": {
+            "op": "&",
+            "type": "G",
+            "clauses": [
+              {
+                "key": "coffeeClick",
+                "type": "QK",
+                "match": {
+                  "cs": false,
+                  "op": "=",
+                  "rhs": "true"
+                }
+              }
+            ]
+          }
+        }
       }
     },
     "test": {}
