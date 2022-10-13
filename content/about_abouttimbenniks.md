@@ -2,7 +2,7 @@
 title: "About: Tim Benniks"
 ---
 
-<le-title lines="About Tim Benniks" as="h3"></le-title>
+<le-title lines="About Tim Benniks" as="h3"  variant="simple" :uppercase="false"></le-title>
 
 <article>
   <p>

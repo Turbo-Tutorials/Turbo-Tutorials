@@ -21,7 +21,12 @@ async function setQuirk() {
 
 <template>
   <div class="max-w-[1440px] mx-auto px-4 xl:p-0 mb-12 rich-text text-xl">
-    <AtomsLeTitle :as="titleType" :lines="title" />
+    <AtomsLeTitle
+      :as="titleType"
+      :lines="title"
+      variant="simple"
+      :uppercase="false"
+    />
     <p>
       This website is created and maintained by
       <a

@@ -47,7 +47,7 @@
   }
 
   .rich-text ul {
-    @apply list-disc list-inside
+    @apply list-disc list-outside ml-4
   }
 
   .rich-text ul li p {

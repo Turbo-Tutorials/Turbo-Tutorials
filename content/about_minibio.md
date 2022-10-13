@@ -2,7 +2,7 @@
 title: "About: Mini Bio"
 ---
 
-<le-title lines="Mini Bio" as="h3"></le-title>
+<le-title lines="Mini Bio" as="h3"  variant="simple" :uppercase="false"></le-title>
 
 <article>
 <p>Over the past 15 years, Tim has worked at various agencies in Amsterdam and Paris with global clients like Nike, Heineken, Google, Tommy Hilfiger, EA Games, CHANEL, L'Oréal, Procter & Gamble, Louis Vuitton, and Hermès.

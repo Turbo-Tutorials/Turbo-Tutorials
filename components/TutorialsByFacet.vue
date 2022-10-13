@@ -29,7 +29,13 @@ const variant = computed(() => props.component?.variant || false);
       'mb-16 md:mb-24': variant !== 'list',
     }"
   >
-    <AtomsLeTitle v-if="title" :as="titleType" :lines="title" />
+    <AtomsLeTitle
+      v-if="title"
+      :as="titleType"
+      :lines="title"
+      :variant="variant === 'list' ? 'simple' : 'default'"
+      :uppercase="variant === 'list' ? false : true"
+    />
     <p v-if="description" v-html="description" class="mb-4" />
 
     <section
