@@ -48,7 +48,7 @@ const variant = computed(() => {
   <div class="bg-lblue mb-24 two-column py-4 lg:p-6">
     <article class="pb-0 mb-8" v-if="title || description">
       <AtomsLeTitle v-if="title" :as="titleType" :lines="title" />
-      <p v-if="description" v-html="description" class="text-xl"></p>
+      <p v-if="description" v-html="description" class="max-w-prose text-xl" />
     </article>
 
     <div class="flex flex-col lg:flex-row">
