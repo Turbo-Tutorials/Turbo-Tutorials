@@ -20,6 +20,7 @@ import SearchCurrentRefinements from './searchCurrentRefinements.vue';
 import SearchResults from './searchResults.vue';
 import TutorialsByBestMatch from './TutorialsByBestMatch.vue'
 import SearchAutocomplete from './SearchAutocomplete.vue'
+import SupportCreator from './SupportCreator.vue'
 
 const mapping = {
   richtext: Richtext,
@@ -32,7 +33,7 @@ const mapping = {
   ttSimilar: TtSimilar,
   personalizationStatus: PersonalizationStatus,
   tutorialsByBestMatch: TutorialsByBestMatch,
-
+  supportCreator: SupportCreator,
 
   searchwrapper: SearchWrapper,
   searchbox: Searchbox,

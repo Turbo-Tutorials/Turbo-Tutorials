@@ -4,7 +4,6 @@ import type { ComponentInstance } from "@uniformdev/canvas";
 const props = defineProps<{
   component: ComponentInstance;
   entry?: string;
-  copy?: string;
 }>();
 
 const entry = computed(() => {
