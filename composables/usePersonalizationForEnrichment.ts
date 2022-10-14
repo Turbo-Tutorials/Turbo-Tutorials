@@ -3,6 +3,7 @@ import enrichmentsMap from '../data/enrichments.json'
 export function usePersonalizationForEnrichment(enrichment: string, value: string) {
   const { $uniformContext } = useNuxtApp()
   const { scores } = $uniformContext
+  delete scores['hasClickedOnBmac'];
 
   const enrichmentCategory = enrichmentsMap.find(enr => enr.name === enrichment)
   const enrichmentId = enrichmentCategory.id;

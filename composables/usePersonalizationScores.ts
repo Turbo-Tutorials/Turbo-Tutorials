@@ -14,6 +14,7 @@ function getRadarsforEnrichment(enrichments: any, enrichment: string) {
 export function usePersonalizationScores() {
   const { $uniformContext } = useNuxtApp()
   const { scores } = $uniformContext
+  delete scores['hasClickedOnBmac'];
 
   const enrichments = enrichmentsMap.map(enrichment => {
     const enrichmentId = enrichment.id

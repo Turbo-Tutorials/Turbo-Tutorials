@@ -16,6 +16,8 @@ export function usePersonalizationForAlgolia() {
   const { $uniformContext } = useNuxtApp()
   const { scores } = $uniformContext
 
+  delete scores['hasClickedOnBmac'];
+
   const res = []
   for (const enr in scores) {
     const cat = getCategoryForScore(enr)
