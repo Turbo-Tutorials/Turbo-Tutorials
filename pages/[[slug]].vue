@@ -1,5 +1,7 @@
 <script lang="ts" setup>
+import { createGunzip } from "zlib";
 import { resolveRenderer } from "../components/componentMapping";
+import enrichmentsMap from "../data/enrichments.json";
 
 const route = useRoute();
 const { $useComposition } = useNuxtApp();
@@ -24,6 +26,31 @@ usePageMeta({
       "image/upload/w_1200,"
     ) as string) || "",
 });
+
+const { $useUniformContext: useUniformContext } = useNuxtApp();
+const { context } = useUniformContext();
+
+async function setEnrichmentScoresToZero() {
+  const scores = usePersonalizationScores();
+  const enrichments = [];
+  scores.enrichments.forEach((category) => {
+    category.values.forEach((val) => {
+      if (val.score === 0) {
+        enrichments.push({
+          str: 0,
+          cat: category.id,
+          key: val.id,
+        });
+      }
+    });
+  });
+
+  await context.update({
+    enrichments,
+  });
+}
+
+setEnrichmentScoresToZero();
 </script>
 <template>
   <main class="max-w-[1440px] mx-auto pt-36 md:pt-48">

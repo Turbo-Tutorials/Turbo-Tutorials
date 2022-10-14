@@ -44,7 +44,6 @@ export default defineNuxtConfig({
     projectId: process.env.UNIFORM_PROJECT_ID,
     readOnlyApiKey: process.env.UNIFORM_API_KEY,
     outputType: process.env.NODE_ENV === 'development' ? "standard" : "edge",
-    //outputType: "standard",
     uniformContextPath: './lib/context/uniformContext'
   },
   runtimeConfig: {
