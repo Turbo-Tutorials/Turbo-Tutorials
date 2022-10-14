@@ -9,9 +9,9 @@ const modules = [
   '@funken-studio/sitemap-nuxt-3',
 ]
 
-// if (process.env.NODE_ENV !== 'development') {
-//   modules.push('@kevinmarrec/nuxt-pwa',)
-// }
+if (process.env.NODE_ENV !== 'development') {
+  modules.push('@kevinmarrec/nuxt-pwa',)
+}
 
 export default defineNuxtConfig({
   nitro: {
@@ -21,11 +21,11 @@ export default defineNuxtConfig({
     }
   },
   modules,
-  // pwa: {
-  //   workbox: {
-  //     enabled: true
-  //   }
-  // },
+  pwa: {
+    workbox: {
+      enabled: false
+    }
+  },
   sitemap: {
     hostname: 'https://turbo-tutorials.dev',
     cacheTime: 1,
