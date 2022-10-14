@@ -29,6 +29,46 @@
               }
             ]
           }
+        },
+        "jamstackconf": {
+          "str": 50,
+          "cap": 50,
+          "dur": "p",
+          "crit": {
+            "op": "&",
+            "type": "G",
+            "clauses": [
+              {
+                "type": "QS",
+                "match": {
+                  "cs": false,
+                  "op": "=",
+                  "rhs": "jamstackConf"
+                },
+                "queryName": "utm_campaign"
+              }
+            ]
+          }
+        },
+        "vueconftoronto": {
+          "str": 50,
+          "cap": 50,
+          "dur": "s",
+          "crit": {
+            "op": "&",
+            "type": "G",
+            "clauses": [
+              {
+                "type": "QS",
+                "match": {
+                  "cs": false,
+                  "op": "=",
+                  "rhs": "vueconf-toronto"
+                },
+                "queryName": "utm_campaign"
+              }
+            ]
+          }
         }
       }
     },

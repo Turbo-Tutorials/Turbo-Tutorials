@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import type { ComponentInstance } from "@uniformdev/canvas";
+import { simple } from "instantsearch.js/es/lib/stateMappings";
 
 const props = defineProps<{
   component: ComponentInstance;
@@ -25,7 +26,13 @@ const variant = computed(() => props.component.variant);
 <template>
   <div class="bg-lblue max-w-[1440px] mx-auto p-8 pb-4 mb-16">
     <div class="mb-16">
-      <AtomsLeTitle v-if="title" :as="titleType" :lines="title" />
+      <AtomsLeTitle
+        v-if="title"
+        :as="titleType"
+        :lines="title"
+        :uppercase="false"
+        variant="simple"
+      />
       <div v-html="description" v-if="description" class="text-xl" />
     </div>
     <PersonalizationStats :controls="variant !== 'noControls'" />

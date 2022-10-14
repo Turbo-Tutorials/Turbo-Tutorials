@@ -128,7 +128,7 @@ watch(
         :options="scores.interest.options"
         :series="scores.interest.series"
       />
-      <div v-if="controls" class="relative -top-12 text-white mx-auto w-2/4">
+      <div v-if="controls" class="relative -top-12 text-white mx-auto md:w-2/4">
         <p
           class="bg-black py-2 px-3 fancy-image uppercase table mb-4 font-bold text-sm"
         >
@@ -152,7 +152,7 @@ watch(
         :options="scores.complexity.options"
         :series="scores.complexity.series"
       />
-      <div v-if="controls" class="relative -top-12 text-white mx-auto w-2/4">
+      <div v-if="controls" class="relative -top-12 text-white mx-auto md:w-2/4">
         <p
           class="bg-black py-2 px-3 fancy-image uppercase table mb-4 font-bold text-sm"
         >

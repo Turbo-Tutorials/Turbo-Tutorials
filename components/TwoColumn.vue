@@ -46,13 +46,13 @@ const variant = computed(() => {
 
 <template>
   <div class="bg-lblue mb-24 two-column py-4 lg:p-6">
-    <article class="pb-0 mb-8" v-if="title || description">
+    <article class="px-4 mb-8" v-if="title || description">
       <AtomsLeTitle v-if="title" :as="titleType" :lines="title" />
       <p v-if="description" v-html="description" class="max-w-prose text-xl" />
     </article>
 
     <div class="flex flex-col lg:flex-row">
-      <div class="lg:pr-6" :class="variant.left">
+      <div class="pb-8 md:pb-0 lg:pr-6" :class="variant.left">
         <SlotContent name="columnA" />
       </div>
       <div class="lg:pl-6" :class="variant.right">
