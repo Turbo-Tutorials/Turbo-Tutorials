@@ -1,7 +1,5 @@
 <script lang="ts" setup>
-import { createGunzip } from "zlib";
 import { resolveRenderer } from "../components/componentMapping";
-import enrichmentsMap from "../data/enrichments.json";
 
 const route = useRoute();
 const { $useComposition } = useNuxtApp();
