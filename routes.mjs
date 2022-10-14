@@ -1,6 +1,6 @@
 import fs from "fs";
 import dotenv from "dotenv";
-import contentful from 'contentful'
+import contentful from "contentful";
 
 dotenv.config();
 
@@ -16,20 +16,26 @@ async function getRoutes() {
   });
 
   const routes = tutorials.items.map((tutorial) => {
-    return `/tutorials/${tutorial.fields.slug}/`
-  })
+    return `/tutorials/${tutorial.fields.slug}/`;
+  });
 
-  const result = ['/', '/about/', '/pwyw/', '/personalization-profile/', '/privacy-policy/', '/rss.xml', '/tutorials/', ...routes]
+  const result = [
+    "/",
+    "/tutorials/",
+    "/about/",
+    "/pwyw/",
+    "/personalization-profile/",
+    "/privacy-policy/",
+    "/rss.xml",
+    "/tutorials/",
+    ...routes,
+  ];
 
-  fs.writeFile(
-    "./data/routes.json",
-    JSON.stringify(result, "", 2),
-    (err) => {
-      if (err) {
-        console.error(err);
-      }
+  fs.writeFile("./data/routes.json", JSON.stringify(result, "", 2), (err) => {
+    if (err) {
+      console.error(err);
     }
-  );
+  });
 
   console.log("routes file written");
 }
