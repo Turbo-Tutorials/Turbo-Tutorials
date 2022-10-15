@@ -40,7 +40,6 @@
     "@uniformdev/cli": "17.3.0",
     "@uniformdev/context": "17.3.0",
     "@uniformdev/context-edge-netlify": "^17.3.0",
-    "@uniformdev/context-vue": "17.3.0",
     "@uniformdev/uniform-nuxt": "17.3.0",
     "algoliasearch": "^4.14.2",
     "apexcharts": "^3.35.5",

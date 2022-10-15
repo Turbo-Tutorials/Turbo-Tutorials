@@ -1220,7 +1220,7 @@
     "@uniformdev/context" "^17.3.0"
     cookie "^0.5.0"
 
-"@uniformdev/context-vue@17.3.0":
+"@uniformdev/context-vue@^17.3.0":
   version "17.3.0"
   resolved "https://registry.yarnpkg.com/@uniformdev/context-vue/-/context-vue-17.3.0.tgz#9da480fcb607d48d9380e2043629ae6f1a391ef2"
   integrity sha512-mOar1iTAudSMJz+IoRKrRvj29KarEX/vlF07S+kP6OIoNkQITIE2+Qm6dEYjTQkfgu9WHGumJlssgDddtLUi/Q==

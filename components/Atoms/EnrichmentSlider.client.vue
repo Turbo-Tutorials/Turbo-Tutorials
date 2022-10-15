@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useScores } from "@uniformDev/context-vue";
+import { useScores } from "@uniformdev/context-vue";
 
 const props = defineProps<{
   enrichment: string;
