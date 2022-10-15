@@ -31,7 +31,13 @@ export function usePersonalizationForAlgolia() {
     })
   }
 
-  return res.map((value) => {
-    return `${value.cat}:${value.value}<score=${value.score}>`;
-  });
+  const query = [];
+
+  res.forEach(value => {
+    if (value.score > 0) {
+      query.push(`${value.cat === 'Interest' ? 'tags' : 'complexity'}:${value.value}<score=${value.score}>`)
+    }
+  })
+
+  return query;
 }

@@ -3,8 +3,6 @@ defineProps<{
   controls: boolean;
 }>();
 
-const { bus, emit } = useEventBus();
-
 function parseScores() {
   const chartOptions = {
     plotOptions: {
@@ -103,17 +101,8 @@ const scores = ref(parseScores());
 
 async function forgetMe() {
   await context.forget(true);
-  scores.value = parseScores();
-  emit("ResetEnrichment");
   window.plausible("ResetEnrichment");
 }
-
-watch(
-  () => bus.value.get("EnrichmentsUpdated"),
-  () => {
-    scores.value = parseScores();
-  }
-);
 </script>
 
 <template>
@@ -128,19 +117,20 @@ watch(
         :options="scores.interest.options"
         :series="scores.interest.series"
       />
-      <div v-if="controls" class="relative -top-12 text-white mx-auto md:w-2/4">
+      <!-- <div v-if="controls" class="relative -top-12 text-white mx-auto md:w-2/4">
         <p
           class="bg-black py-2 px-3 fancy-image uppercase table mb-4 font-bold text-sm"
         >
           Create your own Interest profile
         </p>
+
         <AtomsEnrichmentSlider
           v-for="cat in scores.interest.options.xaxis.categories"
           :key="cat"
           enrichment="Interest"
           :value="cat"
         />
-      </div>
+      </div> -->
     </figure>
     <figure>
       <figcaption class="text-center font-bold text-xl uppercase">
@@ -152,7 +142,7 @@ watch(
         :options="scores.complexity.options"
         :series="scores.complexity.series"
       />
-      <div v-if="controls" class="relative -top-12 text-white mx-auto md:w-2/4">
+      <!-- <div v-if="controls" class="relative -top-12 text-white mx-auto md:w-2/4">
         <p
           class="bg-black py-2 px-3 fancy-image uppercase table mb-4 font-bold text-sm"
         >
@@ -164,15 +154,13 @@ watch(
           enrichment="Complexity"
           :value="cat"
         />
-      </div>
+      </div> -->
     </figure>
 
     <p v-if="controls" class="p-4 bg-blue">
       Want to start fresh?<br />Click
       <button @click="forgetMe">forget me</button> to reset all
       personalization.<br />
-      It's advised to <button @click="forgetMe">reset</button> your
-      personalization profile before using these sliders.
     </p>
   </div>
 </template>

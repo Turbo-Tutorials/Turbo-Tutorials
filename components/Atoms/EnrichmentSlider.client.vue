@@ -1,41 +1,32 @@
 <script lang="ts" setup>
+import { useScores } from "@uniformDev/context-vue";
+
 const props = defineProps<{
   enrichment: string;
   value: string;
 }>();
 
-const { bus, emit } = useEventBus();
-
 const { $useUniformContext: useUniformContext } = useNuxtApp();
 const { context } = useUniformContext();
+const enrInfo = usePersonalizationForEnrichment(props.enrichment, props.value);
+const scores = useScores();
+const val = ref(scores.value[`${enrInfo.enrichmentId}_${enrInfo.valueId}`]);
+const cap = ref(enrInfo.cap);
 
-const scoreForEnrichment = usePersonalizationForEnrichment(
-  props.enrichment,
-  props.value
-);
-
-const val = ref(scoreForEnrichment.value);
-const cap = ref(scoreForEnrichment.cap);
+watch(scores, () => {
+  val.value = scores.value[`${enrInfo.enrichmentId}_${enrInfo.valueId}`];
+});
 
 async function scoreIt() {
   await context.update({
     enrichments: [
       {
         str: val.value,
-        cat: scoreForEnrichment.enrichmentId,
-        key: scoreForEnrichment.valueId,
+        cat: enrInfo.enrichmentId,
+        key: enrInfo.valueId,
       },
     ],
   });
-
-  emit("EnrichmentsUpdated");
-
-  watch(
-    () => bus.value.get("ResetEnrichment"),
-    () => {
-      val.value = 0;
-    }
-  );
 }
 </script>
 

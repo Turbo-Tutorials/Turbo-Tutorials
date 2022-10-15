@@ -10,6 +10,9 @@ const {
 const index = useAlgoliaInitIndex(algoliaIndex);
 const filter = usePersonalizationForAlgolia();
 const result = await index.search("", {
+  sumOrFiltersScores: true,
+  getRankingInfo: true,
+  hitsPerPage: 10,
   optionalFilters: filter,
 });
 </script>
