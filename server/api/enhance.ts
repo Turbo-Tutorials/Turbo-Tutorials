@@ -11,6 +11,12 @@ import {
   CANVAS_CONTENTFUL_QUERY_PARAMETER_TYPES
 } from "../../enhancers/contentful";
 
+import {
+  prismicEnhancer,
+  prismicModelConverter,
+  CANVAS_PRISMIC_PARAMETER_TYPES
+} from "../../enhancers/prismic"
+
 export default defineEventHandler(async (event: H3Event) => {
   const body = await useBody(event)
   const compositionClone = body.composition
@@ -29,6 +35,12 @@ export default defineEventHandler(async (event: H3Event) => {
           contentfulQueryEnhancer(),
           contentfulModelConverter,
           tutorialYouTubeEnhancer
+        )
+      )
+      .parameterType(CANVAS_PRISMIC_PARAMETER_TYPES,
+        compose(
+          prismicEnhancer(),
+          prismicModelConverter
         )
       )
       .parameterType(CLOUDINARY_PARAMETER_TYPES, cloudinaryEnhancer())
