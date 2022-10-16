@@ -5,7 +5,6 @@ const modules = [
   '@nuxtjs/tailwindcss',
   '@uniformdev/uniform-nuxt',
   '@nuxtjs/algolia',
-  '@nuxt/content',
   '@funken-studio/sitemap-nuxt-3',
 ]
 

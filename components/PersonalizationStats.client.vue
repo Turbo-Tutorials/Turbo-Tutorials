@@ -101,6 +101,7 @@ const scores = ref(parseScores());
 
 async function forgetMe() {
   await context.forget(true);
+  scores.value = parseScores();
   window.plausible("ResetEnrichment");
 }
 </script>
