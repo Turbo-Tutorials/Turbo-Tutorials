@@ -16,7 +16,7 @@ const entry = computed(() => props.component.parameters?.entry?.value);
 </script>
 
 <template>
-  <div class="max-w-[1440px] mx-auto px-4 xl:p-0 mb-12 rich-text">
+  <div class="max-w-[1440px] mx-auto px-4 xl:p-0 mb-12 rich-text" v-if="entry">
     <AtomsLeTitle
       v-if="entry.title"
       :lines="entry.title"

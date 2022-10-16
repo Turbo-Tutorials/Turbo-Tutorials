@@ -21,7 +21,6 @@ async function getRoutes() {
 
   const result = [
     "/",
-    "/tutorials/",
     "/about/",
     "/pwyw/",
     "/personalization-profile/",

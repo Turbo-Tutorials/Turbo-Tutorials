@@ -1,14 +1,14 @@
 [
-  "/tutorials/nuxt-3-schema-org/",
-  "/tutorials/nuxt-3-head-management/",
-  "/tutorials/nuxt-3-query-from-an-external-api-read-more/",
-  "/tutorials/turbo-tutorial-or-nuxt-3-pick-and-transform/",
-  "/tutorials/nuxt-3-how-to-query-from-a-nuxt-api-route/",
   "/",
-  "/tutorials/",
   "/about/",
   "/pwyw/",
   "/personalization-profile/",
   "/privacy-policy/",
-  "/rss.xml"
+  "/rss.xml",
+  "/tutorials/",
+  "/tutorials/nuxt-3-query-from-an-external-api-read-more/",
+  "/tutorials/nuxt-3-schema-org/",
+  "/tutorials/nuxt-3-head-management/",
+  "/tutorials/turbo-tutorial-or-nuxt-3-pick-and-transform/",
+  "/tutorials/nuxt-3-how-to-query-from-a-nuxt-api-route/"
 ]

@@ -4,6 +4,7 @@ import { resolveRenderer } from "../../components/componentMapping";
 const route = useRoute();
 const { $useComposition } = useNuxtApp();
 const slug = "/tutorials";
+
 const { data } = await $useComposition({ slug });
 
 if (!data.value) {
@@ -11,6 +12,7 @@ if (!data.value) {
 }
 
 const { data: composition } = await useEnhance(data, slug as string);
+
 const title = composition.value?.parameters?.title?.value || "No Title";
 const description = composition.value?.parameters?.description?.value || "";
 const image = composition.value?.parameters?.image;
