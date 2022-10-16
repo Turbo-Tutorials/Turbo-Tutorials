@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import type { ComponentInstance } from "@uniformdev/canvas";
-import { simple } from "instantsearch.js/es/lib/stateMappings";
 
 const props = defineProps<{
   component: ComponentInstance;
@@ -35,6 +34,6 @@ const variant = computed(() => props.component.variant);
       />
       <div v-html="description" v-if="description" class="text-xl" />
     </div>
-    <PersonalizationStats :controls="variant !== 'noControls'" />
+    <TurboProfile :controls="variant !== 'noControls'" />
   </div>
 </template>
