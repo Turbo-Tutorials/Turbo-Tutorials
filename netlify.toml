@@ -1,5 +1,5 @@
 [build]
-  command = 'NITRO_PRESET=netlify-edge yarn build'
+  command = 'NITRO_PRESET=netlify yarn build'
   publish = 'dist'
 
 [[edge_functions]]
