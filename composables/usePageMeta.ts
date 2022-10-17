@@ -6,7 +6,16 @@ export type meta = {
   structuredData?: {}
 }
 
-export const usePageMeta = ({ title, description, slug, image, structuredData }: meta) => {
+const defaultSchema = {
+  "@context": "http://schema.org",
+  "@type": "WebSite",
+  "url": "https://turbo-tutorials.dev",
+  "name": "Turbo Tutorials"
+}
+
+export const usePageMeta = ({ title, description, slug, image, structuredData = {} }: meta) => {
+  const schemaData = [defaultSchema, structuredData]
+
   return useHead({
     viewport: "width=device-width, initial-scale=1",
     charset: "utf-8",
@@ -17,7 +26,7 @@ export const usePageMeta = ({ title, description, slug, image, structuredData }:
     script: [
       {
         hid: 'json-ld',
-        children: JSON.stringify(structuredData),
+        children: JSON.stringify(schemaData),
         type: 'application/ld+json'
       },
       {
