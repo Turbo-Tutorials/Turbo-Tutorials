@@ -68,6 +68,7 @@ export const usePageMeta = ({ title, description, slug, image, structuredData }:
       {
         name: "description",
         content: description,
+        hid: "description"
       },
       {
         name: "og:description",
