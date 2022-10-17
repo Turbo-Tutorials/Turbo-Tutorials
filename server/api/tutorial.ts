@@ -66,6 +66,26 @@ export default defineEventHandler(async (event: H3Event) => {
 
   const relatedTutorials = tutorialsForTagsData.items.map((item) => enhanceContentfulItem(item));
 
+  function getEducationalLevel(complexity) {
+    let result = ''
+
+    switch (complexity) {
+      case "easy":
+        result = 'beginner'
+        break;
+
+      case "intermediate":
+        result = 'Intermediate'
+        break;
+
+      case "complex":
+        result = 'Advanced'
+        break;
+    }
+
+    return result
+  }
+
   const enhancers = new EnhancerBuilder()
     .data("selectedTags", () => {
       return selectedTags;
@@ -87,9 +107,11 @@ export default defineEventHandler(async (event: H3Event) => {
           canonical: `https://timbenniks.dev/turbo-tutorial/${slug}`,
           structuredData: {
             "@context": "http://schema.org",
-            "@type": "VideoObject",
+            "@type": ["VideoObject", "LearningResource"],
             name: tutorial.title,
             description: tutorial.description,
+            learningResourceType: "How-to",
+            educationalLevel: getEducationalLevel(tutorial.complexity),
             thumbnailUrl: [tutorial.poster.src],
             embedUrl: `https://www.youtube.com/embed/${tutorial.videoId}`,
             contentUrl: `https://timbenniks.dev/turbo-tutorial/${slug}`,
