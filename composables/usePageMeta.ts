@@ -57,7 +57,18 @@ export const usePageMeta = ({ title, description, slug, image, structuredData = 
         name: "theme-color",
         content: "#14356b",
       },
-
+      {
+        name: "msapplication-navbutton-color",
+        content: "#14356b",
+      },
+      {
+        name: "apple-mobile-web-app-capable",
+        content: "yes",
+      },
+      {
+        name: "apple-mobile-web-app-status-bar-style",
+        content: "black-translucent",
+      },
       {
         property: "og:site_name",
         content: "Turbo Tutorials",
