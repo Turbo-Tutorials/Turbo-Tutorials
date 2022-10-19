@@ -19,6 +19,7 @@ export const usePageMeta = ({ title, description, slug, image, structuredData = 
   }
 
   const schemaData = [defaultSchema, structuredData]
+  const url = `${hostname}/${slug === '/' ? '' : `${slug}/`}`
 
   return useHead({
     viewport: "width=device-width, initial-scale=1",
@@ -53,7 +54,7 @@ export const usePageMeta = ({ title, description, slug, image, structuredData = 
       { rel: "apple-touch-icon", href: "/icon.png" },
       { rel: "preconnect", href: "https://res.cloudinary.com" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "canonical", href: `${hostname}/${slug === '/' ? '' : slug}/` },
+      { rel: "canonical", href: url },
       { rel: "alternate", type: "application/rss+xml", title: "RSS feed for Turbo Tutorials", href: "/rss.xml" }
     ],
     meta: [
@@ -83,7 +84,7 @@ export const usePageMeta = ({ title, description, slug, image, structuredData = 
       },
       {
         property: "twitter:domain",
-        content: `${hostname}/${slug === '/' ? '' : slug}`,
+        content: url,
       },
       {
         property: "twitter:site",
@@ -104,7 +105,7 @@ export const usePageMeta = ({ title, description, slug, image, structuredData = 
       },
       {
         property: "og:url",
-        content: `${hostname}/${slug === '/' ? '' : slug}`,
+        content: url,
       },
       {
         property: "og:title",

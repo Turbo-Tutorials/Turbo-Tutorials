@@ -6,7 +6,7 @@ dotenv.config();
 
 async function getEnrichments() {
   const result = await fetch(
-    `https://uniform.app/api/v1/enrichments?projectId=${process.env.UNIFORM_PROJECT_ID}`,
+    `${process.env.UNIFORM_API_HOST}/api/v1/enrichments?projectId=${process.env.UNIFORM_PROJECT_ID}`,
     {
       method: "get",
       headers: {
