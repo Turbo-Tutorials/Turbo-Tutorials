@@ -1,0 +1,63 @@
+composition:
+  _name: Tutorials
+  _id: e755e5d5-cb4c-4095-8163-73cd71a4c4f3
+  _slug: /tutorials
+  type: page
+  parameters:
+    image:
+      type: cloudinary-media-selector
+      value:
+        - alt: Turbo Tutorials
+          url: >-
+            https://res.cloudinary.com/dwfcofnrd/image/upload/v1662715221/Turbo%20Tutorials/share-image.png
+          ratio: ''
+          width: '1920'
+          format: png
+          height: '1080'
+          widths: '1200'
+          caption: Turbo Tutorials
+          options: q_auto,f_auto
+          version: 1662715221
+          publicId: Turbo Tutorials/share-image
+          createdAt: '2022-09-09T09:20:21Z'
+          previewUrl: >-
+            https://res.cloudinary.com/dwfcofnrd/image/upload/q_auto:low,f_auto,w_150/Turbo%20Tutorials/share-image.png
+          resourceType: image
+          transformation: ''
+          globalImageOptions: q_auto,f_auto
+    title:
+      type: text
+      value: Find all Turbo tutorials
+    description:
+      type: text
+      value: This page allows you to search and filter all Turbo Tutorials
+  slots:
+    content:
+      - _id: 146e86e3-aa2d-41ae-9190-afa3ca1c2326
+        type: searchwrapper
+        slots:
+          hits:
+            - _id: ec2152c0-c1a1-429f-a5bc-dc0af2b82797
+              type: searchCurrentRefinements
+            - _id: 7b26e434-9dff-4ac9-9421-c059378aa788
+              type: searchResults
+          sidebar:
+            - _id: 78dc4f0d-f976-4f0d-9f52-03e26344016f
+              type: searchMenu
+              parameters:
+                attribute:
+                  type: text
+                  value: tags
+            - _id: e69fd9ca-137c-4b1b-8856-d86bb200cd01
+              type: searchMenu
+              parameters:
+                attribute:
+                  type: text
+                  value: complexity
+            - _id: 64ac6662-86a3-4a16-b99e-9d1879b9aee1
+              type: searchStats
+            - _id: 21d3d079-dce8-4b62-908a-9c366610867e
+              type: searchClearRefinements
+created: '2022-10-03T19:20:38.000141+00:00'
+modified: '2022-10-14T20:50:45.424752+00:00'
+pattern: false

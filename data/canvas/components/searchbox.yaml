@@ -1,0 +1,14 @@
+id: searchbox
+name: Search Box
+icon: search
+parameters:
+  - id: placeholder
+    name: Placeholder
+    type: text
+    helpText: ''
+    typeConfig: null
+useTeamPermissions: true
+slots: []
+canBeComposition: false
+created: '2022-10-03T19:11:42.506415+00:00'
+updated: '2022-10-03T19:15:55.805234+00:00'

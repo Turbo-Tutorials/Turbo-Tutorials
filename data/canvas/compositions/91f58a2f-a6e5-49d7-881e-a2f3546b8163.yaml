@@ -1,0 +1,54 @@
+composition:
+  _name: Privacy policy
+  _id: 91f58a2f-a6e5-49d7-881e-a2f3546b8163
+  _slug: /privacy-policy
+  type: page
+  parameters:
+    image:
+      type: cloudinary-media-selector
+      value:
+        - alt: Turbo Tutorials
+          url: >-
+            https://res.cloudinary.com/dwfcofnrd/image/upload/v1662715221/Turbo%20Tutorials/share-image.png
+          ratio: ''
+          width: '1920'
+          format: png
+          height: '1080'
+          widths: '1200'
+          caption: Turbo Tutorials
+          options: q_auto,f_auto
+          version: 1662715221
+          publicId: Turbo Tutorials/share-image
+          createdAt: '2022-09-09T09:20:21Z'
+          previewUrl: >-
+            https://res.cloudinary.com/dwfcofnrd/image/upload/q_auto:low,f_auto,w_150/Turbo%20Tutorials/share-image.png
+          resourceType: image
+          transformation: ''
+          globalImageOptions: q_auto,f_auto
+    title:
+      type: text
+      value: Privacy policy
+    description:
+      type: text
+      value: Turbo Tutorials privacy policy
+  slots:
+    content:
+      - _id: f185567d-627a-46a4-8ba5-fe672da1fef4
+        type: richtext
+        parameters:
+          entry:
+            type: prismicEntry
+            value:
+              source: default
+              entryId: Y0rmoREAACMAvue1
+      - _id: d4918c97-074f-460e-99ed-deff673bda7f
+        type: richtext
+        parameters:
+          entry:
+            type: prismicEntry
+            value:
+              source: default
+              entryId: Y0rmzBEAACQAvuf7
+created: '2022-10-05T13:29:58.193724+00:00'
+modified: '2022-10-16T08:55:28.229088+00:00'
+pattern: false

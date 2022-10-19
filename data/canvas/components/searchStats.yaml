@@ -1,0 +1,9 @@
+id: searchStats
+name: Search Stats
+icon: thermostat
+parameters: []
+useTeamPermissions: true
+slots: []
+canBeComposition: false
+created: '2022-10-03T19:19:02.255097+00:00'
+updated: '2022-10-03T19:19:02.255097+00:00'

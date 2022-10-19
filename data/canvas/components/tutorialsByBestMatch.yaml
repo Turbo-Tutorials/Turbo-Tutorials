@@ -1,0 +1,34 @@
+id: tutorialsByBestMatch
+name: Tutorials by best match
+icon: list-tree
+parameters:
+  - id: title
+    name: Title
+    type: text
+    helpText: ''
+    typeConfig: null
+  - id: titleType
+    name: Title Type
+    type: select
+    helpText: ''
+    typeConfig:
+      options:
+        - text: h1
+          value: h1
+        - text: h2
+          value: h2
+        - text: h3
+          value: h3
+        - text: h4
+          value: h4
+        - text: h5
+          value: h5
+useTeamPermissions: true
+slots: []
+titleParameter: title
+canBeComposition: false
+created: '2022-10-05T09:20:06.685528+00:00'
+updated: '2022-10-05T09:23:29.614864+00:00'
+variants:
+  - id: list
+    name: list

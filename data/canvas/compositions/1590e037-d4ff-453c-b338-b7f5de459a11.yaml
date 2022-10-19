@@ -1,0 +1,79 @@
+composition:
+  _name: Personalization profile
+  _id: 1590e037-d4ff-453c-b338-b7f5de459a11
+  _slug: /personalization-profile
+  type: page
+  parameters:
+    image:
+      type: cloudinary-media-selector
+      value:
+        - alt: Turbo Tutorials
+          url: >-
+            https://res.cloudinary.com/dwfcofnrd/image/upload/v1662715221/Turbo%20Tutorials/share-image.png
+          ratio: ''
+          width: '1920'
+          format: png
+          height: '1080'
+          widths: '1200'
+          caption: Turbo Tutorials
+          options: q_auto,f_auto
+          version: 1662715221
+          publicId: Turbo Tutorials/share-image
+          createdAt: '2022-09-09T09:20:21Z'
+          previewUrl: >-
+            https://res.cloudinary.com/dwfcofnrd/image/upload/q_auto:low,f_auto,w_150/Turbo%20Tutorials/share-image.png
+          resourceType: image
+          transformation: ''
+          globalImageOptions: q_auto,f_auto
+    title:
+      type: text
+      value: Personalization profile
+    description:
+      type: text
+      value: >-
+        This website keeps track of what you watch and creates a preference
+        profile for you. Over time these scores decay, so you also get to see
+        other content.
+  slots:
+    content:
+      - _id: 05d1a538-654b-4c3b-a738-4b391b24e43a
+        type: richtext
+        parameters:
+          entry:
+            type: prismicEntry
+            value:
+              source: default
+              entryId: Y0rkohEAACEAvuLE
+      - _id: 8b233d23-2999-49bc-8583-30f5bc41c949
+        type: personalizationStatus
+        parameters:
+          title:
+            type: text
+            value: Your Turbo Profile
+          titletype:
+            type: select
+            value: h2
+          description:
+            type: text
+            value: >-
+              <p>These two radar graphs show you where your interests are based
+              on what you watch. Each time you watch a turbo tutorial, 1 point
+              is added to the tags it has, and 1 point goes towards its
+              complexity. The maximum amount of points for each is fifty. Based
+              on how people use this site, that might change.</p>
+
+              <p>The scores against complexity and interest will decay over time
+              so your personalization profile is always kept fresh.</p>
+      - _id: 200bcb4f-445b-452f-8a7a-367b4861635a
+        type: tutorialsByBestMatch
+        variant: ''
+        parameters:
+          title:
+            type: text
+            value: Turbo's based on best match
+          titleType:
+            type: select
+            value: h3
+created: '2022-10-05T08:20:28.711283+00:00'
+modified: '2022-10-17T08:16:10.619235+00:00'
+pattern: false

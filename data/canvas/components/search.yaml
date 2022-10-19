@@ -1,0 +1,33 @@
+id: search
+name: Search Autocomplete
+icon: play-list-search
+parameters:
+  - id: title
+    name: Title
+    type: text
+    helpText: ''
+    typeConfig: null
+  - id: titleType
+    name: Title Type
+    type: select
+    helpText: ''
+    typeConfig:
+      options:
+        - text: h1
+          value: h1
+        - text: h2
+          value: h2
+        - text: h3
+          value: h3
+        - text: h4
+          value: h4
+        - text: h5
+          value: h5
+        - text: h6
+          value: h6
+useTeamPermissions: true
+slots: []
+titleParameter: title
+canBeComposition: false
+created: '2022-10-09T19:11:44.4339+00:00'
+updated: '2022-10-09T19:25:00.192361+00:00'

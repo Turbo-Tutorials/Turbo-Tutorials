@@ -1,0 +1,9 @@
+id: searchResults
+name: Search Results
+icon: menu-grid-o
+parameters: []
+useTeamPermissions: true
+slots: []
+canBeComposition: false
+created: '2022-10-03T19:15:44.136747+00:00'
+updated: '2022-10-03T19:15:44.136747+00:00'

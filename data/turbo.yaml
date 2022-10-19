@@ -1,19 +1,17 @@
 enrichments:
   - id: '1'
     name: Interest
-    cap: 100
+    cap: 50
     values:
       - id: '3'
-        value: fetch
-      - id: '4'
-        value: head
+        value: data-fetching
       - id: '2'
         value: nuxt3
       - id: '1'
         value: vue3
   - id: '2'
     name: Complexity
-    cap: 100
+    cap: 50
     values:
       - id: '3'
         value: complex
@@ -21,3 +19,56 @@ enrichments:
         value: easy
       - id: '2'
         value: intermediate
+signals:
+  - id: hasClickedOnBmac
+    name: Has clicked on BMAC
+    cap: 50
+    crit:
+      op: '&'
+      type: G
+      clauses:
+        - key: coffeeClick
+          type: QK
+          match:
+            cs: false
+            op: '='
+            rhs: 'true'
+    dur: p
+    description: The user has shown interest in clicking on buy me a coffee!
+    str: 50
+  - id: jamstackconf
+    name: JamstackConf
+    cap: 50
+    crit:
+      op: '&'
+      type: G
+      clauses:
+        - type: QS
+          match:
+            cs: false
+            op: '='
+            rhs: jamstackConf
+          queryName: utm_campaign
+    dur: p
+    description: A jamstackConf visitor
+    str: 50
+  - id: vueconftoronto
+    name: VueConfToronto
+    cap: 50
+    crit:
+      op: '&'
+      type: G
+      clauses:
+        - type: QS
+          match:
+            cs: false
+            op: '='
+            rhs: vueconf-toronto
+          queryName: utm_campaign
+    dur: s
+    description: A VueConf Toronto visitor
+    str: 50
+quirks:
+  - id: coffeeClick
+    name: Coffee Click
+    description: Clicked buy Tim A coffee

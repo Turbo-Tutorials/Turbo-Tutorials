@@ -1,6 +1,18 @@
 {
   "project": {
     "pz": {
+      "agg": {
+        "conferenceVisitor": {
+          "inputs": [
+            {
+              "dim": "jamstackconf"
+            },
+            {
+              "dim": "vueconftoronto"
+            }
+          ]
+        }
+      },
       "enr": {
         "1": {
           "cap": 50

@@ -30,6 +30,7 @@ const { context } = useUniformContext();
 
 async function setEnrichmentScoresToZero() {
   const scores = usePersonalizationScores();
+
   const enrichments = [];
   scores.enrichments.forEach((category) => {
     category.values.forEach((val) => {

@@ -1,0 +1,9 @@
+id: searchCurrentRefinements
+name: Search Current Refinements
+icon: select-o
+parameters: []
+useTeamPermissions: true
+slots: []
+canBeComposition: false
+created: '2022-10-03T19:18:43.515245+00:00'
+updated: '2022-10-03T19:18:43.515245+00:00'

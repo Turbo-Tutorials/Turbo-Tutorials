@@ -30,11 +30,13 @@ slots:
       - $personalization
       - richtext
       - tutorialList
-      - tutoriallistbytags
-      - algolia
-      - tutorialsByTags
       - tutorialsByFacet
       - twoColumn
+      - personalizationStatus
+      - searchwrapper
+      - tutorialsByBestMatch
+      - search
+      - supportCreator
     inheritAllowedComponents: false
 slugSettings:
   unique: global
@@ -44,4 +46,4 @@ slugSettings:
 titleParameter: title
 canBeComposition: true
 created: '2022-09-09T09:17:30.994173+00:00'
-updated: '2022-09-21T10:09:03.83222+00:00'
+updated: '2022-10-13T10:50:51.390696+00:00'

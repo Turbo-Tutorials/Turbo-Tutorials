@@ -22,6 +22,11 @@ parameters:
         - text: h4
           value: h4
       required: true
+  - id: description
+    name: Description
+    type: text
+    helpText: ''
+    typeConfig: null
   - id: entry
     name: Entry
     type: algoliaQuery
@@ -40,7 +45,7 @@ slots: []
 titleParameter: title
 canBeComposition: false
 created: '2022-09-21T08:19:50.990754+00:00'
-updated: '2022-09-21T13:21:49.438679+00:00'
+updated: '2022-09-29T22:10:28.720653+00:00'
 variants:
   - id: list
     name: list

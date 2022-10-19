@@ -10,20 +10,20 @@ composition:
         - alt: Turbo Tutorials
           url: >-
             https://res.cloudinary.com/dwfcofnrd/image/upload/v1662715221/Turbo%20Tutorials/share-image.png
-          ratio: ""
-          width: "1920"
+          ratio: ''
+          width: '1920'
           format: png
-          height: "1080"
-          widths: "1200"
+          height: '1080'
+          widths: '1200'
           caption: Turbo Tutorials
           options: q_auto,f_auto
           version: 1662715221
           publicId: Turbo Tutorials/share-image
-          createdAt: "2022-09-09T09:20:21Z"
+          createdAt: '2022-09-09T09:20:21Z'
           previewUrl: >-
             https://res.cloudinary.com/dwfcofnrd/image/upload/q_auto:low,f_auto,w_150/Turbo%20Tutorials/share-image.png
           resourceType: image
-          transformation: ""
+          transformation: ''
           globalImageOptions: q_auto,f_auto
     title:
       type: text
@@ -35,59 +35,311 @@ composition:
         you the most common things in modern JavaScript and its meta frameworks.
   slots:
     content:
-      - _id: a0791f83-4e8f-4313-95e9-095bf8e66d68
-        type: richtext
+      - _id: f0567c44-1de6-4f70-8c7b-a6d255d57a1d
+        type: $personalization
+        slots:
+          pz:
+            - _id: 0c22b985-898f-4afe-9984-37acfd4d0234
+              type: richtext
+              parameters:
+                entry:
+                  type: prismicEntry
+                  value:
+                    source: default
+                    entryId: Y06mbREAACMAz6xq
+                $pzCrit:
+                  type: $pzCrit
+                  value:
+                    crit:
+                      - l: conferenceVisitor
+                        r: 0
+                        op: '>'
+                    name: ''
+            - _id: f5e94995-8aab-467e-b24f-e784a703eaa9
+              type: richtext
+              parameters:
+                entry:
+                  type: prismicEntry
+                  value:
+                    source: default
+                    entryId: Y0po6BEAACIAvL8R
         parameters:
-          text:
+          count:
+            type: number
+            value: '1'
+          trackingEventName:
             type: text
-            value: >+
-              <p>Welcome to Turbo Tutorials! On this site, you can find short
-              tutorials that teach you the most common things in modern
-              JavaScript and its meta frameworks. Feel free to browse around.
-              Based on your browsing behavior, the website will personalize for
-              your interests.</p>
-
+            value: welcome
+      - _id: ae88ef26-76a9-4cba-8380-3391462ad149
+        type: $personalization
+        slots:
+          pz:
+            - _id: d8fc768a-6bd1-406d-ae5d-cfcfec59ccd4
+              type: tutorialsByFacet
+              parameters:
+                entry:
+                  type: algoliaQuery
+                  value:
+                    count: 3
+                    source: default
+                    searchText: ''
+                    facetsValues:
+                      tags:
+                        - nuxt3
+                      complexity:
+                        - Easy
+                title:
+                  type: text
+                  value: Turbos for conf visitors
+                $pzCrit:
+                  type: $pzCrit
+                  value:
+                    crit:
+                      - l: conferenceVisitor
+                        r: 0
+                        op: '>'
+                    name: 'Tutorials by facet: Turbos for conf visitors'
+                titleType:
+                  type: select
+                  value: h2
+            - _id: 81be74aa-71fd-4c88-acf9-5c8e7b39b51a
+              type: tutorialList
+              parameters:
+                entry:
+                  type: contentfulQuery
+                  value:
+                    count: 3
+                    sortBy: fields.publicationDate
+                    source: default
+                    sortOrder: desc
+                    contentType: turboTutorial
+                title:
+                  type: text
+                  value: Latest Turbos
+                titleType:
+                  type: select
+                  value: h2
+        parameters:
+          count:
+            type: number
+            value: '1'
+          trackingEventName:
+            type: text
+            value: which to show
+      - _id: a3b8ef1a-cbb9-44f2-a22d-1a644b2d568a
+        type: twoColumn
+        slots:
+          columnA:
+            - _id: cb4e4fd7-1a25-4af7-b5d8-08f2e3c8a0ca
+              type: $personalization
+              slots:
+                pz:
+                  - _id: a702820b-8b47-4ccc-8adc-69e87fac1017
+                    type: tutorialsByFacet
+                    variant: list
+                    parameters:
+                      entry:
+                        type: algoliaQuery
+                        value:
+                          count: 3
+                          source: default
+                          searchText: ''
+                          facetsValues:
+                            complexity:
+                              - Easy
+                      title:
+                        type: text
+                        value: Easy ones
+                      $pzCrit:
+                        type: $pzCrit
+                        value:
+                          crit:
+                            - l: '2_1'
+                              op: '>'
+                              rDim: '2_3'
+                            - l: '2_1'
+                              op: '>'
+                              rDim: '2_2'
+                          name: 'Tutorials by facet: Easy ones'
+                      titleType:
+                        type: select
+                        value: h3
+                  - _id: fb55e29c-1c85-4750-9c05-df1bb17c9131
+                    type: tutorialsByFacet
+                    variant: list
+                    parameters:
+                      entry:
+                        type: algoliaQuery
+                        value:
+                          count: 3
+                          source: default
+                          searchText: ''
+                          facetsValues:
+                            complexity:
+                              - Intermediate
+                      title:
+                        type: text
+                        value: Somewhat complex stuff
+                      $pzCrit:
+                        type: $pzCrit
+                        value:
+                          op: '|'
+                          crit:
+                            - l: '2_2'
+                              op: '>'
+                              rDim: '2_1'
+                            - l: '2_2'
+                              op: '>'
+                              rDim: '2_3'
+                          name: 'Tutorials by facet: Easy ones'
+                      titleType:
+                        type: select
+                        value: h3
+                  - _id: c0036a4d-e65c-4057-a9c7-50e6961a25f4
+                    type: tutorialsByFacet
+                    variant: list
+                    parameters:
+                      entry:
+                        type: algoliaQuery
+                        value:
+                          count: 3
+                          source: default
+                          searchText: ''
+                          facetsValues:
+                            complexity:
+                              - Complex
+                      title:
+                        type: text
+                        value: Die hard complexity
+                      $pzCrit:
+                        type: $pzCrit
+                        value:
+                          op: '|'
+                          crit:
+                            - l: '2_3'
+                              op: '>'
+                              rDim: '2_1'
+                            - l: '2_3'
+                              op: '>'
+                              rDim: '2_2'
+                          name: 'Tutorials by facet: Die hard complexity'
+                      titleType:
+                        type: select
+                        value: h3
+                  - _id: 63e012fb-5c1d-4bfd-b712-3b64895a1bb8
+                    type: richtext
+                    parameters:
+                      entry:
+                        type: prismicEntry
+                        value:
+                          source: default
+                          entryId: Y0p5xhEAACEAvQnI
+              parameters:
+                count:
+                  type: number
+                  value: '1'
+                trackingEventName:
+                  type: text
+                  value: Home left column
+          columnB:
+            - _id: 7ed8cb7d-7383-4287-84b2-c58c299db975
+              type: $personalization
+              slots:
+                pz:
+                  - _id: 3df12669-1802-452c-8ae4-9c1205e68735
+                    type: tutorialsByFacet
+                    variant: list
+                    parameters:
+                      entry:
+                        type: algoliaQuery
+                        value:
+                          count: 3
+                          source: default
+                          searchText: ''
+                          facetsValues:
+                            tags:
+                              - data-fetching
+                      title:
+                        type: text
+                        value: Data Fetching
+                      $pzCrit:
+                        type: $pzCrit
+                        value:
+                          crit:
+                            - l: '1_3'
+                              r: '3'
+                              op: '>='
+                          name: 'Tutorials by facet: Data Fetching'
+                      titleType:
+                        type: select
+                        value: h3
+                  - _id: eb137f5b-0fd2-44e7-80e2-5b85ebe1e534
+                    type: tutorialsByFacet
+                    variant: list
+                    parameters:
+                      entry:
+                        type: algoliaQuery
+                        value:
+                          count: 3
+                          source: default
+                          searchText: ''
+                          facetsValues:
+                            tags:
+                              - nuxt3
+                      title:
+                        type: text
+                        value: Nuxt 3
+                      $pzCrit:
+                        type: $pzCrit
+                        value:
+                          crit:
+                            - l: '1_2'
+                              r: '2'
+                              op: '>='
+                          name: 'Tutorials by facet: Nuxt 3'
+                      titleType:
+                        type: select
+                        value: h3
+                  - _id: 35626490-6dd2-408d-9e76-407b21cc78b9
+                    type: tutorialsByFacet
+                    variant: list
+                    parameters:
+                      entry:
+                        type: algoliaQuery
+                        value:
+                          count: 2
+                          source: default
+                          searchText: ''
+                          facetsValues:
+                            tags:
+                              - nuxt3
+                      title:
+                        type: text
+                        value: Some Nuxt 3 turbos
+                      titleType:
+                        type: select
+                        value: h3
+              parameters:
+                trackingEventName:
+                  type: text
+                  value: Home right column
+        variant: ''
+        parameters:
           title:
             type: text
-            value: TURBO TUTORIALS_LEARN HARD STUFF AT TURBO SPEED
-          titleType:
-            type: select
-            value: h1
-          richtextentry:
-            type: RichTextEntry
-            value:
-              blocks:
-                - key: 7lbdj
-                  data: {}
-                  text: >-
-                    Welcome to Turbo Tutorials! On this site, you can find short
-                    tutorials that teach you the most common things in modern
-                    JavaScript and its meta frameworks. Feel free to browse
-                    around. Based on your browsing behavior, the website will
-                    personalize for your interests.
-                  type: unstyled
-                  depth: 0
-                  entityRanges: []
-                  inlineStyleRanges: []
-              entityMap: {}
-      - _id: 8a43bd01-100f-4421-9625-bf12e34cbf45
-        type: tutorialList
-        variant: ""
-        parameters:
-          entry:
-            type: contentfulQuery
-            value:
-              count: 3
-              sortBy: fields.publicationDate
-              source: default
-              sortOrder: desc
-              contentType: turboTutorial
-          title:
-            type: text
-            value: Latest Tutorials
+            value: Turbos for you
           titleType:
             type: select
             value: h2
+          description:
+            type: text
+            value: >-
+              Check out your <a href="/personalization-profile"
+              rel="noopener">Turbo profile</a> to adjust personalization or to
+              reset everything.
+          lightBackground:
+            type: checkbox
+            value: true
       - _id: 61537eff-6a14-4040-afe7-858a56b33a7c
         type: twoColumn
         slots:
@@ -95,216 +347,69 @@ composition:
             - _id: c3ecc3db-2c4d-46d0-bf33-95f28c4918d8
               type: richtext
               parameters:
-                text:
-                  type: text
-                  value: >-
-                    <p>Most tutorials on this website are 5 minutes or less.
-                    They explain a complex topic clearly and straightforwardly.
-                    After watching a turbo tutorial, you know the basics and can
-                    start coding immediately.</p>
-                title:
-                  type: text
-                  value: Turbo learning_watch less and code more
-                titleType:
-                  type: select
-                  value: h3
-                richtextentry:
-                  type: RichTextEntry
+                entry:
+                  type: prismicEntry
                   value:
-                    blocks:
-                      - key: 8e70v
-                        data: {}
-                        text: >-
-                          Most tutorials on this website are 5 minutes or less.
-                          They explain a complex topic clearly and
-                          straightforwardly. After watching a turbo tutorial,
-                          you know the basics, and you can start coding
-                          immediately.
-                        type: unstyled
-                        depth: 0
-                        entityRanges: []
-                        inlineStyleRanges: []
-                    entityMap: {}
+                    source: default
+                    entryId: Y0p6eBEAACMAvQzf
             - _id: 229deb3f-aacd-4035-acdd-e0f79ebf7346
               type: richtext
               parameters:
-                text:
-                  type: text
-                  value: >-
-                    <p>Tutorials are categorized by subject, language,
-                    framework, and complexity. Based on what you watch, the site
-                    will personalize just for you. Next to serving content, it
-                    thinks you like, it will show you badges based on your
-                    consumption. You can clear a badge to remove the
-                    personalization and reset the content.</p>
-                title:
-                  type: text
-                  value: How this website works
-                titleType:
-                  type: select
-                  value: h4
-                richtextentry:
-                  type: RichTextEntry
+                entry:
+                  type: prismicEntry
                   value:
-                    blocks:
-                      - key: 56d7v
-                        data: {}
-                        text: >-
-                          Tutorials are categorized by subject, language,
-                          framework, and complexity. Based on what you watch,
-                          the site will personalize just for you. Next to
-                          serving content, it thinks you like, it will show you
-                          badges based on your consumption. You can clear a
-                          badge to remove the personalization and reset the
-                          content.
-                        type: unstyled
-                        depth: 0
-                        entityRanges: []
-                        inlineStyleRanges: []
-                    entityMap: {}
+                    source: default
+                    entryId: Y0rgGhEAACMAvtDF
           columnB:
-            - _id: 01579382-a337-4d44-a789-22a77a35c817
-              type: richtext
+            - _id: 1ce7c0a6-82b0-4ca2-b04f-f1651c4fb25a
+              type: $personalization
+              slots:
+                pz:
+                  - _id: 5cc47ad5-2de9-4180-8fb3-aca1bf8c68e5
+                    type: richtext
+                    parameters:
+                      entry:
+                        type: prismicEntry
+                        value:
+                          source: default
+                          entryId: Y0rgiBEAACEAvtKw
+                      $pzCrit:
+                        type: $pzCrit
+                        value:
+                          crit:
+                            - l: hasClickedOnBmac
+                              r: '50'
+                              op: '='
+                          name: BMAC thanks
+                  - _id: 9e47861f-ef9f-4042-b868-d45e6a5e026e
+                    type: supportCreator
+                    parameters:
+                      title:
+                        type: text
+                        value: Support the creator with PWYW
+                      $pzCrit:
+                        type: $pzCrit
+                        value:
+                          crit: []
+                          name: Support with BMAC
+                      titleType:
+                        type: select
+                        value: h3
               parameters:
-                text:
+                count:
+                  type: number
+                  value: '1'
+                trackingEventName:
                   type: text
-                  value: >-
-                    <p>This website is created and maintained by <a
-                    href="https://timbenniks.dev" title="Tim's Website"
-                    rel="noopener" target="_blank">Tim Benniks</a>. It will
-                    always be free and it uses the <a
-                    href="https://en.wikipedia.org/wiki/Pay_what_you_want"
-                    rel="noopener" title="PWYW Wikipedia" target="_blank">Pay
-                    What You Want</a> model.</p><p>If the content helps you in
-                    any way, feel free to donate by buying Tim a few coffee's
-                    at: <a href="https://www.buymeacoffee.com/timbenniks" 
-                    rel="noopener" title="Buy Me A Coffee" target="_blank"><img
-                    loading="lazy" style="width:
-                    180px;display:block;margin-top:1rem;" width="180"
-                    height="50"
-                    src="https://timbenniks.dev/_nuxt/image/300411.png" alt="Buy
-                    Me A Coffee" /> </a></p>
-
-
-                    <p>Another way to support Turbo Tutorials is by asking the
-                    company you work for to become a <a
-                    href="#">sponsor</a>.</p>
-                title:
-                  type: text
-                  value: Support the creator_with PWYW
-                titleType:
-                  type: select
-                  value: h3
-                richtextentry:
-                  type: RichTextEntry
-                  value:
-                    blocks:
-                      - key: 73bf6
-                        data: {}
-                        text: >-
-                          This website is created and maintained by <a
-                          href="https://timbenniks.dev">Tim Benniks</a> and it
-                          will always be free.
-                        type: unstyled
-                        depth: 0
-                        entityRanges: []
-                        inlineStyleRanges: []
-                      - key: 4nm6j
-                        data: {}
-                        text: >-
-                          If the content helps you in any way, feel free to
-                          donate by buying Tim a few coffee's at
-                          buymeacoffee/timbenniks
-                        type: unstyled
-                        depth: 0
-                        entityRanges: []
-                        inlineStyleRanges: []
-                      - key: ct0dd
-                        data: {}
-                        text: >-
-                          Another way to support Turbo Tutorials is by asking
-                          the company you work for to become a sponsor
-                        type: unstyled
-                        depth: 0
-                        entityRanges: []
-                        inlineStyleRanges: []
-                    entityMap: {}
+                  value: BMAC
         variant: rightSmall
-      - _id: 78bd3439-f2c4-43b2-8d1f-48d434f3dac3
-        type: tutorialsByFacet
-        variant: ""
-        parameters:
-          entry:
-            type: algoliaQuery
-            value:
-              count: 3
-              source: default
-              searchText: ""
-              facetsValues:
-                tags:
-                  - nuxt3
-          title:
-            type: text
-            value: Nuxt 3 turbo's
-          titleType:
-            type: select
-            value: h3
-      - _id: c68604b4-0b61-4f14-a8f7-26ec26fafa28
-        type: twoColumn
-        slots:
-          columnA:
-            - _id: e47aa4a7-da57-4e65-8c26-66b24c2ed387
-              type: tutorialsByFacet
-              variant: list
-              parameters:
-                entry:
-                  type: algoliaQuery
-                  value:
-                    count: 3
-                    source: default
-                    searchText: ""
-                    facetsValues:
-                      tags:
-                        - fetch
-                title:
-                  type: text
-                  value: Fetch API turbo's
-                titleType:
-                  type: select
-                  value: h3
-          columnB:
-            - _id: a6bd6b6c-a12a-4cb9-886c-d4fae7582476
-              type: tutorialsByFacet
-              variant: list
-              parameters:
-                entry:
-                  type: algoliaQuery
-                  value:
-                    count: 3
-                    source: default
-                    searchText: ""
-                    facetsValues:
-                      complexity:
-                        - Easy
-                title:
-                  type: text
-                  value: For beginners
-                titleType:
-                  type: select
-                  value: h3
-        variant: ""
         parameters:
           title:
             type: text
-            value: The latest stuff for you!
+            value: Turbo Learning
           titleType:
             type: select
             value: h2
-          description:
-            type: text
-            value: >-
-              These tutorials are selected based on your consumption of other
-              tutorials.
-created: "2022-09-09T09:17:41.405333+00:00"
-modified: "2022-09-28T18:38:27.402199+00:00"
+created: '2022-09-09T09:17:41.405333+00:00'
+modified: '2022-10-18T14:13:44.517708+00:00'
 pattern: false

@@ -19,6 +19,15 @@ composition:
           columnB:
             - _id: 4b5c1a68-5949-454d-8e49-370f6a4dcd15
               type: ttSimilar
+      - _id: 1aa58cab-4c67-4bf3-88bd-23a5d14368ef
+        type: supportCreator
+        parameters:
+          title:
+            type: text
+            value: Support the creator
+          titleType:
+            type: select
+            value: h3
 created: '2022-09-18T08:27:42.686361+00:00'
-modified: '2022-09-28T14:11:32.525073+00:00'
+modified: '2022-10-16T08:59:00.305219+00:00'
 pattern: false

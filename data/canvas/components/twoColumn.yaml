@@ -29,6 +29,11 @@ parameters:
     typeConfig:
       multiline: true
       linesCount: '1'
+  - id: lightBackground
+    name: Light Background
+    type: checkbox
+    helpText: ''
+    typeConfig: null
 useTeamPermissions: true
 slots:
   - id: columnA
@@ -40,6 +45,10 @@ slots:
       - $personalization
       - ttComments
       - ttSimilar
+      - personalizationStatus
+      - tutorialsByBestMatch
+      - search
+      - supportCreator
     inheritAllowedComponents: false
   - id: columnB
     name: Column B
@@ -50,11 +59,15 @@ slots:
       - $personalization
       - ttComments
       - ttSimilar
+      - personalizationStatus
+      - tutorialsByBestMatch
+      - search
+      - supportCreator
     inheritAllowedComponents: false
 titleParameter: title
 canBeComposition: false
 created: '2022-09-21T10:08:36.02276+00:00'
-updated: '2022-09-28T14:11:02.294145+00:00'
+updated: '2022-10-13T20:46:27.362612+00:00'
 variants:
   - id: leftSmall
     name: Left Small

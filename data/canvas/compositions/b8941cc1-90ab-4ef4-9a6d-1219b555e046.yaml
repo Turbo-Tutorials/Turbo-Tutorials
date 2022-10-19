@@ -1,0 +1,97 @@
+composition:
+  _name: About
+  _id: b8941cc1-90ab-4ef4-9a6d-1219b555e046
+  _slug: /about
+  type: page
+  parameters:
+    image:
+      type: cloudinary-media-selector
+      value:
+        - alt: Turbo Tutorials
+          url: >-
+            https://res.cloudinary.com/dwfcofnrd/image/upload/v1662715221/Turbo%20Tutorials/share-image.png
+          ratio: ''
+          width: '1920'
+          format: png
+          height: '1080'
+          widths: '1200'
+          caption: Turbo Tutorials
+          options: q_auto,f_auto
+          version: 1662715221
+          publicId: Turbo Tutorials/share-image
+          createdAt: '2022-09-09T09:20:21Z'
+          previewUrl: >-
+            https://res.cloudinary.com/dwfcofnrd/image/upload/q_auto:low,f_auto,w_150/Turbo%20Tutorials/share-image.png
+          resourceType: image
+          transformation: ''
+          globalImageOptions: q_auto,f_auto
+    title:
+      type: text
+      value: About Turbo Tutorials
+    description:
+      type: text
+      value: >-
+        On the Turbo Tutorials site, you can find short tutorials that teach you
+        the most common things in modern JavaScript and its meta frameworks. Tim
+        Benniks created the site to help the community and to learn more about
+        the learning space.
+  slots:
+    content:
+      - _id: 8d753e05-d064-4251-b688-7418cd231056
+        type: richtext
+        parameters:
+          entry:
+            type: prismicEntry
+            value:
+              source: default
+              entryId: Y0rlgREAACEAvuR4
+      - _id: e525a65d-ebfc-4036-a879-78e78ffe0e01
+        type: twoColumn
+        slots:
+          columnA:
+            - _id: 418d5255-9430-4e55-8ea1-71c61f110f61
+              type: richtext
+              parameters:
+                entry:
+                  type: prismicEntry
+                  value:
+                    source: default
+                    entryId: Y0p6eBEAACMAvQzf
+            - _id: c4ef075e-c711-4d46-9b1a-694e008169a2
+              type: richtext
+              parameters:
+                entry:
+                  type: prismicEntry
+                  value:
+                    source: default
+                    entryId: Y0rgGhEAACMAvtDF
+            - _id: c196c905-cf10-4857-a6c9-f79ae7a59d81
+              type: supportCreator
+              parameters:
+                title:
+                  type: text
+                  value: Support the creator
+                titleType:
+                  type: select
+                  value: h3
+          columnB:
+            - _id: 587bd754-c42f-4688-a66b-a117c53685b4
+              type: richtext
+              parameters:
+                entry:
+                  type: prismicEntry
+                  value:
+                    source: default
+                    entryId: Y0rmDREAACEAvuWZ
+            - _id: 5c7a245b-8e16-47f9-a328-c8dde7475780
+              type: richtext
+              parameters:
+                entry:
+                  type: prismicEntry
+                  value:
+                    source: default
+                    entryId: Y0rmRhEAACEAvuaf
+        variant: rightSmall
+created: '2022-10-05T13:22:28.229503+00:00'
+modified: '2022-10-16T08:54:59.903709+00:00'
+pattern: false

@@ -1,0 +1,9 @@
+id: searchClearRefinements
+name: Search clear refinements
+icon: play-stop
+parameters: []
+useTeamPermissions: true
+slots: []
+canBeComposition: false
+created: '2022-10-03T19:18:13.958342+00:00'
+updated: '2022-10-03T19:18:13.958342+00:00'

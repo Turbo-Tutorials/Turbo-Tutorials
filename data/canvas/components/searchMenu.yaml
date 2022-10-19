@@ -1,0 +1,15 @@
+id: searchMenu
+name: Search Menu
+icon: play-list-search
+parameters:
+  - id: attribute
+    name: Attribute
+    type: text
+    helpText: Algolia Facet Attribute
+    typeConfig: null
+useTeamPermissions: true
+slots: []
+titleParameter: attribute
+canBeComposition: false
+created: '2022-10-03T19:17:01.074179+00:00'
+updated: '2022-10-03T19:17:01.074179+00:00'
