@@ -600,10 +600,10 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@kevinmarrec/nuxt-pwa@^0.6.1":
-  version "0.6.1"
-  resolved "https://registry.yarnpkg.com/@kevinmarrec/nuxt-pwa/-/nuxt-pwa-0.6.1.tgz#06daa53f022e91d515d0afb8d18c92d65bf67acb"
-  integrity sha512-t6r7/SbC3TOKdVZbtvZ88gygZ/aIVewqv20lswB3a0CR/zMznr/wj2eGEw0BeuI/rh4nfZiv5FMERNc65bwqwg==
+"@kevinmarrec/nuxt-pwa@^0.8.0":
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/@kevinmarrec/nuxt-pwa/-/nuxt-pwa-0.8.0.tgz#8e9d18ef520c9f99d9f3b42f080671ea1a5da95f"
+  integrity sha512-7xpOmfMmn3EudLHuFhUgV5gXs+09UQA44oCNXMTdyLifig72hx+sxGFmH1buoRZCJ6DSREYiNwFRSWPRBaoWCA==
   dependencies:
     hasha "^5.2.2"
     sharp "^0.31.1"
@@ -852,10 +852,10 @@
   resolved "https://registry.yarnpkg.com/@nuxtjs/robots/-/robots-2.5.0.tgz#a42b25e3bc58181cb2a8fbd30d6b0fee6c36bc60"
   integrity sha512-z1F3HXb05NiZga8Cuq6k5bbowfJOScPtbSOakip0nege+1aI9pGoajzap8eR5s1qwLXAk9Ts+NcgetoUn5lwrQ==
 
-"@nuxtjs/tailwindcss@^5.3.3":
-  version "5.3.3"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/tailwindcss/-/tailwindcss-5.3.3.tgz#8d03a68915cc4b6e641f40b3b9d80779e12607c2"
-  integrity sha512-1YyDcOJuZue3PtTX7c58FEIieAy0utpRa6s9nJ4BVE/UloRG2mDw4ch7s9O4afdsHiib5e7uxNfY1ZZGKupqaw==
+"@nuxtjs/tailwindcss@^5.3.5":
+  version "5.3.5"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/tailwindcss/-/tailwindcss-5.3.5.tgz#9d1988f0f8433e67df5707eea2ea2e8ac004a10c"
+  integrity sha512-d6noacVfcN88R6Iqd5/kl7YyumE+EIsz6ky26JvidHtkTeAPxZt8XN/KFEMJ6xwSvhsUndrNW94XYPKv7l79jg==
   dependencies:
     "@nuxt/kit" "^3.0.0-rc.9"
     "@nuxt/postcss8" "^1.1.3"
@@ -1577,10 +1577,10 @@ anymatch@^3.1.2, anymatch@~3.1.2:
     normalize-path "^3.0.0"
     picomatch "^2.0.4"
 
-apexcharts@^3.35.5:
-  version "3.35.5"
-  resolved "https://registry.yarnpkg.com/apexcharts/-/apexcharts-3.35.5.tgz#c5a950f6f7be35ff4f4509b2179ff538d366c6ec"
-  integrity sha512-Bi3aq35xWntI71JlywXTBBAOhuKTbB4wijKw4ClkIAFV904YDkHPIJ8N9LcZq9fvVb0VX1AEmyOFBOB2Vwsuew==
+apexcharts@^3.36.0:
+  version "3.36.0"
+  resolved "https://registry.yarnpkg.com/apexcharts/-/apexcharts-3.36.0.tgz#eba378167be3ebe5044b8980d5907bad9e9a7fff"
+  integrity sha512-9r7M/SOfnYS1g4G1gmRRgeIN1Oj+ct1S0G6PpMPPD3F4jGHgWl5EzxqvoQkk3vpTxN8MbZB5ZHWIAQvPuFiA+w==
   dependencies:
     svg.draggable.js "^2.2.2"
     svg.easing.js "^2.0.0"
@@ -5210,10 +5210,15 @@ node-emoji@^1.11.0:
   dependencies:
     lodash "^4.17.21"
 
-node-fetch-native@^0.1.4, node-fetch-native@^0.1.5, node-fetch-native@^0.1.7:
+node-fetch-native@^0.1.4, node-fetch-native@^0.1.5:
   version "0.1.7"
   resolved "https://registry.yarnpkg.com/node-fetch-native/-/node-fetch-native-0.1.7.tgz#8a8ed0d5d1d1b89d34c6731a9d69d407c09df067"
   integrity sha512-hps7dFJM0IEF056JftDSSjWDAwW9v2clwHoUJiHyYgl+ojoqjKyWybljMlpTmlC1O+864qovNlRLyAIjRxu9Ag==
+
+node-fetch-native@^0.1.8:
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/node-fetch-native/-/node-fetch-native-0.1.8.tgz#19e2eaf6d86ac14e711ebd2612f40517c3468f2a"
+  integrity sha512-ZNaury9r0NxaT2oL65GvdGDy+5PlSaHTovT6JV5tOW07k1TQmgC0olZETa4C9KZg0+6zBr99ctTYa3Utqj9P/Q==
 
 node-fetch@^2.6.1, node-fetch@^2.6.7:
   version "2.6.7"
