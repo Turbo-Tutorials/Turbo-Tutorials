@@ -1,9 +1,10 @@
 {
   "private": true,
   "scripts": {
-    "build": "yarn run context:manifest && node enrichments.mjs && node routes.mjs && nuxt build",
-    "dev": "yarn run context:manifest && node enrichments.mjs && nuxt dev",
-    "generate": "nuxt generate",
+    "build": "cp .env.stable .env && yarn run context:manifest && node enrichments.mjs && node routes.mjs && nuxt build",
+    "dev": "cp .env.stable .env && yarn run context:manifest && node enrichments.mjs && nuxt dev",
+    "build:canary": "cp .env.canary .env && yarn run context:manifest && node enrichments.mjs && node routes.mjs && nuxt build",
+    "dev:canary": "cp .env.canary .env && yarn run context:manifest && node enrichments.mjs && nuxt dev",
     "context:manifest": "uniform context manifest download --output ./lib/context/context-manifest.json",
     "pull": "run-s pull:components pull:compositions",
     "pull:compositions": "uniform presentation composition pull ./data/canvas/compositions",
@@ -16,7 +17,13 @@
     "pull:context:aggregates": "uniform context aggregate pull ./data/turbo.yaml",
     "pull:context:quirks": "uniform context quirk pull ./data/turbo.yaml",
     "pull:context:tests": "uniform context test pull ./data/turbo.yaml",
-    "pull:context": "run-s pull:context:signals pull:context:enrichments pull:context:quirks",
+    "pull:context": "run-s pull:context:signals pull:context:enrichments pull:context:quirks pull:context:aggregates",
+    "push:context:signals": "uniform context signal push ./data/turbo.yaml",
+    "push:context:enrichments": "uniform context enrichment push ./data/turbo.yaml",
+    "push:context:aggregates": "uniform context aggregate push ./data/turbo.yaml",
+    "push:context:quirks": "uniform context quirk push ./data/turbo.yaml",
+    "push:context:tests": "uniform context test push ./data/turbo.yaml",
+    "push:context": "run-s push:context:signals push:context:enrichments push:context:quirks push:context:aggregates",
     "pull:enrichments": "node enrichments.mjs",
     "copy:edge-netlify": "cp node_modules/@uniformdev/context-edge-netlify/dist/index.deno.js lib/context",
     "postinstall": "yarn copy:edge-netlify"

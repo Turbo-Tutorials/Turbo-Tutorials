@@ -6,14 +6,18 @@ export type meta = {
   structuredData?: {}
 }
 
-const defaultSchema = {
-  "@context": "http://schema.org",
-  "@type": "WebSite",
-  "url": "https://turbo-tutorials.dev",
-  "name": "Turbo Tutorials"
-}
-
 export const usePageMeta = ({ title, description, slug, image, structuredData = {} }: meta) => {
+  const {
+    public: { hostname },
+  } = useRuntimeConfig();
+
+  const defaultSchema = {
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "url": hostname,
+    "name": "Turbo Tutorials"
+  }
+
   const schemaData = [defaultSchema, structuredData]
 
   return useHead({
@@ -49,7 +53,7 @@ export const usePageMeta = ({ title, description, slug, image, structuredData = 
       { rel: "apple-touch-icon", href: "/icon.png" },
       { rel: "preconnect", href: "https://res.cloudinary.com" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "canonical", href: `https://turbo-tutorials.dev/${slug === '/' ? '' : slug}/` },
+      { rel: "canonical", href: `${hostname}/${slug === '/' ? '' : slug}/` },
       { rel: "alternate", type: "application/rss+xml", title: "RSS feed for Turbo Tutorials", href: "/rss.xml" }
     ],
     meta: [
@@ -79,7 +83,7 @@ export const usePageMeta = ({ title, description, slug, image, structuredData = 
       },
       {
         property: "twitter:domain",
-        content: `https://turbo-tutorials.dev/${slug === '/' ? '' : slug}`,
+        content: `${hostname}/${slug === '/' ? '' : slug}`,
       },
       {
         property: "twitter:site",
@@ -100,7 +104,7 @@ export const usePageMeta = ({ title, description, slug, image, structuredData = 
       },
       {
         property: "og:url",
-        content: `https://turbo-tutorials.dev/${slug === '/' ? '' : slug}`,
+        content: `${hostname}/${slug === '/' ? '' : slug}`,
       },
       {
         property: "og:title",

@@ -11,3 +11,5 @@ dist
 .env
 .npmrc
 .netlify
+.env.canary
+.env.stable

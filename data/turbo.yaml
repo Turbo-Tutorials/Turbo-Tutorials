@@ -72,3 +72,13 @@ quirks:
   - id: coffeeClick
     name: Coffee Click
     description: Clicked buy Tim A coffee
+aggregates:
+  - id: conferenceVisitor
+    name: Conference visitor
+    description: People visiting this site from a conf
+    type: 0
+    inputs:
+      - dim: jamstackconf
+        sign: +
+      - dim: vueconftoronto
+        sign: +
