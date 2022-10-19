@@ -1,9 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "build": "cp .env.stable .env && yarn run context:manifest && node enrichments.mjs && node routes.mjs && nuxt build",
+    "build": "yarn run context:manifest && node enrichments.mjs && node routes.mjs && nuxt build",
     "dev": "cp .env.stable .env && yarn run context:manifest && node enrichments.mjs && nuxt dev",
-    "build:canary": "cp .env.canary .env && yarn run context:manifest && node enrichments.mjs && node routes.mjs && nuxt build",
     "dev:canary": "cp .env.canary .env && yarn run context:manifest && node enrichments.mjs && nuxt dev",
     "context:manifest": "uniform context manifest download --output ./lib/context/context-manifest.json",
     "pull": "run-s pull:components pull:compositions",
