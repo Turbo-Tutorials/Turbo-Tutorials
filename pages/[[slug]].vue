@@ -18,29 +18,20 @@ const { data: enhancedComposition } = await useEnhance(
   slug as string
 );
 
-let compositionToRender = ref();
+const { composition } = useCompositionInstance({
+  composition: enhancedComposition.value.composition,
+  enhance: createApiEnhancer({
+    apiUrl: "/api/enhance",
+  }),
+});
 
-if (uniformMode === "canary") {
-  const { composition } = useCompositionInstance({
-    composition: enhancedComposition.value.composition,
-    enhance: createApiEnhancer({
-      apiUrl: "/api/enhance",
-    }),
-  });
-
-  compositionToRender.value = composition.value;
-} else {
-  compositionToRender.value = enhancedComposition.value.composition;
-}
-
-if (!compositionToRender.value) {
+if (!composition.value) {
   throw createError({ statusCode: 404, statusMessage: "Page Not Found" });
 }
 
-const title = compositionToRender.value?.parameters?.title?.value || "No Title";
-const description =
-  compositionToRender.value?.parameters?.description?.value || "";
-const image = compositionToRender.value?.parameters?.image;
+const title = composition.value?.parameters?.title?.value || "No Title";
+const description = composition.value?.parameters?.description?.value || "";
+const image = composition.value?.parameters?.image;
 
 usePageMeta({
   title: title as string,
@@ -83,8 +74,8 @@ setEnrichmentScoresToZero();
   <main class="max-w-[1440px] mx-auto pt-36 md:pt-48">
     <GlobalHeader />
     <Composition
-      v-if="compositionToRender"
-      :data="compositionToRender"
+      v-if="composition"
+      :data="composition"
       :resolve-renderer="resolveRenderer"
       behaviorTracking="onLoad"
     >
