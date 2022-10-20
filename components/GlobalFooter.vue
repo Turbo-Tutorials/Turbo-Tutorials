@@ -14,6 +14,29 @@
             >Personalization profile</nuxt-link
           >
         </li>
+
+        <li><nuxt-link to="/about/" rel="noopener">About</nuxt-link></li>
+      </ul>
+      <ul
+        class="md:self-center space-y-2 mb-6 md:mb-0 text-center md:text-left"
+      >
+        <!-- <li>
+          <nuxt-link to="/sponsor" rel="noopener">Become a sponsor</nuxt-link>
+        </li> -->
+
+        <li><nuxt-link to="/pwyw/" rel="noopener">PWYW</nuxt-link></li>
+        <li>
+          <nuxt-link to="/privacy-policy/" rel="noopener"
+            >Privacy policy</nuxt-link
+          >
+        </li>
+        <li>
+          <a href="/rss.xml" rel="noopener" target="_blank">RSS</a>
+        </li>
+      </ul>
+      <ul
+        class="md:self-center space-y-2 mb-6 md:mb-0 text-center md:text-left"
+      >
         <li>
           <a
             href="https://youtube.com/timbenniks"
@@ -23,24 +46,7 @@
             <AtomsIconLink class="inline w-4 h-4 ml-1"
           /></a>
         </li>
-      </ul>
-      <ul
-        class="md:self-center space-y-2 mb-6 md:mb-0 text-center md:text-left"
-      >
-        <li><nuxt-link to="/about/" rel="noopener">About</nuxt-link></li>
-        <!-- <li>
-          <nuxt-link to="/sponsor" rel="noopener">Become a sponsor</nuxt-link>
-        </li> -->
-        <li><nuxt-link to="/pwyw/" rel="noopener">PWYW</nuxt-link></li>
-      </ul>
-      <ul
-        class="md:self-center space-y-2 mb-6 md:mb-0 text-center md:text-left"
-      >
-        <li>
-          <nuxt-link to="/privacy-policy/" rel="noopener"
-            >Privacy policy</nuxt-link
-          >
-        </li>
+
         <li class="inline-flex space-x-2">
           <AtomsLeIcon url="https://twitter.com/timbenniks" icon="twitter" />
           <AtomsLeIcon url="https://youtube.com/timbenniks" icon="youtube" />
