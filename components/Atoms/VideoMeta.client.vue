@@ -6,7 +6,7 @@ const props = defineProps<{
 const { data: metadata } = await useAsyncData(props.videoId, () =>
   $fetch(`/api/video?videoId=${props.videoId}`)
 );
-const { meta } = metadata.value;
+const { meta } = metadata;
 </script>
 <template>
   <div v-if="meta" class="absolute left-1 bottom-1 space-x-1 text-sm">

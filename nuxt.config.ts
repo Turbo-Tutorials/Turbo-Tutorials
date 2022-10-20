@@ -5,7 +5,7 @@ const modules = [
   '@nuxtjs/tailwindcss',
   '@uniformdev/uniform-nuxt',
   '@nuxtjs/algolia',
-  '@funken-studio/sitemap-nuxt-3',
+  //'@funken-studio/sitemap-nuxt-3',
 ]
 
 if (process.env.NODE_ENV !== 'development') {
@@ -25,11 +25,11 @@ export default defineNuxtConfig({
       enabled: false
     }
   },
-  sitemap: {
-    hostname: process.env.HOST_NAME,
-    cacheTime: 1,
-    routes: dynamicRoutes,
-  },
+  // sitemap: {
+  //   hostname: process.env.HOST_NAME,
+  //   cacheTime: 1,
+  //   routes: dynamicRoutes,
+  // },
   algolia: {
     apiKey: process.env.ALGOLIA_SEARCH_API_KEY,
     applicationId: process.env.ALGOLIA_ID,
