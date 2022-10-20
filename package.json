@@ -30,10 +30,10 @@
   "dependencies": {
     "@contentful/rich-text-html-renderer": "^15.13.1",
     "@funken-studio/sitemap-nuxt-3": "^3.2.0",
-    "@kevinmarrec/nuxt-pwa": "^0.8.0",
+    "@kevinmarrec/nuxt-pwa": "^0.6.1",
     "@nuxtjs/algolia": "^1.1.4",
     "@nuxtjs/robots": "^2.5.0",
-    "@nuxtjs/tailwindcss": "^6.0.1",
+    "@nuxtjs/tailwindcss": "^5.3.3",
     "@prismicio/client": "^6.7.1",
     "@tailwindcss/line-clamp": "^0.4.2",
     "@uniformdev/canvas": "17.3.1-alpha.146",
