@@ -5,10 +5,6 @@ import {
   createApiEnhancer,
 } from "@uniformdev/canvas-vue";
 
-const {
-  public: { uniformMode },
-} = useRuntimeConfig();
-
 const route = useRoute();
 const { $useComposition } = useNuxtApp();
 const slug = route.params.slug ? `/${route.params.slug}` : "/";
