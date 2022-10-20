@@ -5,29 +5,42 @@ import {
   createApiEnhancer,
 } from "@uniformdev/canvas-vue";
 
+const {
+  public: { uniformMode },
+} = useRuntimeConfig();
+
 const route = useRoute();
 const { $useComposition } = useNuxtApp();
 const slug = "/tutorials";
-
 const { data: rawComposition } = await $useComposition({ slug });
 const { data: enhancedComposition } = await useEnhance(
   rawComposition.value?.composition,
   slug as string
 );
-const { composition } = useCompositionInstance({
-  composition: enhancedComposition.value.composition,
-  enhance: createApiEnhancer({
-    apiUrl: "/api/enhance",
-  }),
-});
 
-if (!composition.value) {
+let compositionToRender = ref();
+
+if (uniformMode === "canary") {
+  const { composition } = useCompositionInstance({
+    composition: enhancedComposition.value.composition,
+    enhance: createApiEnhancer({
+      apiUrl: "/api/enhance",
+    }),
+  });
+
+  compositionToRender.value = composition.value;
+} else {
+  compositionToRender.value = enhancedComposition.value.composition;
+}
+
+if (!compositionToRender.value) {
   throw createError({ statusCode: 404, statusMessage: "Page Not Found" });
 }
 
-const title = composition.value?.parameters?.title?.value || "No Title";
-const description = composition.value?.parameters?.description?.value || "";
-const image = composition.value?.parameters?.image;
+const title = compositionToRender.value?.parameters?.title?.value || "No Title";
+const description =
+  compositionToRender.value?.parameters?.description?.value || "";
+const image = compositionToRender.value?.parameters?.image;
 
 usePageMeta({
   title: title as string,
@@ -45,8 +58,8 @@ usePageMeta({
   <main class="max-w-[1440px] mx-auto pt-36 md:pt-48">
     <GlobalHeader />
     <Composition
-      v-if="composition"
-      :data="composition"
+      v-if="compositionToRender"
+      :data="compositionToRender"
       :resolve-renderer="resolveRenderer"
       behaviorTracking="onLoad"
     >
