@@ -22,8 +22,6 @@ export const usePageMeta = ({ title, description, slug, image, structuredData = 
   const url = `${hostname}/${slug === '/' ? '' : `${slug}/`}`
 
   return useHead({
-    viewport: "width=device-width, initial-scale=1",
-    charset: "utf-8",
     title,
     htmlAttrs: {
       lang: "en",
@@ -43,7 +41,6 @@ export const usePageMeta = ({ title, description, slug, image, structuredData = 
         hid: 'plausible',
         children: `window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }`,
         type: 'text/javascript',
-        charset: 'utf-8'
       }
     ],
     style: [

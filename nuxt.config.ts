@@ -5,7 +5,6 @@ const modules = [
   '@nuxtjs/tailwindcss',
   '@uniformdev/uniform-nuxt',
   '@nuxtjs/algolia',
-  //'@funken-studio/sitemap-nuxt-3',
 ]
 
 if (process.env.NODE_ENV !== 'development') {
@@ -19,17 +18,24 @@ export default defineNuxtConfig({
       routes: staticRoutes
     }
   },
+  // routeRules: {
+  //   '/': { static: true },
+  //   '/pwyw': { static: true },
+  //   '/about': { static: true },
+  //   '/personalization-profile': { static: true },
+  //   '/privacy-policy': { static: true },
+  //   '/tutorials/**': { static: true },
+  // },
   modules,
   pwa: {
     workbox: {
       enabled: false
     }
   },
-  // sitemap: {
-  //   hostname: process.env.HOST_NAME,
-  //   cacheTime: 1,
-  //   routes: dynamicRoutes,
-  // },
+  head: {
+    viewport: "width=device-width, initial-scale=1",
+    charset: "utf-8",
+  },
   algolia: {
     apiKey: process.env.ALGOLIA_SEARCH_API_KEY,
     applicationId: process.env.ALGOLIA_ID,
