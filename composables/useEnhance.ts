@@ -1,7 +1,5 @@
-import type { Ref } from "vue"
-import { CompositionGetResponse } from "@uniformdev/canvas";
+export async function useEnhance(composition: any, slug: string) {
 
-export async function useEnhance(composition: Ref<CompositionGetResponse>, slug: string) {
   const { data, pending, error } = await useAsyncData(
     `composition-enhancer-${slug}`,
     () => {
@@ -11,7 +9,7 @@ export async function useEnhance(composition: Ref<CompositionGetResponse>, slug:
           'Accept': 'application/json',
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ composition: composition.value.composition })
+        body: JSON.stringify({ composition })
       })
     })
 

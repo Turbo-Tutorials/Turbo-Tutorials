@@ -19,10 +19,10 @@ import {
 
 export default defineEventHandler(async (event: H3Event) => {
   const body = await useBody(event)
-  const compositionClone = body.composition
+  const composition = body.composition
 
   await enhance({
-    composition: compositionClone,
+    composition,
     enhancers: new EnhancerBuilder()
       .parameterType(CANVAS_CONTENTFUL_PARAMETER_TYPES,
         compose(
@@ -48,5 +48,5 @@ export default defineEventHandler(async (event: H3Event) => {
     context: {},
   });
 
-  return compositionClone
+  return { composition };
 })

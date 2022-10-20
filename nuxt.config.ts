@@ -55,7 +55,8 @@ export default defineNuxtConfig({
       algoliaId: process.env.ALGOLIA_ID,
       algoliaSearchApi: process.env.ALGOLIA_SEARCH_API_KEY,
       algoliaIndex: process.env.ALGOLIA_INDEX,
-      hostname: process.env.HOST_NAME
+      hostname: process.env.HOST_NAME,
+      uniformMode: process.env.UNIFORM_MODE
     },
   },
   vue: {

@@ -1,17 +1,29 @@
 <script setup lang="ts">
 import { resolveRenderer } from "../../components/componentMapping";
+import {
+  useCompositionInstance,
+  createApiEnhancer,
+} from "@uniformdev/canvas-vue";
 
 const route = useRoute();
 const { $useComposition } = useNuxtApp();
 const slug = "/tutorials";
 
-const { data } = await $useComposition({ slug });
+const { data: rawComposition } = await $useComposition({ slug });
+const { data: enhancedComposition } = await useEnhance(
+  rawComposition.value?.composition,
+  slug as string
+);
+const { composition } = useCompositionInstance({
+  composition: enhancedComposition.value.composition,
+  enhance: createApiEnhancer({
+    apiUrl: "/api/enhance",
+  }),
+});
 
-if (!data.value) {
+if (!composition.value) {
   throw createError({ statusCode: 404, statusMessage: "Page Not Found" });
 }
-
-const { data: composition } = await useEnhance(data, slug as string);
 
 const title = composition.value?.parameters?.title?.value || "No Title";
 const description = composition.value?.parameters?.description?.value || "";
