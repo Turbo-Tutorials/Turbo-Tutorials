@@ -1,8 +1,19 @@
 <script lang="ts" setup>
+import Vue3Apexcharts from "../../lib/ApexCharts";
+
 const props = defineProps<{
   caption: string;
   modelValue: any;
 }>();
+
+const install = (app) => {
+  app.component(Vue3Apexcharts.name, Vue3Apexcharts);
+};
+
+Vue3Apexcharts.install = install;
+
+const { vueApp } = useNuxtApp();
+vueApp.use(Vue3Apexcharts as any);
 
 const emit = defineEmits(["update:modelValue"]);
 const model = computed({
