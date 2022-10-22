@@ -22,6 +22,7 @@ import SearchResults from './searchResults.vue';
 import TutorialsByBestMatch from './TutorialsByBestMatch.vue'
 import SearchAutocomplete from './SearchAutocomplete.vue'
 import SupportCreator from './SupportCreator.vue'
+import CampaignHero from './CampaignHero.vue'
 
 const mapping = {
   richtext: Richtext,
@@ -36,6 +37,7 @@ const mapping = {
   tutorialsByBestMatch: TutorialsByBestMatch,
   supportCreator: SupportCreator,
   image: Image,
+  campaignHero: CampaignHero,
 
   searchwrapper: SearchWrapper,
   searchbox: Searchbox,

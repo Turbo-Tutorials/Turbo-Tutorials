@@ -21,6 +21,10 @@ const description = computed(
   () => props.component.parameters?.description?.value || false
 );
 
+const lightBackground = computed(
+  () => props.component.parameters?.lightBackground?.value || false
+);
+
 const variant = computed(() => {
   const variant = props.component?.variant;
 
@@ -33,8 +37,8 @@ const variant = computed(() => {
   }
 
   if (variant === "leftSmall") {
-    left = "w-full lg:w-3/5";
-    right = "w-full lg:w-2/5";
+    left = "w-full lg:w-2/5";
+    right = "w-full lg:w-3/5";
   }
 
   return {
@@ -45,7 +49,7 @@ const variant = computed(() => {
 </script>
 
 <template>
-  <div class="bg-lblue mb-24 two-column py-4 lg:p-6">
+  <div class="bg-lblue mb-24 two-column py-4 lg:p-6" :class="{lightBackground: 'bg-lblue' }">
     <article class="px-4 lg:px-0 mb-8" v-if="title || description">
       <AtomsLeTitle v-if="title" :as="titleType" :lines="title" />
       <p v-if="description" v-html="description" class="max-w-prose text-xl" />
