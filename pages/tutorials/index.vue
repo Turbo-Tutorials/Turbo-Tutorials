@@ -32,7 +32,7 @@ const image = composition.value?.parameters?.image;
 usePageMeta({
   title: title as string,
   description: description as string,
-  slug: route.params.slug as string,
+  slug: 'tutorials',
   image:
     (image?.value[0]?.baseurl.replace(
       "image/upload/",
