@@ -19,7 +19,6 @@ export function usePersonalizationForAlgolia() {
   delete scores['hasClickedOnBmac'];
   delete scores['VueConfToronto'];
   delete scores['JamstackConf'];
-  delete scores['conferenceVisitor'];
 
   const res = []
   for (const enr in scores) {

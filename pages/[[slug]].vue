@@ -8,6 +8,7 @@ import {
 const route = useRoute();
 const { $useComposition } = useNuxtApp();
 const slug = route.params.slug ? `/${route.params.slug}` : "/";
+
 const { data: rawComposition } = await $useComposition({ slug });
 const { data: enhancedComposition } = await useEnhance(
   rawComposition.value?.composition,
@@ -40,6 +41,7 @@ usePageMeta({
     ) as string) || "",
 });
 
+// hack to set all enrichments to zero
 const { $useUniformContext: useUniformContext } = useNuxtApp();
 const { context } = useUniformContext();
 
@@ -65,6 +67,7 @@ async function setEnrichmentScoresToZero() {
 }
 
 setEnrichmentScoresToZero();
+
 </script>
 <template>
   <main class="max-w-[1440px] mx-auto pt-36 md:pt-48">

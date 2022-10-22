@@ -10,11 +10,16 @@ const title = computed(() => props.component.parameters?.title?.value);
 const titleType = computed(
   () => props.component.parameters?.titleType?.value || "h3"
 );
-const description = computed(() => props.component.parameters?.description?.value);
+const description = computed(
+  () => props.component.parameters?.description?.value
+);
 </script>
 
 <template>
-  <div class="max-w-[1440px] mx-auto px-4 xl:p-0 mb-4 md:mb-16 relative aspect-[1500/600] flex flex-col md:block" v-if="entry">
+  <div
+    class="max-w-[1440px] mx-auto px-4 xl:p-0 mb-4 md:mb-16 relative aspect-[1500/600] flex flex-col md:block"
+    v-if="entry"
+  >
     <AtomsImage
       v-if="entry"
       :alt="(title as string)"
@@ -29,15 +34,19 @@ const description = computed(() => props.component.parameters?.description?.valu
     />
 
     <article class="md:absolute top-8 left-8 order-1">
-    <AtomsLeTitle
-      v-if="title"
-      :lines="title"
-      :as="titleType"
-      variant="default"
-      class=""
-    />
+      <AtomsLeTitle
+        v-if="title"
+        :lines="title"
+        :as="titleType"
+        variant="default"
+        class=""
+      />
 
-    <div v-if="description" v-html="description" class="max-w-prose text-xl" />
-  </article>
+      <div
+        v-if="description"
+        v-html="description"
+        class="max-w-prose text-xl"
+      />
+    </article>
   </div>
 </template>

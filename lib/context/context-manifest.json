@@ -1,18 +1,6 @@
 {
   "project": {
     "pz": {
-      "agg": {
-        "conferenceVisitor": {
-          "inputs": [
-            {
-              "dim": "jamstackconf"
-            },
-            {
-              "dim": "vueconftoronto"
-            }
-          ]
-        }
-      },
       "enr": {
         "1": {
           "cap": 50
@@ -47,7 +35,7 @@
           "cap": 50,
           "dur": "p",
           "crit": {
-            "op": "&",
+            "op": "|",
             "type": "G",
             "clauses": [
               {
@@ -58,6 +46,15 @@
                   "rhs": "jamstackConf"
                 },
                 "queryName": "utm_campaign"
+              },
+              {
+                "key": "jamstackconf",
+                "type": "QK",
+                "match": {
+                  "cs": false,
+                  "op": "=",
+                  "rhs": "true"
+                }
               }
             ]
           }
@@ -67,7 +64,7 @@
           "cap": 50,
           "dur": "s",
           "crit": {
-            "op": "&",
+            "op": "|",
             "type": "G",
             "clauses": [
               {
@@ -75,9 +72,18 @@
                 "match": {
                   "cs": false,
                   "op": "=",
-                  "rhs": "vueconf-toronto"
+                  "rhs": "vueconftoronto"
                 },
                 "queryName": "utm_campaign"
+              },
+              {
+                "key": "vueconftoronto",
+                "type": "QK",
+                "match": {
+                  "cs": false,
+                  "op": "=",
+                  "rhs": "true"
+                }
               }
             ]
           }
