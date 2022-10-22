@@ -26,6 +26,7 @@ async function setQuirk() {
       :lines="title"
       variant="simple"
       :uppercase="false"
+      v-if="title"
     />
     <p>
       This website is created and maintained by

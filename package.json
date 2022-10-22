@@ -1,4 +1,5 @@
 {
+  "webhook": "https://api.netlify.com/build_hooks/633ee0a711202c009b8c13ca",
   "private": true,
   "scripts": {
     "build": "yarn run context:manifest && node enrichments.mjs && node routes.mjs && nuxt build",

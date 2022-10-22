@@ -10,6 +10,7 @@ import TtVideo from './TtVideo.vue';
 import TtComments from './TtComments.vue';
 import TtSimilar from './TtSimilar.vue';
 import PersonalizationStatus from './PersonalizationStatus.vue';
+import Image from './Image.vue';
 
 import SearchWrapper from './SearchWrapper.vue';
 import Searchbox from './SearchBox.vue';
@@ -34,6 +35,7 @@ const mapping = {
   personalizationStatus: PersonalizationStatus,
   tutorialsByBestMatch: TutorialsByBestMatch,
   supportCreator: SupportCreator,
+  image: Image,
 
   searchwrapper: SearchWrapper,
   searchbox: Searchbox,
