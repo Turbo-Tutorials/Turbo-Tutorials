@@ -10,7 +10,7 @@ const title = computed(() => props.component.parameters?.title?.value);
 </script>
 
 <template>
-  <div class="max-w-[1440px] mx-auto mb-4" v-if="entry">
+  <div class="max-w-[1440px] mx-auto px-4 lg:p-0 mb-4" v-if="entry">
     <AtomsImage
       v-if="entry"
       :alt="title as string"
