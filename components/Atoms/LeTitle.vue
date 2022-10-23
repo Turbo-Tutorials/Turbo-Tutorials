@@ -21,11 +21,11 @@ const lines = computed(() => {
     :is="as"
     class="text-3xl font-bold leading-none mb-4"
     :class="{
-      'md:text-6xl': as === 'h1',
-      'md:text-5xl': as === 'h2',
-      'md:text-4xl': as === 'h3',
-      'md:text-3xl': as === 'h4',
-      'md:text-2xl': as === 'h5',
+      'md:text-5xl': as === 'h1',
+      'md:text-4xl': as === 'h2',
+      'md:text-3xl': as === 'h3',
+      'md:text-2xl': as === 'h4',
+      'md:text-xl': as === 'h5',
       'flowing-title': variant === 'simple',
       uppercase: uppercase,
     }"

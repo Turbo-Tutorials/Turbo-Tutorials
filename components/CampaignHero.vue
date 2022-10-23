@@ -3,6 +3,10 @@ import type { ComponentInstance } from "@uniformdev/canvas";
 
 const props = defineProps<{
   component: ComponentInstance;
+  entry: string;
+  title: string;
+  titleType: string;
+  description: string;
 }>();
 
 const entry = computed(() => props.component.parameters?.entry?.value[0]);
@@ -17,7 +21,7 @@ const description = computed(
 
 <template>
   <div
-    class="max-w-[1440px] mx-auto px-4 xl:p-0 mb-4 md:mb-16 relative aspect-[1500/600] flex flex-col md:block"
+    class="max-w-[1440px] mx-auto px-4 xl:p-0 mb-4 md:mb-16 relative aspect-[1500/500] flex flex-col md:block"
     v-if="entry"
   >
     <AtomsImage
@@ -33,7 +37,7 @@ const description = computed(
       class="fancy-image hidden md:block mb-4 md:mb-0 order-2"
     />
 
-    <article class="md:absolute top-8 left-8 order-1">
+    <article class="md:absolute top-8 left-8 order-1 w-[calc(100%-4rem)]">
       <AtomsLeTitle
         v-if="title"
         :lines="title"
@@ -45,7 +49,7 @@ const description = computed(
       <div
         v-if="description"
         v-html="description"
-        class="max-w-prose text-xl"
+        class="max-w-prose text-xl md:hidden lg:block"
       />
     </article>
   </div>

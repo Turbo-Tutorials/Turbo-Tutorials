@@ -49,7 +49,10 @@ const variant = computed(() => {
 </script>
 
 <template>
-  <div class="bg-lblue mb-24 two-column py-4 lg:p-6" :class="{lightBackground: 'bg-lblue' }">
+  <div
+    class="mb-16 two-column py-4 lg:p-6"
+    :class="{ 'bg-lblue ': lightBackground }"
+  >
     <article class="px-4 lg:px-0 mb-8" v-if="title || description">
       <AtomsLeTitle v-if="title" :as="titleType" :lines="title" />
       <p v-if="description" v-html="description" class="max-w-prose text-xl" />

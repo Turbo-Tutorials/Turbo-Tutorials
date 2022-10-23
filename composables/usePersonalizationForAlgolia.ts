@@ -17,8 +17,8 @@ export function usePersonalizationForAlgolia() {
   const { scores } = $uniformContext
 
   delete scores['hasClickedOnBmac'];
-  delete scores['VueConfToronto'];
-  delete scores['JamstackConf'];
+  delete scores['vueconftoronto'];
+  delete scores['jamstackconf'];
 
   const res = []
   for (const enr in scores) {

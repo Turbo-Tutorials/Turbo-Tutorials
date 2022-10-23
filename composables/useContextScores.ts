@@ -22,11 +22,17 @@ function getValueForScore(score: string) {
   const cat = score.split("_")[0]
   const val = score.split("_")[1]
   const category = enrichmentsMap.find(enrichment => enrichment.id === String(cat))
+
   return category.values.find(value => value.id === String(val))
 }
 
 function mapScores(scores: ScoreVector) {
   const enrichedScores = []
+
+  delete scores['hasClickedOnBmac'];
+  delete scores['vueconftoronto'];
+  delete scores['jamstackconf'];
+
   for (const enr in scores) {
     const cat = getCategoryForScore(enr)
     const value = getValueForScore(enr)
