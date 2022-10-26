@@ -33,7 +33,7 @@
         "jamstackconf": {
           "str": 50,
           "cap": 50,
-          "dur": "p",
+          "dur": "s",
           "crit": {
             "op": "|",
             "type": "G",

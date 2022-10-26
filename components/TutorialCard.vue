@@ -45,6 +45,7 @@ export type Tutorial = {
   transcript: string;
   complexity: "Easy" | "Intermediate" | "Complex";
   small?: Boolean;
+  _score?: string;
 };
 
 defineProps<Tutorial>();
@@ -86,9 +87,9 @@ defineProps<Tutorial>();
       <p
         v-if="small && description"
         v-html="description"
-        class="mb-4 md:line-clamp-2 hidden md:block"
+        class="mb-4 md:line-clamp-1 hidden md:block"
       />
-      <ul class="flex space-x-3">
+      <ul class="flex space-x-3 mb-4">
         <li v-if="tags" v-for="tag in tags" class="uppercase text-sm">
           <nuxt-link
             class="text-grey text-sm"
@@ -97,6 +98,9 @@ defineProps<Tutorial>();
           >
         </li>
       </ul>
+      <p v-if="small && _score" class="text-xs text-grey">
+        Similar: {{ _score }}%
+      </p>
     </article>
   </div>
 </template>

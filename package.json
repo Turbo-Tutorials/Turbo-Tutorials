@@ -28,6 +28,7 @@
     "postinstall": "yarn copy:edge-netlify"
   },
   "dependencies": {
+    "@algolia/recommend-js": "^1.7.1",
     "@contentful/rich-text-html-renderer": "^15.13.1",
     "@kevinmarrec/nuxt-pwa": "^0.8.0",
     "@nuxtjs/algolia": "^1.1.4",

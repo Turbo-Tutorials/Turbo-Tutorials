@@ -83,6 +83,26 @@
   dependencies:
     "@algolia/logger-common" "4.14.2"
 
+"@algolia/recommend-core@1.7.1":
+  version "1.7.1"
+  resolved "https://registry.yarnpkg.com/@algolia/recommend-core/-/recommend-core-1.7.1.tgz#32af0b9bf73228ca115a24180bc532b5a0e1add5"
+  integrity sha512-11Oi0QeKekRv8G82jBz98whbUVjp1B5uOS+TT4o793vrDeCnuBTPHM0n5zHt2yqjmpHqC3VjmPxjuaOu07wuPQ==
+
+"@algolia/recommend-js@^1.7.1":
+  version "1.7.1"
+  resolved "https://registry.yarnpkg.com/@algolia/recommend-js/-/recommend-js-1.7.1.tgz#7648b3375b8cedb666aea52afc7f13dcdbad4338"
+  integrity sha512-RCxTMhb2zyZZ/bNcMH1NaFbinT+6lusLBw00vDhpr082+YqdXGTNS/FILcetMcgaA+JJbVrBa3m70chCpdu8Eg==
+  dependencies:
+    "@algolia/recommend-core" "1.7.1"
+    "@algolia/recommend-vdom" "1.7.1"
+    htm "^3.0.0"
+    preact "^10.0.0"
+
+"@algolia/recommend-vdom@1.7.1":
+  version "1.7.1"
+  resolved "https://registry.yarnpkg.com/@algolia/recommend-vdom/-/recommend-vdom-1.7.1.tgz#7c1761705cde6fd15d609ad0d87660a180e401e2"
+  integrity sha512-Ap+y+pCMFJZVrGl2UG64tuKeWKeuvzzW3AuGG3XS8UEcvJRn/ROBOjWNMwE0kURHQSWhfoyEuciYdsKa7Pc90w==
+
 "@algolia/recommend@^4.12.2":
   version "4.14.2"
   resolved "https://registry.yarnpkg.com/@algolia/recommend/-/recommend-4.14.2.tgz#46631b4316e1c7e6f936ebac7f6ca6a7f8e3fd11"
@@ -5261,6 +5281,11 @@ postcss@^8.4.17, postcss@^8.4.18:
     nanoid "^3.3.4"
     picocolors "^1.0.0"
     source-map-js "^1.0.2"
+
+preact@^10.0.0:
+  version "10.11.2"
+  resolved "https://registry.yarnpkg.com/preact/-/preact-10.11.2.tgz#e43f2a2f2985dedb426bb4c765b7bb037734f8a8"
+  integrity sha512-skAwGDFmgxhq1DCBHke/9e12ewkhc7WYwjuhHB8HHS8zkdtITXLRmUMTeol2ldxvLwYtwbFeifZ9uDDWuyL4Iw==
 
 preact@^10.10.0:
   version "10.11.0"

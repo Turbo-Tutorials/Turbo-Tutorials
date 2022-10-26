@@ -28,8 +28,16 @@
         "value": "data-fetching"
       },
       {
+        "id": "4",
+        "value": "media"
+      },
+      {
         "id": "2",
         "value": "nuxt3"
+      },
+      {
+        "id": "5",
+        "value": "rendering"
       },
       {
         "id": "1",

@@ -1,5 +1,5 @@
 import { H3Event } from 'h3';
-import algoliasearch from 'algoliasearch';
+import algoliarecommend from '@algolia/recommend';
 
 import {
   EnhancerBuilder,
@@ -44,27 +44,29 @@ export default defineEventHandler(async (event: H3Event) => {
   const selectedTags = tutorial.tags.join(",");
 
   // Algolia recommend. Only possible when more than 10 tutorials
-  // const { public: { algoliaId, algoliaSearchApi, algoliaIndex } } = useRuntimeConfig()
-  // const algoliaClient = algoliasearch(
-  //   algoliaId,
-  //   algoliaSearchApi
-  // ).initIndex(algoliaIndex);
+  const { public: { algoliaId, algoliaSearchApi, algoliaIndex } } = useRuntimeConfig()
+  const algoliaClient = algoliarecommend(
+    algoliaId,
+    algoliaSearchApi
+  )
 
-  // const related = await algoliaClient.getRelatedProducts([
-  //   {
-  //     indexName: algoliaIndex,
-  //     objectID: tutorial.slug,
-  //   },
-  // ])
+  const relatedTutorials = await algoliaClient.getRelatedProducts([
+    {
+      indexName: algoliaIndex,
+      objectID: tutorial.slug,
+      maxRecommendations: 3,
+      threshold: 60
+    },
+  ])
 
-  const tutorialsForTagsData = await ctfClient.getEntries({
-    content_type: "turboTutorial",
-    "metadata.tags.sys.id[all]": tutorial.tags[0],
-    "sys.id[nin]": tutorials.items[0].sys.id,
-    limit: 3,
-  });
+  // const tutorialsForTagsData = await ctfClient.getEntries({
+  //   content_type: "turboTutorial",
+  //   "metadata.tags.sys.id[all]": tutorial.tags[0],
+  //   "sys.id[nin]": tutorials.items[0].sys.id,
+  //   limit: 3,
+  // });
 
-  const relatedTutorials = tutorialsForTagsData.items.map((item) => enhanceContentfulItem(item));
+  // const relatedTutorials = tutorialsForTagsData.items.map((item) => enhanceContentfulItem(item));
 
   function getEducationalLevel(complexity) {
     let result = ''
@@ -147,7 +149,7 @@ export default defineEventHandler(async (event: H3Event) => {
     )
     .component("ttSimilar", (ttSimilar) =>
       ttSimilar.data("similar", () => {
-        return relatedTutorials;
+        return relatedTutorials.results[0].hits;
       })
     );
 
