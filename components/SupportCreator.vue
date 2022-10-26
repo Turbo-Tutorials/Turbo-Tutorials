@@ -43,8 +43,9 @@ async function setQuirk() {
       model.
     </p>
     <p>
-      If the content helps you in any way, feel free to donate by buying Tim a
-      few coffee's at:
+      Tim Benniks built and maintained this free site based on the Pay What You
+      Want (PWYW) model. If the content is of help to you, please donate by
+      buying Tim a few coffees at:
       <a
         @click="setQuirk"
         href="https://www.buymeacoffee.com/timbenniks"
