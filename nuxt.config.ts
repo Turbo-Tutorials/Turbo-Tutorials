@@ -1,4 +1,3 @@
-import dynamicRoutes from './lib/dynamicRoutes'
 import staticRoutes from './data/routes.json'
 
 const modules = [

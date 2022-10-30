@@ -1,5 +1,5 @@
 import { H3Event } from 'h3';
-import { compose, enhance, CompositionGetResponse, EnhancerBuilder } from "@uniformdev/canvas";
+import { compose, enhance, EnhancerBuilder } from "@uniformdev/canvas";
 import { cloudinaryEnhancer, CLOUDINARY_PARAMETER_TYPES } from "../../enhancers/cloudinary";
 import { algoliaQueryEnhancer, CANVAS_ALGOLIA_QUERY_PARAMETER_TYPES } from "../../enhancers/algolia";
 import { contentfulModelConverter } from "../../enhancers/helpers"

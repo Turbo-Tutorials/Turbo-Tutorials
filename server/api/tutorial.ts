@@ -43,7 +43,7 @@ export default defineEventHandler(async (event: H3Event) => {
 
   const selectedTags = tutorial.tags.join(",");
 
-  // Algolia recommend. Only possible when more than 10 tutorials
+  // Algolia recommend.
   const { public: { algoliaId, algoliaSearchApi, algoliaIndex } } = useRuntimeConfig()
   const algoliaClient = algoliarecommend(
     algoliaId,
@@ -58,15 +58,6 @@ export default defineEventHandler(async (event: H3Event) => {
       threshold: 60
     },
   ])
-
-  // const tutorialsForTagsData = await ctfClient.getEntries({
-  //   content_type: "turboTutorial",
-  //   "metadata.tags.sys.id[all]": tutorial.tags[0],
-  //   "sys.id[nin]": tutorials.items[0].sys.id,
-  //   limit: 3,
-  // });
-
-  // const relatedTutorials = tutorialsForTagsData.items.map((item) => enhanceContentfulItem(item));
 
   function getEducationalLevel(complexity) {
     let result = ''

@@ -1,5 +1,4 @@
 import { ScoreVector } from '@uniformdev/context';
-import { ref, watchEffect } from 'vue-demi';
 import { dequal } from 'dequal/lite';
 import { getCategoryForScore, getValueForScore } from '../lib/context/helpers'
 
@@ -16,6 +15,7 @@ type enrichedScoreVector = [
 function mapScores(scores: ScoreVector) {
   const enrichedScores = []
 
+  // only enrichments...
   delete scores['hasClickedOnBmac'];
   delete scores['vueconftoronto'];
   delete scores['jamstackconf'];
