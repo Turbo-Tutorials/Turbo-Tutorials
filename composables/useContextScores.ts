@@ -1,7 +1,7 @@
 import { ScoreVector } from '@uniformdev/context';
 import { ref, watchEffect } from 'vue-demi';
 import { dequal } from 'dequal/lite';
-import enrichmentsMap from '../data/enrichments.json'
+import { getCategoryForScore, getValueForScore } from '../lib/context/helpers'
 
 type enrichedScoreVector = [
   {
@@ -12,19 +12,6 @@ type enrichedScoreVector = [
     score: number;
   }
 ]
-
-function getCategoryForScore(score: string) {
-  const cat = score.split("_")[0]
-  return enrichmentsMap.find(enrichment => enrichment.id === String(cat))
-}
-
-function getValueForScore(score: string) {
-  const cat = score.split("_")[0]
-  const val = score.split("_")[1]
-  const category = enrichmentsMap.find(enrichment => enrichment.id === String(cat))
-
-  return category.values.find(value => value.id === String(val))
-}
 
 function mapScores(scores: ScoreVector) {
   const enrichedScores = []
@@ -50,25 +37,46 @@ function mapScores(scores: ScoreVector) {
   return enrichedScores as enrichedScoreVector;
 }
 
+function toAlgoliaFilter(scores: enrichedScoreVector) {
+  const query = []
+
+  scores.forEach(value => {
+    if (value.score > 0) {
+      query.push(`${value.category === 'Interest' ? 'tags' : 'complexity'}:${value.value}<score=${value.score}>`)
+    }
+  })
+
+  return query;
+}
+
 export const useContextScores = () => {
   const { $useUniformContext: useUniformContext } = useNuxtApp();
   const { context } = useUniformContext()
 
   const scores = ref<enrichedScoreVector>(mapScores(context.scores));
+  const algoliaQueryFilter = ref(toAlgoliaFilter(mapScores(context.scores)))
 
   watchEffect(() => {
     const scoringChangeListener = (updatedScores: ScoreVector) => (scores.value = mapScores(updatedScores));
+    const filterChangeListener = (updatedScores: ScoreVector) => (algoliaQueryFilter.value = toAlgoliaFilter(mapScores(updatedScores)));
     const currentScores = mapScores(context.scores);
+    const currentAlgoliaQueryFilter = toAlgoliaFilter(mapScores(context.scores))
 
     if (!dequal(scores.value, currentScores)) {
       scores.value = currentScores;
+      algoliaQueryFilter.value = currentAlgoliaQueryFilter
     }
 
     context.events.on('scoresUpdated', scoringChangeListener);
+    context.events.on('scoresUpdated', filterChangeListener);
     return () => {
       context.events.off('scoresUpdated', scoringChangeListener);
+      context.events.off('scoresUpdated', filterChangeListener);
     };
   });
 
-  return scores;
+  return {
+    scores,
+    algoliaQueryFilter
+  }
 };

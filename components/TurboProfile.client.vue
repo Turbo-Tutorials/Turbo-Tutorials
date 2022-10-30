@@ -7,7 +7,7 @@ defineProps<{
 
 const { $useUniformContext } = useNuxtApp();
 const { context } = $useUniformContext();
-const scores = useContextScores();
+const { scores } = useContextScores();
 const sliderValues = useScores();
 
 async function update(forget = false) {

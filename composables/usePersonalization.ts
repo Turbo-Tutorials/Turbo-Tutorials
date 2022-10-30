@@ -1,17 +1,4 @@
-import enrichmentsMap from '../data/enrichments.json'
-
-function getEnrichmentIdByTag(value: string, category: string) {
-  const cat = enrichmentsMap.find(enr => enr.name === category)
-  const inter = cat.values.find(val => val.value === value)
-  if (inter) {
-    return inter.id
-  }
-}
-
-function getCategoryIdByCategory(category: string) {
-  return enrichmentsMap
-    .find(enr => enr.name === category).id
-}
+import { getEnrichmentIdByTag, getCategoryIdByCategory } from '../lib/context/helpers'
 
 export async function usePersonalization(options: {
   interests: {

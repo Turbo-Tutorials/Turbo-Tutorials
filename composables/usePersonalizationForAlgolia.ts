@@ -1,30 +1,17 @@
-import enrichmentsMap from '../data/enrichments.json'
-
-function getCategoryForScore(score: string) {
-  const cat = score.split("_")[0]
-  return enrichmentsMap.find(enrichment => enrichment.id === String(cat)).name
-}
-
-function getValueForScore(score: string) {
-  const cat = score.split("_")[0]
-  const val = score.split("_")[1]
-  const category = enrichmentsMap.find(enrichment => enrichment.id === String(cat))
-  return category.values.find(value => value.id === String(val)).value
-}
+import { useScores } from "@uniformdev/context-vue";
+import { getCategoryForScore, getValueForScore } from '../lib/context/helpers'
 
 export function usePersonalizationForAlgolia() {
-  const { $uniformContext } = useNuxtApp()
-  const { scores } = $uniformContext
-
-  delete scores['hasClickedOnBmac'];
-  delete scores['vueconftoronto'];
-  delete scores['jamstackconf'];
+  const scores = useScores()
+  delete scores.value['hasClickedOnBmac'];
+  delete scores.value['vueconftoronto'];
+  delete scores.value['jamstackconf'];
 
   const res = []
-  for (const enr in scores) {
-    const cat = getCategoryForScore(enr)
-    const value = getValueForScore(enr)
-    const score = scores[enr]
+  for (const enr in scores.value) {
+    const cat = getCategoryForScore(enr).name
+    const value = getValueForScore(enr).value
+    const score = scores.value[enr]
 
     res.push({
       cat,
@@ -33,11 +20,11 @@ export function usePersonalizationForAlgolia() {
     })
   }
 
-  const query = [];
+  const query = ref([]);
 
   res.forEach(value => {
     if (value.score > 0) {
-      query.push(`${value.cat === 'Interest' ? 'tags' : 'complexity'}:${value.value}<score=${value.score}>`)
+      query.value.push(`${value.cat === 'Interest' ? 'tags' : 'complexity'}:${value.value}<score=${value.score}>`)
     }
   })
 

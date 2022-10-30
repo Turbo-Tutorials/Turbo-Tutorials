@@ -8,19 +8,35 @@ const {
 } = useRuntimeConfig();
 
 const index = useAlgoliaInitIndex(algoliaIndex);
-const filter = usePersonalizationForAlgolia();
-const result = await index.search("", {
+const { algoliaQueryFilter } = useContextScores();
+
+const searchOptions = ref({
   sumOrFiltersScores: true,
   getRankingInfo: true,
-  hitsPerPage: 10,
-  optionalFilters: filter,
+  hitsPerPage: 6,
+  optionalFilters: algoliaQueryFilter.value,
+});
+
+let searchResult = await index.search("", searchOptions.value);
+const hits = ref(searchResult.hits);
+
+watch(algoliaQueryFilter, async () => {
+  searchOptions.value = {
+    sumOrFiltersScores: true,
+    getRankingInfo: true,
+    hitsPerPage: 6,
+    optionalFilters: algoliaQueryFilter.value,
+  };
+
+  searchResult = await index.search("", searchOptions.value);
+  hits.value = searchResult.hits;
 });
 </script>
 
 <template>
   <TutorialCard
-    v-if="result.hits.length > 0"
-    v-for="tutorial in result.hits"
+    v-if="hits.length > 0"
+    v-for="tutorial in hits"
     v-bind="tutorial"
     :small="small"
   />
