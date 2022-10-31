@@ -12,6 +12,10 @@ const titleType = computed(
   () => props.component.parameters?.titleType?.value || "h3"
 );
 
+const simpleTitle = computed(
+  () => props.component.parameters?.simpleTitle?.value || false
+);
+
 const limit = computed(() => props.component.parameters?.limit?.value || 3);
 
 const variant = computed(() => props.component?.variant || false);
@@ -25,7 +29,13 @@ const variant = computed(() => props.component?.variant || false);
       'mb-16 md:mb-24': variant !== 'list',
     }"
   >
-    <AtomsLeTitle v-if="title" :as="titleType" :lines="title" />
+    <AtomsLeTitle
+      v-if="title"
+      :as="titleType"
+      :lines="title"
+      :variant="simpleTitle ? 'simple' : 'default'"
+      :uppercase="simpleTitle ? false : true"
+    />
     <section
       class="grid grid-cols-1 gap-8"
       :class="{
