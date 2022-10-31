@@ -1,5 +1,4 @@
 <script setup lang="ts">
-const router = useRouter();
 const { $useUniformContext: useUniformContext } = useNuxtApp();
 const { context } = useUniformContext();
 
@@ -9,8 +8,7 @@ async function setSignalForJamstackConf() {
       jamstackconf: true,
     },
   });
-
-  router.push({ path: "/" });
+  navigateTo("/");
 }
 
 setSignalForJamstackConf();
