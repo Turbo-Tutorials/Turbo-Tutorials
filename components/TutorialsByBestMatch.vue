@@ -12,6 +12,8 @@ const titleType = computed(
   () => props.component.parameters?.titleType?.value || "h3"
 );
 
+const limit = computed(() => props.component.parameters?.limit?.value || 3);
+
 const variant = computed(() => props.component?.variant || false);
 </script>
 
@@ -31,7 +33,7 @@ const variant = computed(() => props.component?.variant || false);
         'md:grid-cols-3': variant !== 'list',
       }"
     >
-      <personalized-list :small="variant === 'list'" />
+      <personalized-list :small="variant === 'list'" :limit="limit" />
     </section>
   </div>
 </template>

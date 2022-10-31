@@ -1,6 +1,7 @@
 <script lang="ts" setup>
-defineProps<{
+const props = defineProps<{
   small: boolean;
+  limit: number;
 }>();
 
 const {
@@ -13,7 +14,7 @@ const { algoliaQueryFilter } = useContextScores();
 const searchOptions = ref({
   sumOrFiltersScores: true,
   getRankingInfo: true,
-  hitsPerPage: 6,
+  hitsPerPage: props.limit || 3,
   optionalFilters: algoliaQueryFilter.value,
 });
 

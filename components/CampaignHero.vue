@@ -34,7 +34,7 @@ const description = computed(
       loading="eager"
       fetchpriority="high"
       :fetch="false"
-      class="fancy-image hidden md:block mb-4 md:mb-0 order-2"
+      class="fancy-image mb-4 md:mb-0 order-1 md:order-2"
     />
 
     <article class="md:absolute top-8 left-8 order-1 w-[calc(100%-4rem)]">
