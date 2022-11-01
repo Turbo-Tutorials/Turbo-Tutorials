@@ -122,7 +122,11 @@ setInterval(refresh, 10000);
         </li>
       </ul>
     </div>
-    <pre>{{ timeseries }}</pre>
+
+    <div class="mb-12 bg-lblue p-6 w-[1000px]">
+      <AtomsLeTitle as="h2" lines="Visitors in the last 30 days" />
+      <AtomsBarChart :timeseries="timeseries.results" />
+    </div>
 
     <GlobalFooter />
   </main>
