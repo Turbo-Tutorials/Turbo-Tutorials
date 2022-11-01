@@ -19,7 +19,7 @@ setInterval(refresh, 10000);
   <main class="max-w-[1440px] mx-auto pt-36 md:pt-48">
     <GlobalHeader />
 
-    <div class="w-[900px] mb-12 bg-lblue p-6">
+    <div class="w-[1000px] mb-12 bg-lblue p-6">
       <AtomsLeTitle as="h1" lines="Turbo Stats" />
 
       <ul class="grid grid-cols-4 gap-8">
@@ -31,7 +31,7 @@ setInterval(refresh, 10000);
             :uppercase="false"
           />
 
-          <div class="space-x-2">
+          <div class="space-x-1">
             <span class="text-5xl font-bold">
               {{ aggregate.results.bounce_rate.value }}%
             </span>
@@ -54,7 +54,7 @@ setInterval(refresh, 10000);
             variant="simple"
             :uppercase="false"
           />
-          <div class="space-x-2">
+          <div class="space-x-1">
             <span class="text-5xl font-bold">
               {{ aggregate.results.pageviews.value }}
             </span>
@@ -77,7 +77,7 @@ setInterval(refresh, 10000);
             variant="simple"
             :uppercase="false"
           />
-          <div class="space-x-2">
+          <div class="space-x-1">
             <span class="text-5xl font-bold">
               {{ aggregate.results.visits.value }}
             </span>
@@ -100,7 +100,7 @@ setInterval(refresh, 10000);
             variant="simple"
             :uppercase="false"
           />
-          <div class="space-x-2">
+          <div class="space-x-1">
             <span class="text-5xl font-bold">
               {{ realtime }}
             </span>
@@ -109,7 +109,7 @@ setInterval(refresh, 10000);
       </ul>
     </div>
 
-    <div class="mb-12 bg-lblue p-6 w-[900px]">
+    <div class="mb-12 bg-lblue p-6 w-[1000px]">
       <AtomsLeTitle as="h2" lines="Turbo Top Pages" />
 
       <ul class="w-[600px]">
