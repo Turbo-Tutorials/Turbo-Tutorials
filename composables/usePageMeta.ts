@@ -80,26 +80,6 @@ export const usePageMeta = ({ title, description, slug, image, structuredData = 
         content: "website",
       },
       {
-        name: "twitter:card",
-        content: "summary_large_image"
-      },
-      {
-        name: "twitter:creator",
-        content: "@timbenniks"
-      },
-      {
-        property: "twitter:domain",
-        content: "turbo-tutorials.dev",
-      },
-      {
-        property: "twitter:url",
-        content: url,
-      },
-      {
-        name: "twitter:site",
-        content: "@timbenniks",
-      },
-      {
         name: "description",
         content: description,
         hid: "description"
@@ -107,14 +87,6 @@ export const usePageMeta = ({ title, description, slug, image, structuredData = 
       {
         name: "og:description",
         content: description,
-      },
-      {
-        name: "twitter:description",
-        content: description,
-      },
-      {
-        name: "twitter:image:alt",
-        content: title,
       },
       {
         property: "og:url",
@@ -125,21 +97,24 @@ export const usePageMeta = ({ title, description, slug, image, structuredData = 
         content: title,
       },
       {
+        name: "title",
+        content: title,
+      },
+      {
         property: "og:image",
         content: image,
       },
       {
-        name: "twitter:image",
-        content: image
-      },
-      {
-        name: "twitter:title",
-        content: title,
-      },
-      {
         name: "google-site-verification",
         content: "5vr9hLlKmd0RdQYqtnqzMOe-DdAMTRxhAy0y25EkXfQ"
-      }
+      },
+
+      { property: "twitter:card", content: "summary_large_image" },
+      { property: "twitter:url", content: url },
+      { property: "twitter:title", content: title },
+      { property: "twitter:description", content: description },
+      { property: "twitter:image", content: image },
+      { property: "twitter:creator", content: "@timbenniks" },
     ],
   });
 }
