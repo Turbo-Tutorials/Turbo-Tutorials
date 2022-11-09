@@ -88,7 +88,7 @@ export const usePageMeta = ({ title, description, slug, image, structuredData = 
         content: "@timbenniks"
       },
       {
-        name: "twitter:domain",
+        property: "twitter:domain",
         content: "turbo-tutorials.dev",
       },
       {

@@ -6,9 +6,9 @@ const modules = [
   '@nuxtjs/algolia',
 ]
 
-if (process.env.NODE_ENV !== 'development') {
-  modules.push('@kevinmarrec/nuxt-pwa',)
-}
+// if (process.env.NODE_ENV !== 'development') {
+//   modules.push('@kevinmarrec/nuxt-pwa',)
+// }
 
 export default defineNuxtConfig({
   nitro: {
@@ -28,11 +28,11 @@ export default defineNuxtConfig({
   //   '/sitemap.xml': { swr: true },
   // },
   modules,
-  pwa: {
-    workbox: {
-      enabled: false
-    }
-  },
+  // pwa: {
+  //   workbox: {
+  //     enabled: false
+  //   }
+  // },
   head: {
     viewport: "width=device-width, initial-scale=1",
     charset: "utf-8",
