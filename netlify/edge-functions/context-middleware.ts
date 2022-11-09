@@ -45,6 +45,9 @@ export default async (request: Request, netlifyContext: Context) => {
     return response;
   }
 
+  netlifyContext.log('Edge Function ignoring:', { url: request.url, agent: request.headers["user-agent"] });
+
+
   return new Response(response.body, {
     ...response,
     headers: {
