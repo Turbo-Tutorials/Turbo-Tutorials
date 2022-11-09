@@ -14,7 +14,8 @@ export default async (request: Request, netlifyContext: Context) => {
   if (
     request.method.toUpperCase() !== 'GET' ||
     request.url.match(IGNORED_PATHS) ||
-    request.headers.get("user-agent").includes("Twitterbot")
+    request.headers.get("user-agent").includes("Twitterbot") ||
+    request.headers.get("user-agent").includes("LinkedInBot")
   ) {
     return await netlifyContext.next({ sendConditionalRequest: true });
   }
