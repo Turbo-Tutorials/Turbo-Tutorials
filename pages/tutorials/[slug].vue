@@ -27,7 +27,7 @@ usePersonalization({
 usePageMeta({
   title: `Turbo Tutorial - ${composition.value.data.metadata?.title}` as string,
   description: composition.value.data.metadata?.description as string,
-  slug: slug as string,
+  slug: `tutorials/${slug}` as string,
   image: `https://res.cloudinary.com/dwfcofnrd/image/fetch/w_1200,q_auto/${
     composition.value.data.metadata?.image as string
   }`,
