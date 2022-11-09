@@ -42,7 +42,8 @@ export default async (request: Request, netlifyContext: Context) => {
     return response;
   }
 
-  console.log('##', response.headers['User-Agent'])
+  netlifyContext.log('Edge Function debug:', { url: request.url, headers: response.headers });
+
 
   return new Response(response.body, {
     ...response,
