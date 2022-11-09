@@ -55,66 +55,28 @@ export const usePageMeta = ({ title, description, slug, image, structuredData = 
       { rel: "alternate", type: "application/rss+xml", title: "RSS feed for Turbo Tutorials", href: "/rss.xml" }
     ],
     meta: [
-      {
-        name: "theme-color",
-        content: "#14356b",
-      },
-      {
-        name: "msapplication-navbutton-color",
-        content: "#14356b",
-      },
-      {
-        name: "apple-mobile-web-app-capable",
-        content: "yes",
-      },
-      {
-        name: "apple-mobile-web-app-status-bar-style",
-        content: "black-translucent",
-      },
-      {
-        property: "og:site_name",
-        content: "Turbo Tutorials",
-      },
-      {
-        property: "og:type",
-        content: "website",
-      },
-      {
-        name: "description",
-        content: description,
-        hid: "description"
-      },
-      {
-        name: "og:description",
-        content: description,
-      },
-      {
-        property: "og:url",
-        content: url,
-      },
-      {
-        property: "og:title",
-        content: title,
-      },
-      {
-        name: "title",
-        content: title,
-      },
-      {
-        property: "og:image",
-        content: image,
-      },
-      {
-        name: "google-site-verification",
-        content: "5vr9hLlKmd0RdQYqtnqzMOe-DdAMTRxhAy0y25EkXfQ"
-      },
+      { name: "title", content: title },
+      { name: "description", content: description },
 
-      { property: "twitter:card", content: "summary_large_image" },
-      { property: "twitter:url", content: url },
-      { property: "twitter:title", content: title },
-      { property: "twitter:description", content: description },
-      { property: "twitter:image", content: image },
-      { property: "twitter:creator", content: "@timbenniks" },
+      { name: "theme-color", content: "#14356b" },
+      { name: "msapplication-navbutton-color", content: "#14356b" },
+      { name: "apple-mobile-web-app-capable", content: "yes" },
+      { name: "apple-mobile-web-app-status-bar-style", content: "black-translucent" },
+      { name: "google-site-verification", content: "5vr9hLlKmd0RdQYqtnqzMOe-DdAMTRxhAy0y25EkXfQ" },
+
+      { property: "og:site_name", content: "Turbo Tutorials" },
+      { property: "og:type", content: "website" },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+      { property: "og:url", content: url },
+      { property: "og:image", content: image },
+
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:url", content: url },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: description },
+      { name: "twitter:image", content: image },
+      { name: "twitter:creator", content: "@timbenniks" },
     ],
   });
 }
