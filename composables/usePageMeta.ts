@@ -89,6 +89,10 @@ export const usePageMeta = ({ title, description, slug, image, structuredData = 
       },
       {
         property: "twitter:domain",
+        content: "turbo-tutorials.dev",
+      },
+      {
+        property: "twitter:url",
         content: url,
       },
       {
