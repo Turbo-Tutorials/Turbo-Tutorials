@@ -42,6 +42,8 @@ export default async (request: Request, netlifyContext: Context) => {
     return response;
   }
 
+  console.log('##', response.headers['User-Agent'])
+
   return new Response(response.body, {
     ...response,
     headers: {
