@@ -19,7 +19,7 @@ function loadComments() {
       Don't see your comment?
       <button @click="loadComments">Refresh the comments</button>.
     </p>
-    <AtomsLeTitle as="h4" :lines="`Comments (${videoData.meta.comments})`" />
+    <AtomsLeTitle as="h4" :lines="`Comments (${videoData.comments.length})`" />
 
     <p class="mb-4" v-if="videoData.comments.length > 0">
       <a
