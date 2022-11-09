@@ -42,7 +42,7 @@ export default async (request: Request, netlifyContext: Context) => {
     return response;
   }
 
-  netlifyContext.log('Edge Function debug:', { url: request.url, headers: response.headers });
+  netlifyContext.log('Edge Function debug:', { url: request.url, request });
 
 
   return new Response(response.body, {
