@@ -13,8 +13,8 @@ const IGNORED_PATHS = /\/.*\.(ico|png|jpg|jpeg|svg|css|js|json)(?:\?.*|$)$/g;
 export default async (request: Request, netlifyContext: Context) => {
   if (
     request.method.toUpperCase() !== 'GET' ||
-    request.url.match(IGNORED_PATHS) ||
-    request.headers["user-agent"].includes("Twitterbot")
+    request.url.match(IGNORED_PATHS)
+    //request.headers["user-agent"].includes("Twitterbot")
   ) {
     netlifyContext.log('Edge Function ignoring:', { url: request.url, agent: request.headers["user-agent"] });
 
