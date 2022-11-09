@@ -80,15 +80,15 @@ export const usePageMeta = ({ title, description, slug, image, structuredData = 
         content: "website",
       },
       {
-        property: "twitter:card",
+        name: "twitter:card",
         content: "summary_large_image"
       },
       {
-        property: "twitter:creator",
+        name: "twitter:creator",
         content: "@timbenniks"
       },
       {
-        property: "twitter:domain",
+        name: "twitter:domain",
         content: "turbo-tutorials.dev",
       },
       {
@@ -96,7 +96,7 @@ export const usePageMeta = ({ title, description, slug, image, structuredData = 
         content: url,
       },
       {
-        property: "twitter:site",
+        name: "twitter:site",
         content: "@timbenniks",
       },
       {
@@ -129,11 +129,11 @@ export const usePageMeta = ({ title, description, slug, image, structuredData = 
         content: image,
       },
       {
-        property: "twitter:image",
+        name: "twitter:image",
         content: image
       },
       {
-        property: "twitter:title",
+        name: "twitter:title",
         content: title,
       },
       {
