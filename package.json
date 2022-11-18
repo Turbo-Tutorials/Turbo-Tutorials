@@ -25,7 +25,7 @@
     "push:context": "run-s push:context:signals push:context:enrichments push:context:quirks push:context:aggregates",
     "pull:enrichments": "node enrichments.mjs",
     "copy:edge-netlify": "cp node_modules/@uniformdev/context-edge-netlify/dist/index.deno.js lib/context",
-    "postinstall": "yarn copy:edge-netlify"
+    "postinstall": "yarn copy:edge-netlify && nuxt prepare"
   },
   "dependencies": {
     "@algolia/recommend-js": "^1.8.0",
