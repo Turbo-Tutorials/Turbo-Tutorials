@@ -1,15 +1,5 @@
 import staticRoutes from './data/routes.json'
 
-const modules = [
-  '@nuxtjs/tailwindcss',
-  '@uniformdev/uniform-nuxt',
-  '@nuxtjs/algolia',
-]
-
-// if (process.env.NODE_ENV !== 'development') {
-//   modules.push('@kevinmarrec/nuxt-pwa',)
-// }
-
 export default defineNuxtConfig({
   nitro: {
     prerender: {
@@ -27,12 +17,11 @@ export default defineNuxtConfig({
   //   '/rss.xml': { swr: true },
   //   '/sitemap.xml': { swr: true },
   // },
-  modules,
-  // pwa: {
-  //   workbox: {
-  //     enabled: false
-  //   }
-  // },
+  modules: [
+    '@nuxtjs/tailwindcss',
+    '@uniformdev/uniform-nuxt',
+    '@nuxtjs/algolia',
+  ],
   head: {
     viewport: "width=device-width, initial-scale=1",
     charset: "utf-8",
