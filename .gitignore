@@ -13,3 +13,4 @@ dist
 .netlify
 .env.canary
 .env.stable
+lib/context/index.deno.js

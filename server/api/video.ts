@@ -39,7 +39,7 @@ const getVideoComments = async (id: string) => {
 }
 
 export default defineEventHandler(async (event: H3Event) => {
-  const { videoId, withComments } = useQuery(event)
+  const { videoId, withComments } = getQuery(event)
   const meta = await getVideoSpecs(videoId as string)
 
   const result = {

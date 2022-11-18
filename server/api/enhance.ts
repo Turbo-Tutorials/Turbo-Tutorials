@@ -18,7 +18,7 @@ import {
 } from "../../enhancers/prismic"
 
 export default defineEventHandler(async (event: H3Event) => {
-  const body = await useBody(event)
+  const body = await readBody(event)
   const composition = body.composition
 
   await enhance({

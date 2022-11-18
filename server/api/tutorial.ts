@@ -13,7 +13,7 @@ import { getContentfulClient, enhanceContentfulItem } from "../../enhancers/help
 import { getVideoMeta } from "../../enhancers/youtube"
 
 export default defineEventHandler(async (event: H3Event) => {
-  const { slug } = useQuery(event)
+  const { slug } = getQuery(event)
 
   const canvas = new CanvasClient({
     apiKey: process.env.UNIFORM_API_KEY,
