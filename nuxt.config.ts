@@ -7,9 +7,9 @@ export default defineNuxtConfig({
       routes: staticRoutes
     }
   },
-  // experimental: {
-  //   payloadExtraction: true
-  // },
+  experimental: {
+    payloadExtraction: true
+  },
   // routeRules: {
   //   '/': { static: true },
   //   '/pwyw/': { static: true },
