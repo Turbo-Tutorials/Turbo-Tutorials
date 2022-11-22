@@ -27,6 +27,7 @@ async function getRoutes() {
     "/privacy-policy/",
     "/rss.xml",
     "/tutorials/",
+    "/dashboard/",
     ...routes,
   ];
 

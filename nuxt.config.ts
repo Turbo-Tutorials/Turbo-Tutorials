@@ -7,6 +7,9 @@ export default defineNuxtConfig({
       routes: staticRoutes
     }
   },
+  // experimental: {
+  //   payloadExtraction: true
+  // },
   // routeRules: {
   //   '/': { static: true },
   //   '/pwyw/': { static: true },
@@ -60,8 +63,5 @@ export default defineNuxtConfig({
     compilerOptions: {
       isCustomElement: tag => ['lite-youtube'].includes(tag)
     }
-  },
-  experimental: {
-    payloadExtraction: true
   }
 })
