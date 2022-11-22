@@ -1,22 +1,23 @@
 import staticRoutes from './data/routes.json'
 
 export default defineNuxtConfig({
-  nitro: {
-    prerender: {
-      crawlLinks: false,
-      routes: staticRoutes
-    }
-  },
-  // routeRules: {
-  //   '/': { static: true },
-  //   '/pwyw': { static: true },
-  //   '/about': { static: true },
-  //   '/personalization-profile': { static: true },
-  //   '/privacy-policy': { static: true },
-  //   '/tutorials/**': { static: true },
-  //   '/rss.xml': { swr: true },
-  //   '/sitemap.xml': { swr: true },
+  // nitro: {
+  //   prerender: {
+  //     crawlLinks: false,
+  //     routes: staticRoutes
+  //   }
   // },
+  routeRules: {
+    '/': { static: true },
+    '/pwyw/': { static: true },
+    '/about/': { static: true },
+    '/personalization-profile/': { static: true },
+    '/privacy-policy/': { static: true },
+    '/tutorials/**': { static: true },
+    '/rss.xml': { swr: true },
+    '/sitemap.xml': { swr: true },
+    '/dashboard/': { swr: true },
+  },
   modules: [
     '@nuxtjs/tailwindcss',
     '@uniformdev/uniform-nuxt',
