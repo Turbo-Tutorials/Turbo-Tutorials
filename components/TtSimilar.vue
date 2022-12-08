@@ -10,7 +10,7 @@ const list = computed(() => props.component.data?.similar);
 
 <template>
   <div class="px-4 md:p-0">
-    <AtomsLeTitle as="h4" lines="Similar Turbo's" />
+    <AtomsLeTitle as="h4" lines="Similar Turbos" />
 
     <section class="grid grid-cols-1 gap-8 md:grid-cols-1">
       <TutorialCard

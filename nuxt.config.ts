@@ -21,6 +21,23 @@ export default defineNuxtConfig({
   //   '/sitemap.xml': { swr: true },
   //   '/dashboard/': { swr: true },
   // },
+
+  //   hooks: {
+  //     async 'nitro:config'(nitroConfig) {
+  //         if (nitroConfig.dev) { return }
+  //         const client = new CanvasClient({
+  //             apiHost: process.env.UNIFORM_CLI_BASE_URL,
+  //             apiKey: process.env.UNIFORM_API_KEY,
+  //             projectId: process.env.UNIFORM_PROJECT_ID,
+  //         })
+
+  //         const { compositions } = await client.getCompositionList()
+  //         compositions
+  //             .filter((v) => v?.composition?._slug && v.composition._slug.startsWith('/'))
+  //             .map((v) => nitroConfig.prerender.routes.push(v.composition._slug))
+  //     }
+  // },
+
   modules: [
     '@nuxtjs/tailwindcss',
     '@uniformdev/uniform-nuxt',
